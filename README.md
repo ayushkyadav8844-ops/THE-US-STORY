@@ -4,2870 +4,1853 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <meta name="theme-color" content="#c05f82">
-
 <title>The Us Story ❤️</title>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <style>
-
 :root{
-    --rose:#c05f82;
-    --deep:#91445f;
-    --pink:#ffe8ef;
-    --soft:#e8adbd;
-    --cream:#fffaf8;
-    --paper:rgba(255,253,251,.96);
-    --text:#593c45;
-    --muted:#80616a;
-    --shadow:rgba(90,45,65,.14);
+--rose:#c05f82;
+--deep:#91445f;
+--pink:#ffe8ef;
+--soft:#e8adbd;
+--cream:#fffaf8;
+--paper:rgba(255,253,251,.96);
+--text:#593c45;
+--muted:#80616a;
+--shadow:rgba(90,45,65,.14);
 }
 
-*{
-    box-sizing:border-box;
-}
+*{box-sizing:border-box}
 
-html{
-    scroll-behavior:smooth;
-}
+html{scroll-behavior:smooth}
 
 body{
-    margin:0;
-    min-height:100vh;
-    font-family:Georgia,"Times New Roman",serif;
-    color:var(--text);
-    overflow-x:hidden;
-
-    background:
-        linear-gradient(
-            rgba(255,241,246,.76),
-            rgba(255,248,243,.87)
-        ),
-        url("./file_0000000b66082118bbde5d0666da038.png");
-
-    background-size:cover;
-    background-position:center;
-    background-attachment:fixed;
+margin:0;
+min-height:100vh;
+font-family:Georgia,"Times New Roman",serif;
+color:var(--text);
+overflow-x:hidden;
+background:
+linear-gradient(rgba(255,241,246,.78),rgba(255,248,243,.9)),
+url("./file_0000000b66082118bbde5d0666da038.png");
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
 }
 
-body::before{
-    content:"";
-    position:fixed;
-    inset:0;
-    pointer-events:none;
-    z-index:0;
-
-    background:
-        radial-gradient(
-            circle at 10% 15%,
-            rgba(255,255,255,.65),
-            transparent 25%
-        ),
-        radial-gradient(
-            circle at 90% 30%,
-            rgba(255,210,225,.35),
-            transparent 28%
-        ),
-        radial-gradient(
-            circle at 50% 90%,
-            rgba(255,230,215,.35),
-            transparent 30%
-        );
+body:before{
+content:"";
+position:fixed;
+inset:0;
+pointer-events:none;
+z-index:0;
+background:
+radial-gradient(circle at 10% 15%,rgba(255,255,255,.65),transparent 25%),
+radial-gradient(circle at 90% 30%,rgba(255,210,225,.35),transparent 28%),
+radial-gradient(circle at 50% 90%,rgba(255,230,215,.35),transparent 30%);
 }
 
 .decorations{
-    position:fixed;
-    inset:0;
-    pointer-events:none;
-    overflow:hidden;
-    z-index:1;
+position:fixed;
+inset:0;
+pointer-events:none;
+overflow:hidden;
+z-index:1;
 }
 
 .float{
-    position:absolute;
-    bottom:-50px;
-    opacity:0;
-    animation:floatUp 11s linear infinite;
+position:absolute;
+bottom:-50px;
+opacity:0;
+animation:floatUp 11s linear infinite;
+font-size:25px;
 }
 
-.float:nth-child(1){
-    left:7%;
-}
-
-.float:nth-child(2){
-    left:22%;
-    animation-delay:3s;
-}
-
-.float:nth-child(3){
-    left:43%;
-    animation-delay:6s;
-}
-
-.float:nth-child(4){
-    left:68%;
-    animation-delay:2s;
-}
-
-.float:nth-child(5){
-    left:90%;
-    animation-delay:5s;
-}
+.float:nth-child(1){left:7%}
+.float:nth-child(2){left:22%;animation-delay:3s}
+.float:nth-child(3){left:43%;animation-delay:6s}
+.float:nth-child(4){left:68%;animation-delay:2s}
+.float:nth-child(5){left:90%;animation-delay:5s}
 
 @keyframes floatUp{
-    0%{
-        transform:translateY(0) translateX(0) rotate(0) scale(.6);
-        opacity:0;
-    }
-
-    12%{
-        opacity:.6;
-    }
-
-    50%{
-        transform:translateY(-55vh) translateX(25px)
-                   rotate(18deg) scale(1);
-        opacity:.4;
-    }
-
-    100%{
-        transform:translateY(-115vh) translateX(-25px)
-                   rotate(-18deg) scale(1.15);
-        opacity:0;
-    }
+0%{transform:translateY(0) rotate(0) scale(.6);opacity:0}
+12%{opacity:.6}
+50%{transform:translateY(-55vh) translateX(25px) rotate(18deg) scale(1);opacity:.4}
+100%{transform:translateY(-115vh) translateX(-25px) rotate(-18deg) scale(1.15);opacity:0}
 }
 
 .sparkle{
-    position:absolute;
-    color:rgba(192,95,130,.5);
-    animation:sparkle 3s ease-in-out infinite;
+position:absolute;
+color:rgba(192,95,130,.5);
+animation:sparkle 3s ease-in-out infinite;
 }
-
-.s1{
-    top:14%;
-    left:9%;
-}
-
-.s2{
-    top:31%;
-    right:8%;
-    animation-delay:.8s;
-}
-
-.s3{
-    top:61%;
-    left:6%;
-    animation-delay:1.5s;
-}
-
-.s4{
-    top:79%;
-    right:9%;
-    animation-delay:2s;
-}
+.s1{top:14%;left:9%}
+.s2{top:31%;right:8%;animation-delay:.8s}
+.s3{top:61%;left:6%;animation-delay:1.5s}
+.s4{top:79%;right:9%;animation-delay:2s}
 
 @keyframes sparkle{
-    0%,100%{
-        transform:scale(.5) rotate(0);
-        opacity:.2;
-    }
-
-    50%{
-        transform:scale(1.5) rotate(35deg);
-        opacity:.9;
-    }
+0%,100%{transform:scale(.5);opacity:.2}
+50%{transform:scale(1.5) rotate(35deg);opacity:.9}
 }
 
 .container{
-    position:relative;
-    z-index:5;
-    width:92%;
-    max-width:850px;
-    margin:auto;
-    padding:20px 0 80px;
+position:relative;
+z-index:5;
+width:92%;
+max-width:850px;
+margin:auto;
+padding:20px 0 80px;
 }
 
-header{
-    text-align:center;
-    padding:25px 8px 10px;
-}
-
-/* TEDDIES */
+header{text-align:center;padding:25px 8px 10px}
 
 .teddies{
-    display:flex;
-    justify-content:center;
-    align-items:flex-end;
-    gap:12px;
-    height:155px;
+display:flex;
+justify-content:center;
+align-items:flex-end;
+gap:12px;
+height:155px;
 }
 
 .teddy{
-    position:relative;
-    width:100px;
-    height:135px;
-    animation:teddyFloat 3s ease-in-out infinite;
-    filter:drop-shadow(0 9px 8px rgba(80,40,30,.13));
+position:relative;
+width:100px;
+height:135px;
+animation:teddyFloat 3s ease-in-out infinite;
+filter:drop-shadow(0 9px 8px rgba(80,40,30,.13));
 }
 
-.teddy:nth-child(2){
-    animation-delay:.4s;
-}
+.teddy:nth-child(2){animation-delay:.4s}
 
 .head{
-    position:absolute;
-    left:12px;
-    top:8px;
-    width:76px;
-    height:70px;
-    border-radius:48%;
-    background:linear-gradient(145deg,#dfa174,#ae694b);
-    z-index:3;
+position:absolute;
+left:12px;
+top:8px;
+width:76px;
+height:70px;
+border-radius:48%;
+background:linear-gradient(145deg,#dfa174,#ae694b);
+z-index:3;
 }
 
-.girl .head{
-    background:linear-gradient(145deg,#e5a08f,#b97065);
-}
+.girl .head{background:linear-gradient(145deg,#e5a08f,#b97065)}
 
 .ear{
-    position:absolute;
-    top:-7px;
-    width:30px;
-    height:30px;
-    border-radius:50%;
-    background:#bd7651;
-    z-index:-1;
+position:absolute;
+top:-7px;
+width:30px;
+height:30px;
+border-radius:50%;
+background:#bd7651;
+z-index:-1;
 }
 
-.girl .ear{
-    background:#c98277;
-}
+.girl .ear{background:#c98277}
+.ear.left{left:0}
+.ear.right{right:0}
 
-.ear.left{
-    left:0;
-}
-
-.ear.right{
-    right:0;
-}
-
-.ear::after{
-    content:"";
-    position:absolute;
-    inset:6px;
-    border-radius:50%;
-    background:#f1b7a2;
+.ear:after{
+content:"";
+position:absolute;
+inset:6px;
+border-radius:50%;
+background:#f1b7a2;
 }
 
 .eye{
-    position:absolute;
-    top:28px;
-    width:7px;
-    height:8px;
-    border-radius:50%;
-    background:#493036;
+position:absolute;
+top:28px;
+width:7px;
+height:8px;
+border-radius:50%;
+background:#493036;
 }
 
-.eye.left{
-    left:20px;
-}
+.eye.left{left:20px}
+.eye.right{right:20px}
 
-.eye.right{
-    right:20px;
-}
-
-.eye::after{
-    content:"";
-    position:absolute;
-    width:2px;
-    height:2px;
-    top:1px;
-    left:1px;
-    border-radius:50%;
-    background:white;
+.eye:after{
+content:"";
+position:absolute;
+width:2px;
+height:2px;
+top:1px;
+left:1px;
+border-radius:50%;
+background:white;
 }
 
 .cheek{
-    position:absolute;
-    top:42px;
-    width:11px;
-    height:7px;
-    border-radius:50%;
-    background:#ed999d;
-    opacity:.7;
+position:absolute;
+top:42px;
+width:11px;
+height:7px;
+border-radius:50%;
+background:#ed999d;
+opacity:.7;
 }
 
-.cheek.left{
-    left:10px;
-}
-
-.cheek.right{
-    right:10px;
-}
+.cheek.left{left:10px}
+.cheek.right{right:10px}
 
 .muzzle{
-    position:absolute;
-    left:23px;
-    top:37px;
-    width:30px;
-    height:23px;
-    border-radius:50%;
-    background:#f0c4a8;
+position:absolute;
+left:23px;
+top:37px;
+width:30px;
+height:23px;
+border-radius:50%;
+background:#f0c4a8;
 }
 
 .nose{
-    position:absolute;
-    left:10px;
-    top:5px;
-    width:10px;
-    height:7px;
-    border-radius:50%;
-    background:#553037;
+position:absolute;
+left:10px;
+top:5px;
+width:10px;
+height:7px;
+border-radius:50%;
+background:#553037;
 }
 
 .mouth{
-    position:absolute;
-    left:12px;
-    top:11px;
-    width:6px;
-    height:5px;
-    border-bottom:2px solid #553037;
-    border-radius:50%;
+position:absolute;
+left:12px;
+top:11px;
+width:6px;
+height:5px;
+border-bottom:2px solid #553037;
+border-radius:50%;
 }
 
 .body{
-    position:absolute;
-    left:21px;
-    top:73px;
-    width:58px;
-    height:50px;
-    border-radius:48% 48% 40% 40%;
-    background:linear-gradient(145deg,#dfa174,#ae694b);
+position:absolute;
+left:21px;
+top:73px;
+width:58px;
+height:50px;
+border-radius:48% 48% 40% 40%;
+background:linear-gradient(145deg,#dfa174,#ae694b);
 }
 
-.girl .body{
-    background:linear-gradient(145deg,#e5a08f,#b97065);
-}
+.girl .body{background:linear-gradient(145deg,#e5a08f,#b97065)}
 
 .belly{
-    position:absolute;
-    left:15px;
-    top:9px;
-    width:28px;
-    height:26px;
-    border-radius:50%;
-    background:#edc09e;
+position:absolute;
+left:15px;
+top:9px;
+width:28px;
+height:26px;
+border-radius:50%;
+background:#edc09e;
 }
 
 .arm{
-    position:absolute;
-    top:77px;
-    width:20px;
-    height:38px;
-    border-radius:50%;
-    background:#c17a55;
-    z-index:4;
+position:absolute;
+top:77px;
+width:20px;
+height:38px;
+border-radius:50%;
+background:#c17a55;
+z-index:4;
 }
 
-.girl .arm{
-    background:#c67c72;
-}
-
-.arm.left{
-    left:5px;
-    transform:rotate(27deg);
-}
-
-.arm.right{
-    right:5px;
-    transform:rotate(-27deg);
-}
+.girl .arm{background:#c67c72}
+.arm.left{left:5px;transform:rotate(27deg)}
+.arm.right{right:5px;transform:rotate(-27deg)}
 
 .leg{
-    position:absolute;
-    top:108px;
-    width:24px;
-    height:19px;
-    border-radius:50%;
-    background:#ad684b;
+position:absolute;
+top:108px;
+width:24px;
+height:19px;
+border-radius:50%;
+background:#ad684b;
 }
 
-.leg.left{
-    left:19px;
-}
-
-.leg.right{
-    right:19px;
-}
+.leg.left{left:19px}
+.leg.right{right:19px}
 
 .heart{
-    position:absolute;
-    left:37px;
-    top:71px;
-    z-index:8;
-    font-size:27px;
-    animation:heartBounce 1.5s ease-in-out infinite;
+position:absolute;
+left:37px;
+top:71px;
+z-index:8;
+font-size:27px;
+animation:heartBounce 1.5s ease-in-out infinite;
 }
 
 .bow{
-    position:absolute;
-    right:-4px;
-    top:-5px;
-    z-index:20;
-    font-size:27px;
-    animation:bowWiggle 2s ease-in-out infinite;
+position:absolute;
+right:-4px;
+top:-5px;
+z-index:20;
+font-size:27px;
+animation:bowWiggle 2s ease-in-out infinite;
 }
 
 @keyframes teddyFloat{
-    0%,100%{
-        transform:translateY(0) rotate(-2deg);
-    }
-
-    50%{
-        transform:translateY(-10px) rotate(2deg);
-    }
+0%,100%{transform:translateY(0) rotate(-2deg)}
+50%{transform:translateY(-10px) rotate(2deg)}
 }
 
 @keyframes heartBounce{
-    0%,100%{
-        transform:scale(1) rotate(-3deg);
-    }
-
-    50%{
-        transform:scale(1.2) rotate(4deg);
-    }
+0%,100%{transform:scale(1) rotate(-3deg)}
+50%{transform:scale(1.2) rotate(4deg)}
 }
 
 @keyframes bowWiggle{
-    0%,100%{
-        transform:rotate(10deg);
-    }
-
-    50%{
-        transform:rotate(-8deg) scale(1.06);
-    }
+0%,100%{transform:rotate(10deg)}
+50%{transform:rotate(-8deg) scale(1.06)}
 }
 
 .header-heart{
-    font-size:39px;
-    animation:heartbeat 1.5s ease-in-out infinite;
+font-size:39px;
+animation:heartbeat 1.5s ease-in-out infinite;
 }
 
 @keyframes heartbeat{
-    0%,100%{
-        transform:scale(1);
-    }
-
-    50%{
-        transform:scale(1.18);
-    }
+0%,100%{transform:scale(1)}
+50%{transform:scale(1.18)}
 }
 
 h1{
-    margin:10px 0;
-    color:var(--deep);
-    font-size:clamp(40px,9vw,72px);
-    line-height:1;
-    text-shadow:0 4px 15px rgba(145,76,101,.13);
+margin:10px 0;
+color:var(--deep);
+font-size:clamp(40px,9vw,72px);
+line-height:1;
+text-shadow:0 4px 15px rgba(145,76,101,.13);
 }
 
 .subtitle{
-    color:var(--muted);
-    font-size:20px;
-    line-height:1.6;
+color:var(--muted);
+font-size:20px;
+line-height:1.6;
 }
 
 .divider{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:12px;
-    margin:22px auto;
+display:flex;
+justify-content:center;
+align-items:center;
+gap:12px;
+margin:22px auto;
 }
 
-.divider::before,
-.divider::after{
-    content:"";
-    width:70px;
-    height:1px;
-    background:linear-gradient(to right,transparent,var(--soft));
+.divider:before,.divider:after{
+content:"";
+width:70px;
+height:1px;
+background:linear-gradient(to right,transparent,var(--soft));
 }
 
-.divider::after{
-    background:linear-gradient(to left,transparent,var(--soft));
+.divider:after{
+background:linear-gradient(to left,transparent,var(--soft));
 }
-
-/* COUNTER */
 
 .counter{
-    position:relative;
-    text-align:center;
-    margin:25px 0 35px;
-    padding:32px 20px;
-    overflow:hidden;
-    background:rgba(255,252,250,.95);
-    border:1px solid rgba(160,91,111,.18);
-    border-radius:32px;
-    box-shadow:0 18px 50px var(--shadow);
-    backdrop-filter:blur(9px);
+position:relative;
+text-align:center;
+margin:25px 0 35px;
+padding:32px 20px;
+overflow:hidden;
+background:rgba(255,252,250,.95);
+border:1px solid rgba(160,91,111,.18);
+border-radius:32px;
+box-shadow:0 18px 50px var(--shadow);
+backdrop-filter:blur(9px);
 }
 
-.counter::before{
-    content:"";
-    position:absolute;
-    inset:8px;
-    border:1px dashed rgba(192,95,130,.3);
-    border-radius:25px;
-    pointer-events:none;
+.counter:before{
+content:"";
+position:absolute;
+inset:8px;
+border:1px dashed rgba(192,95,130,.3);
+border-radius:25px;
+pointer-events:none;
 }
 
 .counter-heart{
-    position:relative;
-    display:inline-block;
-    font-size:40px;
-    animation:counterPulse 1.5s ease-in-out infinite;
-}
-
-@keyframes counterPulse{
-    0%,100%{
-        transform:scale(1);
-    }
-
-    50%{
-        transform:scale(1.18);
-    }
+font-size:40px;
+animation:heartbeat 1.5s infinite;
 }
 
 .counter-title{
-    position:relative;
-    margin-top:5px;
-    color:var(--deep);
-    font-size:25px;
-    font-weight:bold;
+margin-top:5px;
+color:var(--deep);
+font-size:25px;
+font-weight:bold;
 }
 
 .counter-date{
-    position:relative;
-    margin:8px 0 20px;
-    color:var(--muted);
-    font-size:15px;
+margin:8px 0 20px;
+color:var(--muted);
+font-size:15px;
 }
 
 .counter-grid{
-    position:relative;
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:10px;
-    max-width:620px;
-    margin:auto;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:10px;
+max-width:620px;
+margin:auto;
 }
 
 .counter-box{
-    padding:15px 5px;
-    border-radius:19px;
-    background:linear-gradient(145deg,#fff7fa,#fffdfb);
-    border:1px solid rgba(192,95,130,.14);
-    box-shadow:0 7px 18px rgba(90,50,60,.07);
-    transition:transform .25s ease;
-}
-
-.counter-box:hover{
-    transform:translateY(-4px);
+padding:15px 5px;
+border-radius:19px;
+background:linear-gradient(145deg,#fff7fa,#fffdfb);
+border:1px solid rgba(192,95,130,.14);
+box-shadow:0 7px 18px rgba(90,50,60,.07);
 }
 
 .number{
-    color:var(--deep);
-    font-size:clamp(22px,5vw,36px);
-    font-weight:bold;
-    font-variant-numeric:tabular-nums;
+color:var(--deep);
+font-size:clamp(22px,5vw,36px);
+font-weight:bold;
 }
 
 .label{
-    margin-top:4px;
-    color:#a27682;
-    font-size:11px;
-    text-transform:uppercase;
-    letter-spacing:.8px;
+margin-top:4px;
+color:#a27682;
+font-size:11px;
+text-transform:uppercase;
+letter-spacing:.8px;
 }
 
-/* CARDS */
-
-.card,
-.music{
-    position:relative;
-    margin:30px 0;
-    padding:30px;
-    background:var(--paper);
-    border:1px solid rgba(160,91,111,.18);
-    border-radius:30px;
-    box-shadow:0 18px 50px var(--shadow);
-    backdrop-filter:blur(8px);
+.card,.music{
+position:relative;
+margin:30px 0;
+padding:30px;
+background:var(--paper);
+border:1px solid rgba(160,91,111,.18);
+border-radius:30px;
+box-shadow:0 18px 50px var(--shadow);
+backdrop-filter:blur(8px);
 }
 
-.card::before,
-.music::before{
-    content:"";
-    position:absolute;
-    inset:8px;
-    border:1px dashed rgba(182,107,131,.28);
-    border-radius:23px;
-    pointer-events:none;
-}
-
-.card::after{
-    content:"♡";
-    position:absolute;
-    right:18px;
-    top:12px;
-    color:rgba(166,90,115,.28);
-    font-size:27px;
+.card:before,.music:before{
+content:"";
+position:absolute;
+inset:8px;
+border:1px dashed rgba(182,107,131,.28);
+border-radius:23px;
+pointer-events:none;
 }
 
 .card h2{
-    position:relative;
-    margin-top:0;
-    color:var(--deep);
-    font-size:30px;
+position:relative;
+margin-top:0;
+color:var(--deep);
+font-size:30px;
 }
 
 .card p{
-    position:relative;
-    font-size:19px;
-    line-height:1.7;
+position:relative;
+font-size:19px;
+line-height:1.7;
 }
 
-/* LOGIN */
-
 #login{
-    max-width:450px;
-    margin:25px auto 40px;
-    text-align:center;
+max-width:450px;
+margin:25px auto 40px;
+text-align:center;
 }
 
 .login-title{
-    color:var(--deep);
-    font-size:29px;
-    font-weight:bold;
+color:var(--deep);
+font-size:29px;
+font-weight:bold;
 }
 
 .login-subtitle{
-    margin:10px 0 25px;
-    color:var(--muted);
-    font-size:17px;
+margin:10px 0 25px;
+color:var(--muted);
+font-size:17px;
 }
 
 label{
-    display:block;
-    margin:10px 0 6px;
-    font-size:17px;
+display:block;
+margin:10px 0 6px;
+font-size:17px;
 }
 
-input,
-textarea{
-    width:100%;
-    padding:14px;
-    margin:7px 0 14px;
-    border:1px solid #d6aeba;
-    border-radius:16px;
-    background:rgba(255,255,255,.95);
-    color:var(--text);
-    font-family:inherit;
-    font-size:17px;
-    outline:none;
-    transition:.2s ease;
-}
-
-input:focus,
-textarea:focus{
-    border-color:#b66b83;
-    box-shadow:0 0 0 3px rgba(182,107,131,.11);
+input,textarea{
+width:100%;
+padding:14px;
+margin:7px 0 14px;
+border:1px solid #d6aeba;
+border-radius:16px;
+background:rgba(255,255,255,.95);
+color:var(--text);
+font-family:inherit;
+font-size:17px;
+outline:none;
 }
 
 textarea{
-    min-height:150px;
-    resize:vertical;
+min-height:150px;
+resize:vertical;
 }
 
-input[type=file]{
-    padding:11px;
-}
+input[type=file]{padding:11px}
 
 button{
-    font-family:inherit;
+font-family:inherit;
 }
 
 .primary{
-    border:none;
-    border-radius:30px;
-    padding:14px 24px;
-    background:linear-gradient(135deg,#c7678a,#ae5577);
-    color:white;
-    font-size:17px;
-    cursor:pointer;
-    box-shadow:0 9px 24px rgba(150,70,100,.2);
-    transition:.2s ease;
-}
-
-.primary:hover{
-    transform:translateY(-3px);
+border:none;
+border-radius:30px;
+padding:14px 24px;
+background:linear-gradient(135deg,#c7678a,#ae5577);
+color:white;
+font-size:17px;
+cursor:pointer;
+box-shadow:0 9px 24px rgba(150,70,100,.2);
 }
 
 .primary:disabled{
-    opacity:.6;
-    cursor:not-allowed;
+opacity:.6;
+cursor:not-allowed;
 }
 
-#loginButton{
-    width:100%;
-}
+#loginButton{width:100%}
 
 .logout{
-    padding:8px 15px;
-    border:1px solid #c88ca0;
-    border-radius:20px;
-    background:rgba(255,255,255,.8);
-    color:var(--deep);
-    cursor:pointer;
+padding:8px 15px;
+border:1px solid #c88ca0;
+border-radius:20px;
+background:rgba(255,255,255,.8);
+color:var(--deep);
+cursor:pointer;
 }
 
 .status{
-    min-height:25px;
-    margin-top:14px;
-    text-align:center;
-    font-size:16px;
-    line-height:1.5;
+min-height:25px;
+margin-top:14px;
+text-align:center;
+font-size:16px;
+line-height:1.5;
 }
 
-.success{
-    color:#5d8a65;
-}
+.success{color:#5d8a65}
+.error{color:#b04b5b}
 
-.error{
-    color:#b04b5b;
-}
-
-/* DIARY */
-
-#diary{
-    display:none;
-}
+#diary{display:none}
 
 .diary-top{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:15px;
-    margin-bottom:20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:15px;
+margin-bottom:20px;
 }
 
 .welcome{
-    color:var(--deep);
-    font-size:17px;
-    overflow-wrap:anywhere;
+color:var(--deep);
+font-size:17px;
+overflow-wrap:anywhere;
 }
 
-/* MUSIC */
-
-.music{
-    text-align:center;
-    overflow:visible;
-}
+.music{text-align:center;overflow:visible}
 
 .music-icon{
-    display:inline-block;
-    font-size:45px;
+display:inline-block;
+font-size:45px;
 }
 
 .music.playing .music-icon{
-    animation:musicPulse 1.2s ease-in-out infinite;
+animation:musicPulse 1.2s infinite;
 }
 
 @keyframes musicPulse{
-    0%,100%{
-        transform:scale(1) rotate(0);
-    }
-
-    50%{
-        transform:scale(1.2) rotate(5deg);
-    }
+0%,100%{transform:scale(1)}
+50%{transform:scale(1.2) rotate(5deg)}
 }
 
 .music-title{
-    color:var(--deep);
-    font-size:30px;
-    font-weight:bold;
+color:var(--deep);
+font-size:30px;
+font-weight:bold;
 }
 
 .music-subtitle{
-    margin:8px 0 18px;
-    color:var(--muted);
-    font-size:17px;
-    font-style:italic;
+margin:8px 0 18px;
+color:var(--muted);
+font-size:17px;
+font-style:italic;
 }
 
 #song{
-    display:block;
-    width:100%;
-    max-width:500px;
-    margin:10px auto 18px;
+display:block;
+width:100%;
+max-width:500px;
+margin:10px auto 18px;
 }
 
 .music-status{
-    min-height:24px;
-    margin-top:12px;
-    color:#8a6872;
-    font-size:15px;
+min-height:24px;
+margin-top:12px;
+color:#8a6872;
+font-size:15px;
 }
-
-/* MEMORY */
 
 .memory{
-    position:relative;
-    margin:26px 0;
-    padding:25px;
-    border:1px solid rgba(160,91,111,.15);
-    border-radius:23px;
-    background:linear-gradient(145deg,#fffdfb,#fff7f4);
-    box-shadow:0 13px 32px rgba(90,50,60,.09);
-    transform:rotate(-.35deg);
-    transition:.3s ease;
-}
-
-.memory:nth-child(even){
-    transform:rotate(.45deg);
-}
-
-.memory:hover{
-    transform:translateY(-5px) rotate(0);
-}
-
-.memory::before{
-    content:"♡";
-    position:absolute;
-    top:13px;
-    right:17px;
-    color:#ed91b1;
-    font-size:25px;
+position:relative;
+margin:26px 0;
+padding:25px;
+border:1px solid rgba(160,91,111,.15);
+border-radius:23px;
+background:linear-gradient(145deg,#fffdfb,#fff7f4);
+box-shadow:0 13px 32px rgba(90,50,60,.09);
 }
 
 .memory h3{
-    margin-top:0;
-    padding-right:35px;
-    color:var(--deep);
-    font-size:26px;
+margin-top:0;
+padding-right:35px;
+color:var(--deep);
+font-size:26px;
 }
 
 .memory-date{
-    display:inline-block;
-    margin-bottom:12px;
-    padding:5px 11px;
-    border-radius:16px;
-    background:#fff0f4;
-    color:#a27682;
-    font-size:14px;
+display:inline-block;
+margin-bottom:12px;
+padding:5px 11px;
+border-radius:16px;
+background:#fff0f4;
+color:#a27682;
+font-size:14px;
 }
 
 .memory p{
-    font-size:17px;
-    line-height:1.65;
-    white-space:pre-wrap;
-    overflow-wrap:anywhere;
+font-size:17px;
+line-height:1.65;
+white-space:pre-wrap;
+overflow-wrap:anywhere;
 }
 
 .memory img{
-    display:block;
-    width:100%;
-    max-height:520px;
-    object-fit:cover;
-    margin-top:16px;
-    padding:9px 9px 28px;
-    border-radius:6px;
-    background:white;
-    box-shadow:0 8px 20px rgba(50,30,35,.14);
+display:block;
+width:100%;
+max-height:520px;
+object-fit:cover;
+margin-top:16px;
+padding:9px 9px 28px;
+border-radius:6px;
+background:white;
+box-shadow:0 8px 20px rgba(50,30,35,.14);
 }
 
-/* GAME */
-
-.game-intro{
-    color:var(--muted);
-    font-size:17px;
-    line-height:1.6;
+.loading,.empty{
+padding:35px 15px;
+text-align:center;
+color:#98737d;
+line-height:1.7;
 }
 
-.runner{
-    position:relative;
-    width:100%;
-    height:230px;
-    margin:20px 0;
-    overflow:hidden;
-    border-radius:22px;
-    background:
-        linear-gradient(
-            to bottom,
-            #fff2f7 0%,
-            #fff9f7 72%,
-            #f7d9e3 72%,
-            #f7d9e3 74%,
-            #fff9f7 74%
-        );
-    border:1px solid #edc3d0;
+.loading-bears,.empty-bear{
+font-size:38px;
 }
-
-.runner-cloud{
-    position:absolute;
-    font-size:30px;
-    opacity:.5;
-    animation:cloudMove 14s linear infinite;
-}
-
-.cloud1{
-    top:25px;
-    left:100%;
-}
-
-.cloud2{
-    top:65px;
-    left:130%;
-    animation-delay:6s;
-}
-
-@keyframes cloudMove{
-    from{
-        transform:translateX(0);
-    }
-
-    to{
-        transform:translateX(-650px);
-    }
-}
-
-.player{
-    position:absolute;
-    left:55px;
-    bottom:55px;
-    width:42px;
-    height:48px;
-    font-size:39px;
-    z-index:5;
-    user-select:none;
-}
-
-.obstacle{
-    position:absolute;
-    bottom:52px;
-    right:-60px;
-    font-size:38px;
-    z-index:4;
-}
-
-.game-ground{
-    position:absolute;
-    bottom:0;
-    left:0;
-    right:0;
-    height:54px;
-    border-top:3px solid #d69aaf;
-}
-
-.game-score{
-    display:flex;
-    justify-content:space-between;
-    margin:12px 4px;
-    color:var(--deep);
-    font-weight:bold;
-}
-
-.game-controls{
-    display:flex;
-    justify-content:center;
-    gap:10px;
-    margin-top:12px;
-}
-
-.game-control{
-    min-width:130px;
-    padding:13px 18px;
-    border:none;
-    border-radius:25px;
-    background:var(--rose);
-    color:white;
-    font-family:inherit;
-    font-size:16px;
-    cursor:pointer;
-    touch-action:manipulation;
-}
-
-.game-message{
-    min-height:25px;
-    text-align:center;
-    color:var(--muted);
-    margin-top:10px;
-}
-
-/* LOADING */
-
-.loading{
-    padding:35px 10px;
-    text-align:center;
-    color:#98737d;
-    font-size:18px;
-}
-
-.loading-bears{
-    font-size:38px;
-    letter-spacing:7px;
-    animation:loadingBears 1.3s ease-in-out infinite;
-}
-
-@keyframes loadingBears{
-    0%,100%{
-        transform:translateY(0);
-    }
-
-    50%{
-        transform:translateY(-8px);
-    }
-}
-
-.empty{
-    padding:35px 15px;
-    text-align:center;
-    color:#98737d;
-    line-height:1.7;
-}
-
-.empty-bear{
-    font-size:50px;
-    animation:teddyFloat 2.5s ease-in-out infinite;
-}
-
-/* STICKER */
 
 .sticker{
-    position:fixed;
-    right:14px;
-    bottom:14px;
-    z-index:20;
-    width:72px;
-    height:72px;
-    border-radius:50%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background:rgba(255,255,255,.92);
-    border:3px solid white;
-    box-shadow:0 8px 25px rgba(90,40,60,.18);
-    animation:stickerFloat 3s ease-in-out infinite;
-    pointer-events:none;
+position:fixed;
+right:14px;
+bottom:14px;
+z-index:20;
+width:72px;
+height:72px;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+background:rgba(255,255,255,.92);
+border:3px solid white;
+box-shadow:0 8px 25px rgba(90,40,60,.18);
+animation:stickerFloat 3s infinite;
+pointer-events:none;
 }
 
-.sticker::before{
-    content:"🧸";
-    font-size:40px;
-}
-
-.sticker::after{
-    content:"💕";
-    position:absolute;
-    top:-12px;
-    right:-5px;
-    font-size:20px;
-    animation:heartbeat 1.5s infinite;
+.sticker:before{content:"🧸";font-size:40px}
+.sticker:after{
+content:"💕";
+position:absolute;
+top:-12px;
+right:-5px;
+font-size:20px;
 }
 
 @keyframes stickerFloat{
-    0%,100%{
-        transform:translateY(0) rotate(-4deg);
-    }
-
-    50%{
-        transform:translateY(-8px) rotate(4deg);
-    }
+0%,100%{transform:translateY(0) rotate(-4deg)}
+50%{transform:translateY(-8px) rotate(4deg)}
 }
 
-/* CELEBRATION */
-
-.celebration{
-    position:fixed;
-    z-index:100;
-    pointer-events:none;
-    font-size:25px;
-    animation:celebrate 1.6s ease-out forwards;
+.runner{
+position:relative;
+width:100%;
+height:230px;
+margin:20px 0;
+overflow:hidden;
+border-radius:22px;
+background:linear-gradient(to bottom,#fff2f7 0%,#fff9f7 72%,#f7d9e3 72%,#f7d9e3 74%,#fff9f7 74%);
+border:1px solid #edc3d0;
 }
 
-@keyframes celebrate{
-    0%{
-        transform:translate(0,0) scale(.3);
-        opacity:0;
-    }
+.runner-cloud{
+position:absolute;
+font-size:30px;
+opacity:.5;
+animation:cloudMove 14s linear infinite;
+}
 
-    20%{
-        opacity:1;
-    }
+.cloud1{top:25px;left:100%}
+.cloud2{top:65px;left:130%;animation-delay:6s}
 
-    100%{
-        transform:translate(var(--x),var(--y))
-                   scale(1.2) rotate(25deg);
-        opacity:0;
-    }
+@keyframes cloudMove{
+from{transform:translateX(0)}
+to{transform:translateX(-650px)}
+}
+
+.player{
+position:absolute;
+left:55px;
+bottom:55px;
+width:42px;
+height:48px;
+font-size:39px;
+z-index:5;
+}
+
+.obstacle{
+position:absolute;
+bottom:52px;
+right:-60px;
+font-size:38px;
+z-index:4;
+}
+
+.game-ground{
+position:absolute;
+bottom:0;
+left:0;
+right:0;
+height:54px;
+border-top:3px solid #d69aaf;
+}
+
+.game-score{
+display:flex;
+justify-content:space-between;
+margin:12px 4px;
+color:var(--deep);
+font-weight:bold;
+}
+
+.game-controls{
+display:flex;
+justify-content:center;
+gap:10px;
+margin-top:12px;
+}
+
+.game-control{
+min-width:130px;
+padding:13px 18px;
+border:none;
+border-radius:25px;
+background:var(--rose);
+color:white;
+font-size:16px;
+cursor:pointer;
+touch-action:manipulation;
+}
+
+.game-message{
+min-height:25px;
+text-align:center;
+color:var(--muted);
+margin-top:10px;
 }
 
 footer{
-    margin-top:55px;
-    padding-bottom:20px;
-    text-align:center;
-    color:#86636d;
-    font-size:16px;
+margin-top:55px;
+padding-bottom:20px;
+text-align:center;
+color:#86636d;
+font-size:16px;
 }
 
 .footer-bears{
-    font-size:35px;
-    margin-bottom:8px;
-    animation:teddyFloat 2.5s ease-in-out infinite;
+font-size:35px;
+margin-bottom:8px;
 }
-
-/* MOBILE */
 
 @media(max-width:600px){
-
-    .container{
-        width:94%;
-        padding-top:12px;
-    }
-
-    .card,
-    .music,
-    .counter{
-        padding:24px 19px;
-        border-radius:24px;
-    }
-
-    h1{
-        font-size:43px;
-    }
-
-    .subtitle{
-        font-size:18px;
-    }
-
-    .teddies{
-        transform:scale(.82);
-        margin-bottom:-8px;
-    }
-
-    .counter-grid{
-        gap:6px;
-    }
-
-    .counter-box{
-        padding:12px 3px;
-    }
-
-    .number{
-        font-size:22px;
-    }
-
-    .label{
-        font-size:9px;
-    }
-
-    .diary-top{
-        flex-direction:column;
-        align-items:flex-start;
-    }
-
-    .logout{
-        align-self:flex-end;
-    }
-
-    .sticker{
-        width:60px;
-        height:60px;
-        right:8px;
-        bottom:8px;
-    }
-
-    .sticker::before{
-        font-size:32px;
-    }
-
-    .runner{
-        height:210px;
-    }
-
-    .player{
-        left:30px;
-    }
-
-    .game-control{
-        width:100%;
-        min-width:0;
-    }
-
-    .game-controls{
-        gap:8px;
-    }
+.container{width:94%;padding-top:12px}
+.card,.music,.counter{padding:24px 19px;border-radius:24px}
+h1{font-size:43px}
+.subtitle{font-size:18px}
+.teddies{transform:scale(.82);margin-bottom:-8px}
+.counter-grid{gap:6px}
+.counter-box{padding:12px 3px}
+.number{font-size:22px}
+.label{font-size:9px}
+.diary-top{flex-direction:column;align-items:flex-start}
+.logout{align-self:flex-end}
+.sticker{width:60px;height:60px;right:8px;bottom:8px}
+.sticker:before{font-size:32px}
+.runner{height:210px}
+.player{left:30px}
+.game-control{width:100%;min-width:0}
+.game-controls{gap:8px}
 }
-
-@media(prefers-reduced-motion:reduce){
-
-    *,
-    *::before,
-    *::after{
-        animation-duration:.001ms !important;
-        animation-iteration-count:1 !important;
-        scroll-behavior:auto !important;
-    }
-}
-
 </style>
 </head>
 
 <body>
 
 <div class="decorations">
+<div class="float">💕</div>
+<div class="float">💗</div>
+<div class="float">💖</div>
+<div class="float">❤️</div>
+<div class="float">✨</div>
 
-    <div class="float">💕</div>
-    <div class="float">💗</div>
-    <div class="float">💖</div>
-    <div class="float">❤️</div>
-    <div class="float">✨</div>
-
-    <div class="sparkle s1">✦</div>
-    <div class="sparkle s2">✧</div>
-    <div class="sparkle s3">✦</div>
-    <div class="sparkle s4">✧</div>
-
+<div class="sparkle s1">✦</div>
+<div class="sparkle s2">✧</div>
+<div class="sparkle s3">✦</div>
+<div class="sparkle s4">✧</div>
 </div>
 
 <div class="container">
 
 <header>
 
-    <div class="teddies">
+<div class="teddies">
 
-        <div class="teddy">
+<div class="teddy">
+<div class="head">
+<div class="ear left"></div>
+<div class="ear right"></div>
+<div class="eye left"></div>
+<div class="eye right"></div>
+<div class="cheek left"></div>
+<div class="cheek right"></div>
+<div class="muzzle">
+<div class="nose"></div>
+<div class="mouth"></div>
+</div>
+</div>
 
-            <div class="head">
+<div class="body"><div class="belly"></div></div>
+<div class="arm left"></div>
+<div class="arm right"></div>
+<div class="leg left"></div>
+<div class="leg right"></div>
+<div class="heart">❤️</div>
+</div>
 
-                <div class="ear left"></div>
-                <div class="ear right"></div>
+<div class="teddy girl">
+<div class="bow">🎀</div>
+<div class="head">
+<div class="ear left"></div>
+<div class="ear right"></div>
+<div class="eye left"></div>
+<div class="eye right"></div>
+<div class="cheek left"></div>
+<div class="cheek right"></div>
+<div class="muzzle">
+<div class="nose"></div>
+<div class="mouth"></div>
+</div>
+</div>
 
-                <div class="eye left"></div>
-                <div class="eye right"></div>
+<div class="body"><div class="belly"></div></div>
+<div class="arm left"></div>
+<div class="arm right"></div>
+<div class="leg left"></div>
+<div class="leg right"></div>
+<div class="heart">💗</div>
+</div>
 
-                <div class="cheek left"></div>
-                <div class="cheek right"></div>
+</div>
 
-                <div class="muzzle">
-                    <div class="nose"></div>
-                    <div class="mouth"></div>
-                </div>
+<div class="header-heart">❤️</div>
 
-            </div>
+<h1>The Us Story</h1>
 
-            <div class="body">
-                <div class="belly"></div>
-            </div>
+<div class="divider"><span>♡</span></div>
 
-            <div class="arm left"></div>
-            <div class="arm right"></div>
-
-            <div class="leg left"></div>
-            <div class="leg right"></div>
-
-            <div class="heart">❤️</div>
-
-        </div>
-
-        <div class="teddy girl">
-
-            <div class="bow">🎀</div>
-
-            <div class="head">
-
-                <div class="ear left"></div>
-                <div class="ear right"></div>
-
-                <div class="eye left"></div>
-                <div class="eye right"></div>
-
-                <div class="cheek left"></div>
-                <div class="cheek right"></div>
-
-                <div class="muzzle">
-                    <div class="nose"></div>
-                    <div class="mouth"></div>
-                </div>
-
-            </div>
-
-            <div class="body">
-                <div class="belly"></div>
-            </div>
-
-            <div class="arm left"></div>
-            <div class="arm right"></div>
-
-            <div class="leg left"></div>
-            <div class="leg right"></div>
-
-            <div class="heart">💗</div>
-
-        </div>
-
-    </div>
-
-    <div class="header-heart">❤️</div>
-
-    <h1>The Us Story</h1>
-
-    <div class="divider">
-        <span>♡</span>
-    </div>
-
-    <p class="subtitle">
-        A tiny corner of the internet
-        <br>
-        that belongs only to our story. 🧸❤️
-    </p>
+<p class="subtitle">
+A tiny corner of the internet<br>
+that belongs only to our story. 🧸❤️
+</p>
 
 </header>
 
-
-<!-- LOVE COUNTER -->
-
 <div class="counter">
 
-    <div class="counter-heart">❤️</div>
+<div class="counter-heart">❤️</div>
 
-    <div class="counter-title">
-        Our Story So Far
-    </div>
+<div class="counter-title">Our Story So Far</div>
 
-    <div class="counter-date">
-        Since 11 January 2022 · every second counts · forever ♾️
-    </div>
-
-    <div class="counter-grid">
-
-        <div class="counter-box">
-            <div id="days" class="number">0</div>
-            <div class="label">Days</div>
-        </div>
-
-        <div class="counter-box">
-            <div id="hours" class="number">00</div>
-            <div class="label">Hours</div>
-        </div>
-
-        <div class="counter-box">
-            <div id="minutes" class="number">00</div>
-            <div class="label">Minutes</div>
-        </div>
-
-        <div class="counter-box">
-            <div id="seconds" class="number">00</div>
-            <div class="label">Seconds</div>
-        </div>
-
-    </div>
-
+<div class="counter-date">
+Since 11 January 2022 · every second counts · forever ♾️
 </div>
 
+<div class="counter-grid">
 
-<!-- LOGIN -->
+<div class="counter-box">
+<div id="days" class="number">0</div>
+<div class="label">Days</div>
+</div>
+
+<div class="counter-box">
+<div id="hours" class="number">00</div>
+<div class="label">Hours</div>
+</div>
+
+<div class="counter-box">
+<div id="minutes" class="number">00</div>
+<div class="label">Minutes</div>
+</div>
+
+<div class="counter-box">
+<div id="seconds" class="number">00</div>
+<div class="label">Seconds</div>
+</div>
+
+</div>
+</div>
 
 <div id="login" class="card">
 
-    <div class="login-title">
-        🔐 Our Private Diary
-    </div>
+<div class="login-title">🔐 Our Private Diary</div>
 
-    <div class="login-subtitle">
-        Just us, our memories, and a little piece of forever. ❤️
-    </div>
-
-    <label for="email">Email</label>
-
-    <input
-        id="email"
-        type="email"
-        placeholder="Enter your email"
-        autocomplete="email"
-    >
-
-    <label for="password">Password</label>
-
-    <input
-        id="password"
-        type="password"
-        placeholder="Enter your password"
-        autocomplete="current-password"
-    >
-
-    <button
-        id="loginButton"
-        class="primary"
-        type="button">
-
-        Enter Our Diary ❤️
-
-    </button>
-
-    <div id="loginStatus" class="status"></div>
-
+<div class="login-subtitle">
+Just us, our memories, and a little piece of forever. ❤️
 </div>
 
+<label>Email</label>
+<input id="email" type="email" placeholder="Enter your email">
 
-<!-- DIARY -->
+<label>Password</label>
+<input id="password" type="password" placeholder="Enter your password">
+
+<button id="loginButton" class="primary" type="button">
+Enter Our Diary ❤️
+</button>
+
+<div id="loginStatus" class="status"></div>
+
+</div>
 
 <div id="diary">
 
-    <div class="diary-top">
+<div class="diary-top">
+<div id="welcome" class="welcome">Welcome back ❤️</div>
+<button id="logout" class="logout">Logout</button>
+</div>
 
-        <div id="welcome" class="welcome">
-            Welcome back ❤️
-        </div>
+<div id="music" class="music">
 
-        <button
-            id="logout"
-            class="logout"
-            type="button">
+<div class="music-icon">🎵</div>
 
-            Logout
+<div class="music-title">Our Song ❤️</div>
 
-        </button>
+<div class="music-subtitle">
+A little soundtrack for our little world...
+</div>
 
-    </div>
+<audio id="song" preload="metadata" controls playsinline>
+<source src="./vidssave.com%20Osho%20Jain%20_%20Tu%20Aisa%20Kaise%20Hai_%20%E2%80%93%20%23OshoJain%20720P.mp3" type="audio/mpeg">
+Your browser does not support audio.
+</audio>
 
+<button id="musicButton" class="primary">
+▶ Play Our Song
+</button>
 
-    <!-- MUSIC -->
-
-    <div id="music" class="music">
-
-        <div class="music-icon">
-            🎵
-        </div>
-
-        <div class="music-title">
-            Our Song ❤️
-        </div>
-
-        <div class="music-subtitle">
-            A little soundtrack for our little world...
-        </div>
-
-        <audio
-            id="song"
-            preload="metadata"
-            controls
-            playsinline>
-
-            <!-- YOUR ACTUAL SONG FILE -->
-
-            <source
-                src="./vidssave.com%20Osho%20Jain%20_%20Tu%20Aisa%20Kaise%20Hai_%20%E2%80%93%20%23OshoJain%20720P.mp3"
-                type="audio/mpeg">
-
-            Your browser does not support audio.
-
-        </audio>
-
-        <button
-            id="musicButton"
-            class="primary"
-            type="button">
-
-            ▶ Play Our Song
-
-        </button>
-
-        <div
-            id="musicStatus"
-            class="music-status">
-
-            Our song ❤️
-
-        </div>
-
-    </div>
-
-
-    <!-- TO US -->
-
-    <div class="card">
-
-        <h2>🌷 To Us</h2>
-
-        <p>
-
-            Some moments are too beautiful to disappear
-            into a phone gallery.
-
-            <br><br>
-
-            So this little place exists for us —
-            for the photos, the silly moments,
-            the milestones, the conversations,
-            and all those tiny things that somehow
-            became huge parts of our story.
-
-            <br><br>
-
-            One day we'll look back at this place
-            and realize just how much life we lived together. ❤️
-
-        </p>
-
-    </div>
-
-
-    <!-- MEMORY FORM -->
-
-    <div class="card">
-
-        <h2>✨ Save A Little Moment</h2>
-
-        <label for="title">
-            Memory title
-        </label>
-
-        <input
-            id="title"
-            type="text"
-            placeholder="Our first date..."
-        >
-
-        <label for="date">
-            Date
-        </label>
-
-        <input
-            id="date"
-            type="date"
-        >
-
-        <label for="message">
-            What happened?
-        </label>
-
-        <textarea
-            id="message"
-            placeholder="Write everything you want us to remember..."
-        ></textarea>
-
-        <label for="photo">
-            Add a photo 📷
-        </label>
-
-        <input
-            id="photo"
-            type="file"
-            accept="image/*"
-        >
-
-        <button
-            id="save"
-            class="primary"
-            type="button">
-
-            🧸 Save This Little Moment ♡
-
-        </button>
-
-        <div id="status" class="status"></div>
-
-    </div>
-
-
-    <!-- MEMORY WALL -->
-
-    <div class="card">
-
-        <h2>📖 Our Memory Wall</h2>
-
-        <p
-            style="
-                color:#80616a;
-                margin-top:-5px;
-                margin-bottom:25px;
-            ">
-
-            Little pieces of us, kept safe in one place. ♡
-
-        </p>
-
-        <div id="memories">
-
-            <div class="loading">
-
-                <div class="loading-bears">
-                    🧸 💕 🧸
-                </div>
-
-                <br>
-
-                Bringing our memories...
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- GAME -->
-
-    <div class="card">
-
-        <h2>
-            💌 Missing Me? Let's Look Back Together
-        </h2>
-
-        <p class="game-intro">
-
-            Feeling a little lonely?
-
-            Come play our tiny endless-runner.
-            Jump over the little obstacles and see
-            how long you can keep our story going. 🧸❤️
-
-        </p>
-
-        <div class="runner" id="runner">
-
-            <div class="runner-cloud cloud1">
-                ☁️
-            </div>
-
-            <div class="runner-cloud cloud2">
-                ☁️
-            </div>
-
-            <div
-                id="player"
-                class="player">
-
-                🧸
-
-            </div>
-
-            <div
-                id="obstacle"
-                class="obstacle">
-
-                🌷
-
-            </div>
-
-            <div class="game-ground"></div>
-
-        </div>
-
-        <div class="game-score">
-
-            <span>
-                Score:
-                <span id="score">0</span>
-            </span>
-
-            <span>
-                Best:
-                <span id="best">0</span>
-            </span>
-
-        </div>
-
-        <div class="game-controls">
-
-            <button
-                id="startGame"
-                class="game-control">
-
-                🧸 Start
-
-            </button>
-
-            <button
-                id="jumpButton"
-                class="game-control">
-
-                ☝️ Jump
-
-            </button>
-
-        </div>
-
-        <div
-            id="gameMessage"
-            class="game-message">
-
-            Tap Start, then tap Jump whenever you need to. ❤️
-
-        </div>
-
-    </div>
+<div id="musicStatus" class="music-status">
+Our song ❤️
+</div>
 
 </div>
 
+<div class="card">
+
+<h2>🌷 To Us</h2>
+
+<p>
+Some moments are too beautiful to disappear into a phone gallery.
+<br><br>
+So this little place exists for us — for the photos, the silly moments,
+the milestones, the conversations, and all those tiny things that somehow
+became huge parts of our story.
+<br><br>
+One day we'll look back at this place and realize just how much life we lived together. ❤️
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>✨ Save A Little Moment</h2>
+
+<label>Memory title</label>
+<input id="title" type="text" placeholder="Our first date...">
+
+<label>Date</label>
+<input id="date" type="date">
+
+<label>What happened?</label>
+<textarea id="message" placeholder="Write everything you want us to remember..."></textarea>
+
+<label>Add a photo 📷</label>
+<input id="photo" type="file" accept="image/*">
+
+<button id="save" class="primary">
+🧸 Save This Little Moment ♡
+</button>
+
+<div id="status" class="status"></div>
+
+</div>
+
+<div class="card">
+
+<h2>📖 Our Memory Wall</h2>
+
+<p style="color:#80616a;margin-top:-5px;margin-bottom:25px;">
+Little pieces of us, kept safe in one place. ♡
+</p>
+
+<div id="memories">
+<div class="loading">
+<div class="loading-bears">🧸 💕 🧸</div>
+<br>
+Bringing our memories...
+</div>
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>💌 Missing Me? Let's Look Back Together</h2>
+
+<p>
+Feeling a little lonely?
+Come play our tiny endless-runner.
+Jump over the little obstacles and see how long you can keep our story going. 🧸❤️
+</p>
+
+<div class="runner" id="runner">
+
+<div class="runner-cloud cloud1">☁️</div>
+<div class="runner-cloud cloud2">☁️</div>
+
+<div id="player" class="player">🧸</div>
+<div id="obstacle" class="obstacle">🌷</div>
+
+<div class="game-ground"></div>
+
+</div>
+
+<div class="game-score">
+<span>Score: <span id="score">0</span></span>
+<span>Best: <span id="best">0</span></span>
+</div>
+
+<div class="game-controls">
+<button id="startGame" class="game-control">🧸 Start</button>
+<button id="jumpButton" class="game-control">☝️ Jump</button>
+</div>
+
+<div id="gameMessage" class="game-message">
+Tap Start, then tap Jump whenever you need to. ❤️
+</div>
+
+</div>
+
+</div>
 
 <div class="sticker"></div>
 
-
 <footer>
 
-    <div class="footer-bears">
-        🧸 ♡ 🧸
-    </div>
+<div class="footer-bears">🧸 ♡ 🧸</div>
 
-    The Us Story.
-    <br>
-    A thousand little moments.
-    <br>
-    One beautiful story. ❤️
+The Us Story.<br>
+A thousand little moments.<br>
+One beautiful story. ❤️
 
 </footer>
 
 </div>
 
-
 <script>
 
-/* =========================================================
+/* ================================
    SUPABASE
-   ========================================================= */
+================================ */
 
 const SUPABASE_URL =
-    "PASTE_YOUR_SUPABASE_PROJECT_URL_HERE";
+"https://rxtiefedshmfbfejtetk.supabase.co";
 
 const SUPABASE_KEY =
-    "PASTE_YOUR_SUPABASE_PUBLISHABLE_KEY_HERE";
+"sb_publishable_S59gIZua305x2r3BZ1BYKQ_Us1zmr3f";
 
 const TABLE = "memories";
 
 const supabaseClient =
-    window.supabase.createClient(
-        SUPABASE_URL,
-        SUPABASE_KEY
-    );
+window.supabase.createClient(
+SUPABASE_URL,
+SUPABASE_KEY
+);
 
 
-/* =========================================================
-   RELATIONSHIP COUNTER
-   ========================================================= */
+/* ================================
+   COUNTER
+================================ */
 
 const relationshipStart =
-    new Date("2022-01-11T00:00:00");
+new Date("2022-01-11T00:00:00");
 
 function updateCounter(){
 
-    const now = new Date();
+const now = new Date();
 
-    let difference =
-        now.getTime() -
-        relationshipStart.getTime();
+let difference =
+now.getTime() -
+relationshipStart.getTime();
 
-    if(difference < 0){
-        difference = 0;
-    }
+if(difference < 0) difference = 0;
 
-    const totalSeconds =
-        Math.floor(difference / 1000);
+const totalSeconds =
+Math.floor(difference / 1000);
 
-    const days =
-        Math.floor(totalSeconds / 86400);
+const days =
+Math.floor(totalSeconds / 86400);
 
-    const hours =
-        Math.floor(
-            (totalSeconds % 86400) / 3600
-        );
+const hours =
+Math.floor((totalSeconds % 86400) / 3600);
 
-    const minutes =
-        Math.floor(
-            (totalSeconds % 3600) / 60
-        );
+const minutes =
+Math.floor((totalSeconds % 3600) / 60);
 
-    const seconds =
-        totalSeconds % 60;
+const seconds =
+totalSeconds % 60;
 
-    document.getElementById("days")
-        .textContent =
-        days.toLocaleString();
+document.getElementById("days").textContent =
+days.toLocaleString();
 
-    document.getElementById("hours")
-        .textContent =
-        String(hours).padStart(2,"0");
+document.getElementById("hours").textContent =
+String(hours).padStart(2,"0");
 
-    document.getElementById("minutes")
-        .textContent =
-        String(minutes).padStart(2,"0");
+document.getElementById("minutes").textContent =
+String(minutes).padStart(2,"0");
 
-    document.getElementById("seconds")
-        .textContent =
-        String(seconds).padStart(2,"0");
+document.getElementById("seconds").textContent =
+String(seconds).padStart(2,"0");
 }
 
 updateCounter();
-
 setInterval(updateCounter,1000);
 
 
-/* =========================================================
+/* ================================
    ELEMENTS
-   ========================================================= */
+================================ */
 
 const login =
-    document.getElementById("login");
+document.getElementById("login");
 
 const diary =
-    document.getElementById("diary");
+document.getElementById("diary");
 
 const loginButton =
-    document.getElementById("loginButton");
+document.getElementById("loginButton");
 
 const logoutButton =
-    document.getElementById("logout");
+document.getElementById("logout");
 
 const loginStatus =
-    document.getElementById("loginStatus");
+document.getElementById("loginStatus");
 
 const welcome =
-    document.getElementById("welcome");
+document.getElementById("welcome");
 
 const saveButton =
-    document.getElementById("save");
+document.getElementById("save");
 
 const status =
-    document.getElementById("status");
+document.getElementById("status");
 
 const memoriesContainer =
-    document.getElementById("memories");
+document.getElementById("memories");
 
 
-/* =========================================================
+/* ================================
    LOGIN DISPLAY
-   ========================================================= */
+================================ */
 
 function showLogin(){
 
-    login.style.display = "block";
-    diary.style.display = "none";
+login.style.display = "block";
+diary.style.display = "none";
 
 }
 
 function showDiary(user){
 
-    login.style.display = "none";
-    diary.style.display = "block";
+login.style.display = "none";
+diary.style.display = "block";
 
-    if(user && user.email){
+if(user && user.email){
+welcome.textContent =
+"Welcome back ❤️ " + user.email;
+}
 
-        welcome.textContent =
-            "Welcome back ❤️ " +
-            user.email;
+loadMemories();
 
-    }
-
-    loadMemories();
 }
 
 
-/* =========================================================
+/* ================================
    LOGIN
-   ========================================================= */
+================================ */
 
 async function doLogin(){
 
-    const email =
-        document.getElementById("email")
-        .value.trim();
+const email =
+document.getElementById("email").value.trim();
 
-    const password =
-        document.getElementById("password")
-        .value;
+const password =
+document.getElementById("password").value;
 
-    if(!email || !password){
+if(!email || !password){
 
-        loginStatus.className =
-            "status error";
+loginStatus.className = "status error";
+loginStatus.textContent =
+"Please enter both email and password ❤️";
 
-        loginStatus.textContent =
-            "Please enter both email and password ❤️";
+return;
+}
 
-        return;
-    }
+loginButton.disabled = true;
+loginButton.textContent =
+"Opening our diary... ❤️";
 
-    loginButton.disabled = true;
+try{
 
-    loginButton.textContent =
-        "Opening our diary... ❤️";
+const {data,error} =
+await supabaseClient.auth.signInWithPassword({
+email,
+password
+});
 
-    try{
+if(error) throw error;
 
-        const {
-            data,
-            error
-        } =
-            await supabaseClient.auth
-            .signInWithPassword({
-                email:email,
-                password:password
-            });
+if(!data || !data.session || !data.user){
+throw new Error("Login session could not be created.");
+}
 
-        if(error){
-            throw error;
-        }
+loginStatus.textContent = "";
+showDiary(data.user);
 
-        if(
-            !data ||
-            !data.session ||
-            !data.user
-        ){
+}catch(error){
 
-            throw new Error(
-                "Login session could not be created."
-            );
+console.error(error);
 
-        }
+loginStatus.className = "status error";
 
-        loginStatus.textContent = "";
+loginStatus.textContent =
+error.message ||
+"Couldn't log in. Please check your details.";
 
-        showDiary(data.user);
+}finally{
 
-    }
+loginButton.disabled = false;
 
-    catch(error){
+loginButton.textContent =
+"Enter Our Diary ❤️";
 
-        console.error(
-            "LOGIN ERROR:",
-            error
-        );
-
-        loginStatus.className =
-            "status error";
-
-        loginStatus.textContent =
-            error.message ||
-            "Couldn't log in. Please check your details.";
-
-    }
-
-    finally{
-
-        loginButton.disabled = false;
-
-        loginButton.textContent =
-            "Enter Our Diary ❤️";
-
-    }
+}
 
 }
 
 
-/* =========================================================
+/* ================================
    LOGOUT
-   ========================================================= */
+================================ */
 
 async function doLogout(){
 
-    try{
+await supabaseClient.auth.signOut();
 
-        await supabaseClient
-            .auth
-            .signOut();
+showLogin();
 
-    }
-
-    catch(error){
-
-        console.error(
-            "LOGOUT ERROR:",
-            error
-        );
-
-    }
-
-    showLogin();
-
-    loginStatus.className = "status";
-
-    loginStatus.textContent =
-        "Logged out ❤️";
+loginStatus.className = "status";
+loginStatus.textContent = "Logged out ❤️";
 
 }
 
 
-/* =========================================================
-   AUTH STATE
-   ========================================================= */
+/* ================================
+   AUTH
+================================ */
 
-supabaseClient.auth
-.onAuthStateChange(
-    function(event,session){
+supabaseClient.auth.onAuthStateChange(
+function(event,session){
 
-        if(
-            session &&
-            session.user
-        ){
+if(session && session.user){
+showDiary(session.user);
+}else{
+showLogin();
+}
 
-            showDiary(session.user);
+});
 
-        }
-
-        else{
-
-            showLogin();
-
-        }
-
-    }
-);
-
-
-/* =========================================================
-   CHECK SESSION
-   ========================================================= */
 
 async function checkSession(){
 
-    try{
+try{
 
-        const {
-            data,
-            error
-        } =
-            await supabaseClient
-            .auth
-            .getSession();
+const {data,error} =
+await supabaseClient.auth.getSession();
 
-        if(error){
-            throw error;
-        }
+if(error) throw error;
 
-        if(
-            data &&
-            data.session &&
-            data.session.user
-        ){
+if(data.session && data.session.user){
+showDiary(data.session.user);
+}else{
+showLogin();
+}
 
-            showDiary(
-                data.session.user
-            );
+}catch(error){
 
-        }
+console.error(error);
+showLogin();
 
-        else{
-
-            showLogin();
-
-        }
-
-    }
-
-    catch(error){
-
-        console.error(
-            "SESSION ERROR:",
-            error
-        );
-
-        showLogin();
-
-    }
+}
 
 }
 
 checkSession();
 
 
-/* =========================================================
-   HTML ESCAPE
-   ========================================================= */
+/* ================================
+   ESCAPE HTML
+================================ */
 
 function escapeHTML(value){
 
-    if(
-        value === null ||
-        value === undefined
-    ){
+if(value === null || value === undefined)
+return "";
 
-        return "";
-
-    }
-
-    return String(value)
-        .replace(/&/g,"&amp;")
-        .replace(/</g,"&lt;")
-        .replace(/>/g,"&gt;")
-        .replace(/"/g,"&quot;")
-        .replace(/'/g,"&#039;");
+return String(value)
+.replace(/&/g,"&amp;")
+.replace(/</g,"&lt;")
+.replace(/>/g,"&gt;")
+.replace(/"/g,"&quot;")
+.replace(/'/g,"&#039;");
 
 }
 
 
-/* =========================================================
+/* ================================
    IMAGE COMPRESSION
-   ========================================================= */
+================================ */
 
 function compressImage(file){
 
-    return new Promise(
-        function(resolve,reject){
+return new Promise(function(resolve,reject){
 
-            const reader =
-                new FileReader();
+const reader = new FileReader();
 
-            reader.onload =
-                function(event){
+reader.onload = function(event){
 
-                    const image =
-                        new Image();
+const image = new Image();
 
-                    image.onload =
-                        function(){
+image.onload = function(){
 
-                            const MAX = 1600;
+const MAX = 1600;
 
-                            let width =
-                                image.width;
+let width = image.width;
+let height = image.height;
 
-                            let height =
-                                image.height;
+if(width > MAX || height > MAX){
 
-                            if(
-                                width > MAX ||
-                                height > MAX
-                            ){
+if(width > height){
 
-                                if(width > height){
+height = Math.round(height * MAX / width);
+width = MAX;
 
-                                    height =
-                                        Math.round(
-                                            height *
-                                            MAX /
-                                            width
-                                        );
+}else{
 
-                                    width = MAX;
+width = Math.round(width * MAX / height);
+height = MAX;
 
-                                }
+}
 
-                                else{
+}
 
-                                    width =
-                                        Math.round(
-                                            width *
-                                            MAX /
-                                            height
-                                        );
+const canvas =
+document.createElement("canvas");
 
-                                    height = MAX;
+canvas.width = width;
+canvas.height = height;
 
-                                }
+const ctx =
+canvas.getContext("2d");
 
-                            }
+ctx.drawImage(
+image,
+0,
+0,
+width,
+height
+);
 
-                            const canvas =
-                                document.createElement(
-                                    "canvas"
-                                );
+resolve(
+canvas.toDataURL("image/jpeg",.82)
+);
 
-                            canvas.width = width;
-                            canvas.height = height;
+};
 
-                            const ctx =
-                                canvas.getContext(
-                                    "2d"
-                                );
+image.onerror = function(){
+reject(new Error("This image could not be processed."));
+};
 
-                            ctx.drawImage(
-                                image,
-                                0,
-                                0,
-                                width,
-                                height
-                            );
+image.src = event.target.result;
 
-                            resolve(
-                                canvas.toDataURL(
-                                    "image/jpeg",
-                                    .82
-                                )
-                            );
+};
 
-                        };
+reader.onerror = function(){
+reject(new Error("Could not read the photo."));
+};
 
-                    image.onerror =
-                        function(){
+reader.readAsDataURL(file);
 
-                            reject(
-                                new Error(
-                                    "This image could not be processed."
-                                )
-                            );
-
-                        };
-
-                    image.src =
-                        event.target.result;
-
-                };
-
-            reader.onerror =
-                function(){
-
-                    reject(
-                        new Error(
-                            "Could not read the photo."
-                        )
-                    );
-
-                };
-
-            reader.readAsDataURL(file);
-
-        }
-    );
+});
 
 }
 
 
-/* =========================================================
+/* ================================
    LOAD MEMORIES
-   ========================================================= */
+================================ */
 
 async function loadMemories(){
 
-    memoriesContainer.innerHTML = `
+memoriesContainer.innerHTML = `
+<div class="loading">
+<div class="loading-bears">🧸 💕 🧸</div>
+<br>
+Bringing our memories...
+</div>
+`;
 
-        <div class="loading">
+try{
 
-            <div class="loading-bears">
-                🧸 💕 🧸
-            </div>
+const {data:userData,error:userError} =
+await supabaseClient.auth.getUser();
 
-            <br>
+if(userError) throw userError;
 
-            Bringing our memories...
+const user = userData.user;
 
-        </div>
+if(!user){
 
-    `;
+memoriesContainer.innerHTML =
+`<div class="empty">Please log in to see our memories. ❤️</div>`;
 
-    try{
+return;
 
-        const {
-            data:userData,
-            error:userError
-        } =
-            await supabaseClient
-            .auth
-            .getUser();
+}
 
-        if(userError){
-            throw userError;
-        }
+const {data,error} =
+await supabaseClient
+.from(TABLE)
+.select("id,user_id,title,date,message,image,created_at")
+.eq("user_id",user.id)
+.order("created_at",{ascending:false});
 
-        const user =
-            userData &&
-            userData.user;
+if(error) throw error;
 
-        if(!user){
+displayMemories(data || []);
 
-            memoriesContainer.innerHTML = `
+}catch(error){
 
-                <div class="empty">
+console.error(error);
 
-                    <div class="empty-bear">
-                        🧸
-                    </div>
+memoriesContainer.innerHTML = `
+<div class="empty">
+<div class="empty-bear">🧸💔</div>
+<strong>Our memory wall couldn't load.</strong>
+<br><br>
+${escapeHTML(error.message || "Unknown error.")}
+</div>
+`;
 
-                    Please log in to see
-                    our memories. ❤️
-
-                </div>
-
-            `;
-
-            return;
-
-        }
-
-        const {
-            data,
-            error
-        } =
-            await supabaseClient
-            .from(TABLE)
-            .select(
-                "id,user_id,title,date,message,image,created_at"
-            )
-            .eq(
-                "user_id",
-                user.id
-            )
-            .order(
-                "created_at",
-                {
-                    ascending:false
-                }
-            );
-
-        if(error){
-            throw error;
-        }
-
-        displayMemories(
-            data || []
-        );
-
-    }
-
-    catch(error){
-
-        console.error(
-            "LOAD ERROR:",
-            error
-        );
-
-        memoriesContainer.innerHTML = `
-
-            <div class="empty">
-
-                <div class="empty-bear">
-                    🧸💔
-                </div>
-
-                <strong>
-                    Our memory wall couldn't load.
-                </strong>
-
-                <br><br>
-
-                ${escapeHTML(
-                    error.message ||
-                    "Unknown error."
-                )}
-
-            </div>
-
-        `;
-
-    }
+}
 
 }
 
 
-/* =========================================================
+/* ================================
    DISPLAY MEMORIES
-   ========================================================= */
+================================ */
 
 function displayMemories(memories){
 
-    if(
-        !memories ||
-        memories.length === 0
-    ){
+if(!memories.length){
 
-        memoriesContainer.innerHTML = `
+memoriesContainer.innerHTML = `
+<div class="empty">
+<div class="empty-bear">🧸💕</div>
+No memories yet...
+<br>
+Let's save our first little moment. ❤️
+</div>
+`;
 
-            <div class="empty">
+return;
 
-                <div class="empty-bear">
-                    🧸💕
-                </div>
+}
 
-                No memories yet...
+memoriesContainer.innerHTML = "";
 
-                <br>
+memories.forEach(function(memory){
 
-                Let's save our first
-                little moment. ❤️
+const article =
+document.createElement("article");
 
-            </div>
+article.className = "memory";
 
-        `;
+let dateHTML = "";
 
-        return;
+if(memory.date){
 
-    }
+const d =
+new Date(memory.date + "T00:00:00");
 
-    memoriesContainer.innerHTML = "";
+dateHTML = `
+<div class="memory-date">
+${escapeHTML(
+d.toLocaleDateString(undefined,{
+day:"numeric",
+month:"long",
+year:"numeric"
+})
+)}
+</div>
+`;
 
-    memories.forEach(
-        function(memory){
+}
 
-            const article =
-                document.createElement(
-                    "article"
-                );
+let imageHTML = "";
 
-            article.className =
-                "memory";
+if(memory.image){
 
-            const title =
-                escapeHTML(
-                    memory.title
-                );
+imageHTML = `
+<img
+src="${escapeHTML(memory.image)}"
+alt="Our memory"
+loading="lazy">
+`;
 
-            const message =
-                escapeHTML(
-                    memory.message
-                );
+}
 
-            let dateHTML = "";
+article.innerHTML = `
+<h3>${escapeHTML(memory.title)}</h3>
+${dateHTML}
+<p>${escapeHTML(memory.message)}</p>
+${imageHTML}
+`;
 
-            if(memory.date){
+memoriesContainer.appendChild(article);
 
-                const d =
-                    new Date(
-                        memory.date +
-                        "T00:00:00"
-                    );
-
-                dateHTML = `
-
-                    <div class="memory-date">
-
-                        ${escapeHTML(
-                            d.toLocaleDateString(
-                                undefined,
-                                {
-                                    day:"numeric",
-                                    month:"long",
-                                    year:"numeric"
-                                }
-                            )
-                        )}
-
-                    </div>
-
-                `;
-
-            }
-
-            let imageHTML = "";
-
-            if(memory.image){
-
-                imageHTML = `
-
-                    <img
-                        src="${escapeHTML(
-                            memory.image
-                        )}"
-                        alt="Our memory"
-                        loading="lazy"
-                    >
-
-                `;
-
-            }
-
-            article.innerHTML = `
-
-                <h3>
-                    ${title}
-                </h3>
-
-                ${dateHTML}
-
-                <p>
-                    ${message}
-                </p>
-
-                ${imageHTML}
-
-            `;
-
-            memoriesContainer.appendChild(
-                article
-            );
-
-        }
-    );
+});
 
 }
 
 
-/* =========================================================
+/* ================================
    SAVE MEMORY
-   ========================================================= */
+================================ */
 
 async function saveMemory(){
 
-    const title =
-        document.getElementById("title")
-        .value.trim();
+const title =
+document.getElementById("title").value.trim();
 
-    const date =
-        document.getElementById("date")
-        .value;
+const date =
+document.getElementById("date").value;
 
-    const message =
-        document.getElementById("message")
-        .value.trim();
+const message =
+document.getElementById("message").value.trim();
 
-    const photoInput =
-        document.getElementById("photo");
+const photoInput =
+document.getElementById("photo");
 
-    if(!title || !message){
+if(!title || !message){
 
-        status.className =
-            "status error";
+status.className = "status error";
+status.textContent =
+"Please add a title and message ❤️";
 
-        status.textContent =
-            "Please add a title and message ❤️";
+return;
 
-        return;
+}
 
-    }
+saveButton.disabled = true;
 
-    saveButton.disabled = true;
+saveButton.textContent =
+"Saving our little moment... 🧸";
 
-    saveButton.textContent =
-        "Saving our little moment... 🧸";
+try{
 
-    try{
+const {data:userData,error:userError} =
+await supabaseClient.auth.getUser();
 
-        const {
-            data:userData,
-            error:userError
-        } =
-            await supabaseClient
-            .auth
-            .getUser();
+if(userError) throw userError;
 
-        if(userError){
-            throw userError;
-        }
+const user = userData.user;
 
-        const user =
-            userData &&
-            userData.user;
+if(!user){
+throw new Error(
+"Your login session has expired. Please log in again."
+);
+}
 
-        if(!user){
+let image = null;
 
-            throw new Error(
-                "Your login session has expired. Please log in again."
-            );
+if(photoInput.files.length > 0){
 
-        }
+const file = photoInput.files[0];
 
-        let image = null;
+if(!file.type.startsWith("image/")){
+throw new Error("Please choose an image file.");
+}
 
-        if(
-            photoInput.files &&
-            photoInput.files.length > 0
-        ){
+if(file.size > 15 * 1024 * 1024){
+throw new Error(
+"That photo is over 15 MB. Please choose a smaller photo."
+);
+}
 
-            const file =
-                photoInput.files[0];
+status.className = "status";
+status.textContent =
+"Making the photo diary-friendly... 📷";
 
-            if(
-                !file.type.startsWith("image/")
-            ){
+image = await compressImage(file);
 
-                throw new Error(
-                    "Please choose an image file."
-                );
+}
 
-            }
+const {error} =
+await supabaseClient
+.from(TABLE)
+.insert({
+user_id:user.id,
+title:title,
+date:date || null,
+message:message,
+image:image
+});
 
-            if(
-                file.size >
-                15 * 1024 * 1024
-            ){
+if(error) throw error;
 
-                throw new Error(
-                    "That photo is over 15 MB. Please choose a smaller photo."
-                );
+status.className = "status success";
 
-            }
+status.textContent =
+"Our little moment is safely saved forever. ❤️";
 
-            status.className = "status";
+document.getElementById("title").value = "";
+document.getElementById("date").value = "";
+document.getElementById("message").value = "";
+photoInput.value = "";
 
-            status.textContent =
-                "Making the photo diary-friendly... 📷";
+celebration();
 
-            image =
-                await compressImage(file);
+await loadMemories();
 
-        }
+}catch(error){
 
-        const memory = {
+console.error(error);
 
-            user_id:user.id,
-            title:title,
-            date:date || null,
-            message:message,
-            image:image
+status.className = "status error";
 
-        };
+status.textContent =
+error.message ||
+"Couldn't save this memory.";
 
-        const {
-            error
-        } =
-            await supabaseClient
-            .from(TABLE)
-            .insert(memory);
+}finally{
 
-        if(error){
-            throw error;
-        }
+saveButton.disabled = false;
 
-        status.className =
-            "status success";
+saveButton.textContent =
+"🧸 Save This Little Moment ♡";
 
-        status.textContent =
-            "Our little moment is safely saved forever. ❤️";
-
-        document.getElementById("title")
-            .value = "";
-
-        document.getElementById("date")
-            .value = "";
-
-        document.getElementById("message")
-            .value = "";
-
-        photoInput.value = "";
-
-        celebration();
-
-        await loadMemories();
-
-    }
-
-    catch(error){
-
-        console.error(
-            "SAVE ERROR:",
-            error
-        );
-
-        status.className =
-            "status error";
-
-        status.textContent =
-            error.message ||
-            "Couldn't save this memory.";
-
-    }
-
-    finally{
-
-        saveButton.disabled = false;
-
-        saveButton.textContent =
-            "🧸 Save This Little Moment ♡";
-
-    }
+}
 
 }
 
 
-/* =========================================================
+/* ================================
    CELEBRATION
-   ========================================================= */
+================================ */
 
 function celebration(){
 
-    const symbols = [
-        "❤️",
-        "💕",
-        "💗",
-        "💖",
-        "✨",
-        "🧸"
-    ];
+const symbols =
+["❤️","💕","💗","💖","✨","🧸"];
 
-    for(
-        let i=0;
-        i<15;
-        i++
-    ){
+for(let i=0;i<15;i++){
 
-        const element =
-            document.createElement("div");
+const element =
+document.createElement("div");
 
-        element.className =
-            "celebration";
+element.style.position = "fixed";
+element.style.zIndex = "100";
+element.style.pointerEvents = "none";
+element.style.fontSize = "25px";
 
-        element.textContent =
-            symbols[
-                Math.floor(
-                    Math.random() *
-                    symbols.length
-                )
-            ];
+element.textContent =
+symbols[Math.floor(Math.random()*symbols.length)];
 
-        element.style.left = "50%";
-        element.style.top = "50%";
+element.style.left = "50%";
+element.style.top = "50%";
 
-        element.style.setProperty(
-            "--x",
-            (
-                Math.random() *
-                340 -
-                170
-            ) + "px"
-        );
+element.style.transform =
+`translate(${Math.random()*340-170}px,
+${Math.random()*340-240}px)`;
 
-        element.style.setProperty(
-            "--y",
-            (
-                Math.random() *
-                340 -
-                240
-            ) + "px"
-        );
+document.body.appendChild(element);
 
-        document.body.appendChild(
-            element
-        );
+setTimeout(function(){
+element.remove();
+},1500);
 
-        setTimeout(
-            function(){
-                element.remove();
-            },
-            1700
-        );
-
-    }
+}
 
 }
 
 
-/* =========================================================
+/* ================================
    MUSIC
-   ========================================================= */
+================================ */
 
 const song =
-    document.getElementById("song");
+document.getElementById("song");
 
 const music =
-    document.getElementById("music");
+document.getElementById("music");
 
 const musicButton =
-    document.getElementById("musicButton");
+document.getElementById("musicButton");
 
 const musicStatus =
-    document.getElementById("musicStatus");
+document.getElementById("musicStatus");
 
 musicButton.addEventListener(
-    "click",
-    async function(){
+"click",
+async function(){
 
-        if(song.paused){
+if(song.paused){
 
-            try{
+try{
 
-                await song.play();
+await song.play();
 
-            }
+}catch(error){
 
-            catch(error){
+musicStatus.textContent =
+"Couldn't play the song. Check the song filename. ❤️";
 
-                console.error(
-                    "AUDIO ERROR:",
-                    error
-                );
+}
 
-                musicStatus.textContent =
-                    "Couldn't play the song. Check the song filename. ❤️";
+}else{
 
-            }
+song.pause();
 
-        }
+}
 
-        else{
-
-            song.pause();
-
-        }
-
-    }
-);
-
-song.addEventListener(
-    "play",
-    function(){
-
-        music.classList.add("playing");
-
-        musicButton.textContent =
-            "⏸ Pause Our Song";
-
-        musicStatus.textContent =
-            "Playing our song ❤️";
-
-    }
-);
-
-song.addEventListener(
-    "pause",
-    function(){
-
-        music.classList.remove("playing");
-
-        if(!song.ended){
-
-            musicButton.textContent =
-                "▶ Play Our Song";
-
-            musicStatus.textContent =
-                "Paused ❤️";
-
-        }
-
-    }
-);
-
-song.addEventListener(
-    "ended",
-    function(){
-
-        music.classList.remove("playing");
-
-        musicButton.textContent =
-            "▶ Play Our Song";
-
-        musicStatus.textContent =
-            "Our song ❤️";
-
-    }
-);
+});
 
 
-/* =========================================================
+song.addEventListener("play",function(){
+
+music.classList.add("playing");
+
+musicButton.textContent =
+"⏸ Pause Our Song";
+
+musicStatus.textContent =
+"Playing our song ❤️";
+
+});
+
+
+song.addEventListener("pause",function(){
+
+music.classList.remove("playing");
+
+if(!song.ended){
+
+musicButton.textContent =
+"▶ Play Our Song";
+
+musicStatus.textContent =
+"Paused ❤️";
+
+}
+
+});
+
+
+song.addEventListener("ended",function(){
+
+music.classList.remove("playing");
+
+musicButton.textContent =
+"▶ Play Our Song";
+
+musicStatus.textContent =
+"Our song ❤️";
+
+});
+
+
+/* ================================
    GAME
-   ========================================================= */
+================================ */
 
 const runner =
-    document.getElementById("runner");
+document.getElementById("runner");
 
 const player =
-    document.getElementById("player");
+document.getElementById("player");
 
 const obstacle =
-    document.getElementById("obstacle");
+document.getElementById("obstacle");
 
 const scoreElement =
-    document.getElementById("score");
+document.getElementById("score");
 
 const bestElement =
-    document.getElementById("best");
+document.getElementById("best");
 
 const startGameButton =
-    document.getElementById("startGame");
+document.getElementById("startGame");
 
 const jumpButton =
-    document.getElementById("jumpButton");
+document.getElementById("jumpButton");
 
 const gameMessage =
-    document.getElementById("gameMessage");
+document.getElementById("gameMessage");
 
 let gameRunning = false;
 let jumping = false;
@@ -2880,345 +1863,266 @@ let animationFrame = null;
 let lastTime = 0;
 
 let best =
-    Number(
-        localStorage.getItem(
-            "theUsStoryBest"
-        ) || 0
-    );
+Number(localStorage.getItem("theUsStoryBest") || 0);
 
 bestElement.textContent = best;
 
 
-/* JUMP */
-
 function jump(){
 
-    if(!gameRunning){
-        return;
-    }
+if(!gameRunning || jumping) return;
 
-    if(jumping){
-        return;
-    }
-
-    jumping = true;
-    velocityY = 14;
+jumping = true;
+velocityY = 14;
 
 }
 
-
-/* START GAME */
 
 function startGame(){
 
-    if(gameRunning){
-        return;
-    }
+if(gameRunning) return;
 
-    gameRunning = true;
-    jumping = false;
-    velocityY = 0;
-    playerY = 0;
+gameRunning = true;
+jumping = false;
+velocityY = 0;
+playerY = 0;
 
-    obstacleX =
-        runner.clientWidth + 40;
+obstacleX =
+runner.clientWidth + 40;
 
-    score = 0;
-    gameSpeed = 6;
+score = 0;
+gameSpeed = 6;
 
-    scoreElement.textContent = "0";
+scoreElement.textContent = "0";
 
-    gameMessage.textContent =
-        "Keep going! 🧸❤️";
+gameMessage.textContent =
+"Keep going! 🧸❤️";
 
-    startGameButton.textContent =
-        "🔄 Restart";
+startGameButton.textContent =
+"🔄 Restart";
 
-    lastTime =
-        performance.now();
+lastTime = performance.now();
 
-    cancelAnimationFrame(
-        animationFrame
-    );
+cancelAnimationFrame(animationFrame);
 
-    animationFrame =
-        requestAnimationFrame(
-            gameLoop
-        );
+animationFrame =
+requestAnimationFrame(gameLoop);
 
 }
 
-
-/* GAME OVER */
 
 function gameOver(){
 
-    gameRunning = false;
+gameRunning = false;
 
-    cancelAnimationFrame(
-        animationFrame
-    );
+cancelAnimationFrame(animationFrame);
 
-    if(score > best){
+if(score > best){
 
-        best = score;
+best = score;
 
-        localStorage.setItem(
-            "theUsStoryBest",
-            best
-        );
+localStorage.setItem(
+"theUsStoryBest",
+best
+);
 
-        bestElement.textContent =
-            best;
+bestElement.textContent = best;
 
-        gameMessage.textContent =
-            "NEW BEST! 🧸💗 You made our story longer!";
+gameMessage.textContent =
+"NEW BEST! 🧸💗 You made our story longer!";
 
-    }
+}else{
 
-    else{
-
-        gameMessage.textContent =
-            "Aww, you bumped into a flower. 🌷 Try again? ❤️";
-
-    }
-
-    startGameButton.textContent =
-        "🧸 Play Again";
+gameMessage.textContent =
+"Aww, you bumped into a flower. 🌷 Try again? ❤️";
 
 }
 
+startGameButton.textContent =
+"🧸 Play Again";
 
-/* GAME LOOP */
+}
+
 
 function gameLoop(time){
 
-    if(!gameRunning){
-        return;
-    }
+if(!gameRunning) return;
 
-    const delta =
-        Math.min(
-            (time - lastTime) / 16.67,
-            2
-        );
+const delta =
+Math.min((time-lastTime)/16.67,2);
 
-    lastTime = time;
+lastTime = time;
 
 
-    /* PLAYER */
+if(jumping){
 
-    if(jumping){
+velocityY -= .75 * delta;
 
-        velocityY -=
-            .75 * delta;
+playerY += velocityY * delta;
 
-        playerY +=
-            velocityY * delta;
+if(playerY <= 0){
 
-        if(playerY <= 0){
+playerY = 0;
+velocityY = 0;
+jumping = false;
 
-            playerY = 0;
-            velocityY = 0;
-            jumping = false;
+}
 
-        }
+}
 
-    }
-
-    player.style.transform =
-        "translateY(" +
-        (-playerY) +
-        "px)";
+player.style.transform =
+`translateY(${-playerY}px)`;
 
 
-    /* OBSTACLE */
+obstacleX -= gameSpeed * delta;
 
-    obstacleX -=
-        gameSpeed * delta;
+if(obstacleX < -70){
 
-    if(obstacleX < -70){
+obstacleX =
+runner.clientWidth + 20;
 
-        obstacleX =
-            runner.clientWidth + 20;
+score++;
 
-        score++;
+scoreElement.textContent = score;
 
-        scoreElement.textContent =
-            score;
+gameSpeed =
+Math.min(12,6+score*.12);
 
-        gameSpeed =
-            Math.min(
-                12,
-                6 + score * .12
-            );
+}
 
-    }
-
-    obstacle.style.transform =
-        "translateX(" +
-        obstacleX +
-        "px)";
+obstacle.style.transform =
+`translateX(${obstacleX}px)`;
 
 
-    /* COLLISION */
+const playerRect =
+player.getBoundingClientRect();
 
-    const playerRect =
-        player.getBoundingClientRect();
+const obstacleRect =
+obstacle.getBoundingClientRect();
 
-    const obstacleRect =
-        obstacle.getBoundingClientRect();
+const padding = 8;
 
-    const padding = 8;
+const collision =
+playerRect.left + padding <
+obstacleRect.right - padding &&
 
-    const collision =
-        playerRect.left + padding <
-        obstacleRect.right - padding &&
+playerRect.right - padding >
+obstacleRect.left + padding &&
 
-        playerRect.right - padding >
-        obstacleRect.left + padding &&
+playerRect.top + padding <
+obstacleRect.bottom - padding &&
 
-        playerRect.top + padding <
-        obstacleRect.bottom - padding &&
+playerRect.bottom - padding >
+obstacleRect.top + padding;
 
-        playerRect.bottom - padding >
-        obstacleRect.top + padding;
+if(collision){
 
-    if(collision){
+gameOver();
+return;
 
-        gameOver();
-        return;
+}
 
-    }
-
-    animationFrame =
-        requestAnimationFrame(
-            gameLoop
-        );
+animationFrame =
+requestAnimationFrame(gameLoop);
 
 }
 
 
-/* GAME BUTTONS */
-
 startGameButton.addEventListener(
-    "click",
-    startGame
+"click",
+startGame
 );
 
 jumpButton.addEventListener(
-    "pointerdown",
-    function(event){
+"pointerdown",
+function(event){
 
-        event.preventDefault();
+event.preventDefault();
+jump();
 
-        jump();
+});
 
-    }
-);
 
 runner.addEventListener(
-    "pointerdown",
-    function(event){
+"pointerdown",
+function(event){
 
-        if(gameRunning){
+if(gameRunning){
 
-            event.preventDefault();
+event.preventDefault();
+jump();
 
-            jump();
+}
 
-        }
+});
 
-    }
-);
-
-
-/* KEYBOARD */
 
 document.addEventListener(
-    "keydown",
-    function(event){
+"keydown",
+function(event){
 
-        if(
-            event.code === "Space" ||
-            event.code === "ArrowUp"
-        ){
+if(
+event.code === "Space" ||
+event.code === "ArrowUp"
+){
 
-            event.preventDefault();
+event.preventDefault();
 
-            if(!gameRunning){
+if(!gameRunning){
+startGame();
+}else{
+jump();
+}
 
-                startGame();
+}
 
-            }
-
-            else{
-
-                jump();
-
-            }
-
-        }
-
-    }
-);
+});
 
 
-/* =========================================================
-   BUTTON EVENTS
-   ========================================================= */
+/* ================================
+   BUTTONS
+================================ */
 
 loginButton.addEventListener(
-    "click",
-    doLogin
+"click",
+doLogin
 );
 
 logoutButton.addEventListener(
-    "click",
-    doLogout
+"click",
+doLogout
 );
 
 saveButton.addEventListener(
-    "click",
-    saveMemory
+"click",
+saveMemory
 );
 
 
-/* =========================================================
-   ENTER TO LOGIN
-   ========================================================= */
-
-document
-.getElementById("password")
+document.getElementById("password")
 .addEventListener(
-    "keydown",
-    function(event){
+"keydown",
+function(event){
 
-        if(event.key === "Enter"){
+if(event.key === "Enter"){
+doLogin();
+}
 
-            doLogin();
+});
 
-        }
 
-    }
-);
-
-document
-.getElementById("email")
+document.getElementById("email")
 .addEventListener(
-    "keydown",
-    function(event){
+"keydown",
+function(event){
 
-        if(event.key === "Enter"){
+if(event.key === "Enter"){
 
-            document
-            .getElementById("password")
-            .focus();
+document.getElementById("password").focus();
 
-        }
+}
 
-    }
-);
+});
 
 </script>
 
