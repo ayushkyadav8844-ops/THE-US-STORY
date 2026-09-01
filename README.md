@@ -3,7 +3,10 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0,
+               maximum-scale=1.0, user-scalable=no">
 
 <meta name="theme-color" content="#c05f82">
 
@@ -13,5326 +16,3832 @@
 
 <style>
 
-/* =========================================================
-   ROOT
-   ========================================================= */
-
 :root{
-    --rose:#c05f82;
-    --deep:#91445f;
-    --pink:#ffe8ef;
-    --soft:#e8adbd;
-    --cream:#fffaf8;
-    --paper:rgba(255,253,251,.96);
-    --text:#593c45;
-    --muted:#80616a;
-    --shadow:rgba(90,45,65,.14);
+  --rose:#c05f82;
+  --deep:#91445f;
+  --pink:#ffe8ef;
+  --soft:#e8adbd;
+  --cream:#fffaf8;
+  --paper:rgba(255,253,251,.96);
+  --text:#593c45;
+  --muted:#80616a;
+  --shadow:rgba(90,45,65,.14);
 }
 
 *{
-    box-sizing:border-box;
+  box-sizing:border-box;
 }
 
 html{
-    scroll-behavior:smooth;
+  scroll-behavior:smooth;
 }
 
 body{
-    margin:0;
-    min-height:100vh;
-    font-family:Georgia,"Times New Roman",serif;
-    color:var(--text);
-    overflow-x:hidden;
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  color:var(--text);
 
-    background:
-        linear-gradient(
-            rgba(255,241,246,.76),
-            rgba(255,248,243,.87)
-        ),
-        url("./file_00000000b66082118bbde5d0666da038.png");
+  background:
+    linear-gradient(
+      rgba(255,250,248,.88),
+      rgba(255,250,248,.94)
+    ),
+    url("./file_00000000b66082118bbde5d0666da038.png");
 
-    background-size:cover;
-    background-position:center;
-    background-attachment:fixed;
+  background-size:cover;
+  background-position:center;
+  background-attachment:fixed;
 }
 
-body::before{
-    content:"";
-    position:fixed;
-    inset:0;
-    pointer-events:none;
-    z-index:0;
-
-    background:
-        radial-gradient(
-            circle at 10% 15%,
-            rgba(255,255,255,.65),
-            transparent 25%
-        ),
-        radial-gradient(
-            circle at 90% 30%,
-            rgba(255,210,225,.35),
-            transparent 28%
-        ),
-        radial-gradient(
-            circle at 50% 90%,
-            rgba(255,230,215,.35),
-            transparent 30%
-        );
+button,
+input,
+textarea{
+  font:inherit;
 }
 
-
-/* =========================================================
-   FLOATING DECORATIONS
-   ========================================================= */
-
-.decorations{
-    position:fixed;
-    inset:0;
-    pointer-events:none;
-    overflow:hidden;
-    z-index:1;
+button{
+  cursor:pointer;
 }
 
-.float{
-    position:absolute;
-    bottom:-50px;
-    opacity:0;
-    animation:floatUp 11s linear infinite;
+.hidden{
+  display:none !important;
 }
 
-.float:nth-child(1){left:7%;}
-.float:nth-child(2){left:22%;animation-delay:3s;}
-.float:nth-child(3){left:43%;animation-delay:6s;}
-.float:nth-child(4){left:68%;animation-delay:2s;}
-.float:nth-child(5){left:90%;animation-delay:5s;}
-
-@keyframes floatUp{
-
-    0%{
-        transform:
-            translateY(0)
-            translateX(0)
-            rotate(0)
-            scale(.6);
-        opacity:0;
-    }
-
-    12%{
-        opacity:.6;
-    }
-
-    50%{
-        transform:
-            translateY(-55vh)
-            translateX(25px)
-            rotate(18deg)
-            scale(1);
-        opacity:.4;
-    }
-
-    100%{
-        transform:
-            translateY(-115vh)
-            translateX(-25px)
-            rotate(-18deg)
-            scale(1.15);
-        opacity:0;
-    }
-}
-
-.sparkle{
-    position:absolute;
-    color:rgba(192,95,130,.5);
-    animation:sparkle 3s ease-in-out infinite;
-}
-
-.s1{top:14%;left:9%;}
-.s2{top:31%;right:8%;animation-delay:.8s;}
-.s3{top:61%;left:6%;animation-delay:1.5s;}
-.s4{top:79%;right:9%;animation-delay:2s;}
-
-@keyframes sparkle{
-
-    0%,100%{
-        transform:scale(.5) rotate(0);
-        opacity:.2;
-    }
-
-    50%{
-        transform:scale(1.5) rotate(35deg);
-        opacity:.9;
-    }
-}
-
-
-/* =========================================================
-   CONTAINER
-   ========================================================= */
-
-.container{
-    position:relative;
-    z-index:5;
-    width:92%;
-    max-width:850px;
-    margin:auto;
-    padding:20px 0 80px;
-}
+/* =========================
+   HEADER
+========================= */
 
 header{
-    text-align:center;
-    padding:25px 8px 10px;
+  position:sticky;
+  top:0;
+  z-index:1000;
+
+  background:rgba(255,250,248,.9);
+
+  backdrop-filter:blur(14px);
+
+  border-bottom:
+    1px solid rgba(192,95,130,.12);
 }
 
+.nav{
+  max-width:1050px;
+  margin:auto;
 
-/* =========================================================
-   TEDDIES
-   ========================================================= */
+  padding:13px 18px;
 
-.teddies{
-    display:flex;
-    justify-content:center;
-    align-items:flex-end;
-    gap:12px;
-    height:155px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  gap:10px;
+}
+
+.logo{
+  color:var(--deep);
+  font-size:20px;
+  font-weight:900;
+}
+
+.nav-buttons{
+  display:flex;
+  gap:7px;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+}
+
+.nav-buttons button{
+  border:0;
+  background:var(--pink);
+  color:var(--deep);
+
+  padding:8px 12px;
+
+  border-radius:999px;
+  font-weight:700;
+}
+
+.nav-buttons button:hover{
+  background:var(--soft);
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+  max-width:1050px;
+  margin:0 auto;
+
+  min-height:75vh;
+
+  padding:60px 20px 40px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  text-align:center;
+}
+
+.hero-card{
+  width:min(850px,100%);
+
+  background:var(--paper);
+
+  border-radius:32px;
+
+  padding:42px 24px;
+
+  box-shadow:
+    0 20px 60px var(--shadow);
+
+  border:
+    1px solid rgba(192,95,130,.12);
 }
 
 .teddy{
-    position:relative;
-    width:100px;
-    height:135px;
-    animation:teddyFloat 3s ease-in-out infinite;
-    filter:drop-shadow(
-        0 9px 8px rgba(80,40,30,.13)
-    );
-}
+  font-size:80px;
 
-.teddy:nth-child(2){
-    animation-delay:.4s;
-}
-
-.head{
-    position:absolute;
-    left:12px;
-    top:8px;
-    width:76px;
-    height:70px;
-    border-radius:48%;
-    background:
-        linear-gradient(
-            145deg,
-            #dfa174,
-            #ae694b
-        );
-    z-index:3;
-}
-
-.girl .head{
-    background:
-        linear-gradient(
-            145deg,
-            #e5a08f,
-            #b97065
-        );
-}
-
-.ear{
-    position:absolute;
-    top:-7px;
-    width:30px;
-    height:30px;
-    border-radius:50%;
-    background:#bd7651;
-    z-index:-1;
-}
-
-.girl .ear{
-    background:#c98277;
-}
-
-.ear.left{left:0;}
-.ear.right{right:0;}
-
-.ear::after{
-    content:"";
-    position:absolute;
-    inset:6px;
-    border-radius:50%;
-    background:#f1b7a2;
-}
-
-.eye{
-    position:absolute;
-    top:28px;
-    width:7px;
-    height:8px;
-    border-radius:50%;
-    background:#493036;
-}
-
-.eye.left{left:20px;}
-.eye.right{right:20px;}
-
-.eye::after{
-    content:"";
-    position:absolute;
-    width:2px;
-    height:2px;
-    top:1px;
-    left:1px;
-    border-radius:50%;
-    background:white;
-}
-
-.cheek{
-    position:absolute;
-    top:42px;
-    width:11px;
-    height:7px;
-    border-radius:50%;
-    background:#ed999d;
-    opacity:.7;
-}
-
-.cheek.left{left:10px;}
-.cheek.right{right:10px;}
-
-.muzzle{
-    position:absolute;
-    left:23px;
-    top:37px;
-    width:30px;
-    height:23px;
-    border-radius:50%;
-    background:#f0c4a8;
-}
-
-.nose{
-    position:absolute;
-    left:10px;
-    top:5px;
-    width:10px;
-    height:7px;
-    border-radius:50%;
-    background:#553037;
-}
-
-.mouth{
-    position:absolute;
-    left:12px;
-    top:11px;
-    width:6px;
-    height:5px;
-    border-bottom:2px solid #553037;
-    border-radius:50%;
-}
-
-.body{
-    position:absolute;
-    left:21px;
-    top:73px;
-    width:58px;
-    height:50px;
-    border-radius:48% 48% 40% 40%;
-    background:
-        linear-gradient(
-            145deg,
-            #dfa174,
-            #ae694b
-        );
-}
-
-.girl .body{
-    background:
-        linear-gradient(
-            145deg,
-            #e5a08f,
-            #b97065
-        );
-}
-
-.belly{
-    position:absolute;
-    left:15px;
-    top:9px;
-    width:28px;
-    height:26px;
-    border-radius:50%;
-    background:#edc09e;
-}
-
-.arm{
-    position:absolute;
-    top:77px;
-    width:20px;
-    height:38px;
-    border-radius:50%;
-    background:#c17a55;
-    z-index:4;
-}
-
-.girl .arm{
-    background:#c67c72;
-}
-
-.arm.left{
-    left:5px;
-    transform:rotate(27deg);
-}
-
-.arm.right{
-    right:5px;
-    transform:rotate(-27deg);
-}
-
-.leg{
-    position:absolute;
-    top:108px;
-    width:24px;
-    height:19px;
-    border-radius:50%;
-    background:#ad684b;
-}
-
-.leg.left{left:19px;}
-.leg.right{right:19px;}
-
-.heart{
-    position:absolute;
-    left:37px;
-    top:71px;
-    z-index:8;
-    font-size:27px;
-    animation:heartBounce 1.5s ease-in-out infinite;
-}
-
-.bow{
-    position:absolute;
-    right:-4px;
-    top:-5px;
-    z-index:20;
-    font-size:27px;
-    animation:bowWiggle 2s ease-in-out infinite;
+  animation:
+    teddyFloat 2.4s ease-in-out infinite;
 }
 
 @keyframes teddyFloat{
 
-    0%,100%{
-        transform:translateY(0) rotate(-2deg);
-    }
+  0%,100%{
+    transform:
+      translateY(0)
+      rotate(-2deg);
+  }
 
-    50%{
-        transform:translateY(-10px) rotate(2deg);
-    }
+  50%{
+    transform:
+      translateY(-12px)
+      rotate(2deg);
+  }
+
 }
 
-@keyframes heartBounce{
+.hero h1{
+  margin:12px 0 8px;
 
-    0%,100%{
-        transform:scale(1) rotate(-3deg);
-    }
+  font-size:
+    clamp(34px,7vw,64px);
 
-    50%{
-        transform:scale(1.2) rotate(4deg);
-    }
+  color:var(--deep);
 }
 
-@keyframes bowWiggle{
+.hero p{
+  color:var(--muted);
 
-    0%,100%{
-        transform:rotate(10deg);
-    }
+  font-size:17px;
+  line-height:1.7;
 
-    50%{
-        transform:rotate(-8deg) scale(1.06);
-    }
+  max-width:680px;
+
+  margin:12px auto;
 }
 
-.header-heart{
-    font-size:39px;
-    animation:heartbeat 1.5s ease-in-out infinite;
+/* =========================
+   MAIN
+========================= */
+
+main{
+  max-width:1050px;
+
+  margin:auto;
+
+  padding:
+    10px 18px 70px;
 }
 
-@keyframes heartbeat{
+.card{
+  background:var(--paper);
 
-    0%,100%{
-        transform:scale(1);
-    }
+  border-radius:26px;
 
-    50%{
-        transform:scale(1.18);
-    }
-}
+  padding:25px;
 
-h1{
-    margin:10px 0;
-    color:var(--deep);
-    font-size:clamp(40px,9vw,72px);
-    line-height:1;
-    text-shadow:
-        0 4px 15px rgba(145,76,101,.13);
-}
+  margin:22px 0;
 
-.subtitle{
-    color:var(--muted);
-    font-size:20px;
-    line-height:1.6;
-}
+  box-shadow:
+    0 14px 40px var(--shadow);
 
-.divider{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:12px;
-    margin:22px auto;
-}
-
-.divider::before,
-.divider::after{
-    content:"";
-    width:70px;
-    height:1px;
-    background:
-        linear-gradient(
-            to right,
-            transparent,
-            var(--soft)
-        );
-}
-
-.divider::after{
-    background:
-        linear-gradient(
-            to left,
-            transparent,
-            var(--soft)
-        );
-}
-
-
-/* =========================================================
-   TIMER SECTION
-   ========================================================= */
-
-.timer-section{
-    margin:25px 0 35px;
-}
-
-.timer-heading{
-    text-align:center;
-    color:var(--deep);
-    font-size:30px;
-    margin:0 0 18px;
-}
-
-.timer-card{
-    position:relative;
-    text-align:center;
-    margin:18px 0;
-    padding:25px 18px;
-
-    background:rgba(255,252,250,.95);
-
-    border:1px solid rgba(160,91,111,.18);
-
-    border-radius:30px;
-
-    box-shadow:
-        0 18px 50px var(--shadow);
-
-    backdrop-filter:blur(9px);
-
-    overflow:hidden;
-}
-
-.timer-card::before{
-    content:"";
-    position:absolute;
-    inset:8px;
-
-    border:1px dashed
-        rgba(192,95,130,.3);
-
-    border-radius:23px;
-
-    pointer-events:none;
-}
-
-.timer-icon{
-    position:relative;
-    font-size:37px;
-}
-
-.timer-title{
-    position:relative;
-    color:var(--deep);
-    font-size:24px;
-    font-weight:bold;
-    margin:6px 0;
-}
-
-.timer-subtitle{
-    position:relative;
-    color:var(--muted);
-    font-size:14px;
-    margin-bottom:17px;
-}
-
-.timer-grid{
-    position:relative;
-
-    display:grid;
-
-    grid-template-columns:
-        repeat(4,1fr);
-
-    gap:8px;
-
-    max-width:620px;
-
-    margin:auto;
-}
-
-.timer-box{
-    padding:13px 4px;
-
-    border-radius:17px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #fff7fa,
-            #fffdfb
-        );
-
-    border:
-        1px solid
-        rgba(192,95,130,.14);
-
-    box-shadow:
-        0 7px 18px
-        rgba(90,50,60,.07);
-}
-
-.timer-number{
-    color:var(--deep);
-    font-size:clamp(20px,5vw,32px);
-    font-weight:bold;
-    font-variant-numeric:tabular-nums;
-}
-
-.timer-label{
-    margin-top:4px;
-    color:#a27682;
-    font-size:9px;
-    text-transform:uppercase;
-    letter-spacing:.7px;
-}
-
-.birthday-card{
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,246,250,.98),
-            rgba(255,250,246,.98)
-        );
-}
-
-.birthday-card.today{
-    animation:
-        birthdayCardGlow
-        1.5s ease-in-out
-        infinite alternate;
-}
-
-@keyframes birthdayCardGlow{
-
-    from{
-        box-shadow:
-            0 18px 50px
-            rgba(192,95,130,.15);
-    }
-
-    to{
-        box-shadow:
-            0 18px 65px
-            rgba(192,95,130,.45);
-    }
-}
-
-
-/* =========================================================
-   CARDS
-   ========================================================= */
-
-.card,
-.music{
-    position:relative;
-    margin:30px 0;
-    padding:30px;
-
-    background:var(--paper);
-
-    border:
-        1px solid
-        rgba(160,91,111,.18);
-
-    border-radius:30px;
-
-    box-shadow:
-        0 18px 50px var(--shadow);
-
-    backdrop-filter:blur(8px);
-}
-
-.card::before,
-.music::before{
-    content:"";
-    position:absolute;
-    inset:8px;
-
-    border:
-        1px dashed
-        rgba(182,107,131,.28);
-
-    border-radius:23px;
-
-    pointer-events:none;
-}
-
-.card::after{
-    content:"♡";
-    position:absolute;
-    right:18px;
-    top:12px;
-    color:rgba(166,90,115,.28);
-    font-size:27px;
+  border:
+    1px solid rgba(192,95,130,.10);
 }
 
 .card h2{
-    position:relative;
-    margin-top:0;
-    color:var(--deep);
-    font-size:30px;
+  color:var(--deep);
+  margin-top:0;
 }
 
-.card p{
-    position:relative;
-    font-size:19px;
-    line-height:1.7;
+/* =========================
+   TIMERS
+========================= */
+
+.timer-grid{
+  display:grid;
+
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap:15px;
 }
 
+.timer-card{
+  text-align:center;
 
-/* =========================================================
-   LOGIN
-   ========================================================= */
+  background:
+    linear-gradient(
+      145deg,
+      #fff,
+      var(--pink)
+    );
 
-#login{
-    max-width:450px;
-    margin:25px auto 40px;
-    text-align:center;
+  border-radius:22px;
+
+  padding:22px 14px;
+
+  box-shadow:
+    0 8px 25px var(--shadow);
 }
 
-.login-title{
-    color:var(--deep);
-    font-size:29px;
-    font-weight:bold;
+.timer-icon{
+  font-size:40px;
 }
 
-.login-subtitle{
-    margin:10px 0 25px;
-    color:var(--muted);
-    font-size:17px;
+.timer-title{
+  font-weight:800;
+
+  color:var(--deep);
+
+  margin:8px 0;
 }
 
-label{
-    display:block;
-    margin:10px 0 6px;
-    font-size:17px;
+.timer-value{
+  font-size:
+    clamp(20px,4vw,30px);
+
+  font-weight:900;
+
+  color:var(--rose);
+
+  line-height:1.4;
 }
 
-input,
-textarea{
-    width:100%;
-    padding:14px;
-    margin:7px 0 14px;
-
-    border:
-        1px solid
-        #d6aeba;
-
-    border-radius:16px;
-
-    background:rgba(255,255,255,.95);
-
-    color:var(--text);
-
-    font-family:inherit;
-    font-size:17px;
-
-    outline:none;
-
-    transition:.2s ease;
+.timer-small{
+  font-size:12px;
+  color:var(--muted);
+  margin-top:7px;
 }
 
-input:focus,
-textarea:focus{
-    border-color:#b66b83;
+@media(max-width:750px){
 
-    box-shadow:
-        0 0 0 3px
-        rgba(182,107,131,.11);
+  .timer-grid{
+    grid-template-columns:1fr;
+  }
+
 }
 
-textarea{
-    min-height:150px;
-    resize:vertical;
-}
-
-input[type=file]{
-    padding:11px;
-}
-
-button{
-    font-family:inherit;
-}
+/* =========================
+   BUTTONS
+========================= */
 
 .primary{
-    border:none;
+  border:0;
 
-    border-radius:30px;
+  background:var(--rose);
+  color:#fff;
 
-    padding:14px 24px;
+  padding:12px 20px;
 
-    background:
-        linear-gradient(
-            135deg,
-            #c7678a,
-            #ae5577
-        );
+  border-radius:999px;
 
-    color:white;
+  font-weight:800;
 
-    font-size:17px;
-
-    cursor:pointer;
-
-    box-shadow:
-        0 9px 24px
-        rgba(150,70,100,.2);
-
-    transition:.2s ease;
+  box-shadow:
+    0 7px 18px
+    rgba(145,68,95,.2);
 }
 
-.primary:hover{
-    transform:translateY(-3px);
+.secondary{
+  border:0;
+
+  background:var(--pink);
+  color:var(--deep);
+
+  padding:11px 18px;
+
+  border-radius:999px;
+
+  font-weight:800;
 }
 
-.primary:disabled{
-    opacity:.6;
-    cursor:not-allowed;
+.primary:active,
+.secondary:active{
+  transform:scale(.97);
 }
 
-#loginButton{
-    width:100%;
+/* =========================
+   LOGIN
+========================= */
+
+.form{
+  display:grid;
+
+  gap:12px;
+
+  max-width:520px;
+
+  margin:auto;
 }
 
-.logout{
-    padding:8px 15px;
+.form input,
+.form textarea{
+  width:100%;
 
-    border:
-        1px solid
-        #c88ca0;
+  border:
+    1px solid
+    rgba(192,95,130,.2);
 
-    border-radius:20px;
+  background:#fff;
 
-    background:
-        rgba(255,255,255,.8);
+  border-radius:15px;
 
-    color:var(--deep);
+  padding:13px 15px;
 
-    cursor:pointer;
+  color:var(--text);
+
+  outline:none;
 }
 
-.status{
-    min-height:25px;
-    margin-top:14px;
-    text-align:center;
-    font-size:16px;
-    line-height:1.5;
+.form textarea{
+  min-height:110px;
+  resize:vertical;
 }
 
-.success{
-    color:#5d8a65;
+.form input:focus,
+.form textarea:focus{
+  border-color:var(--rose);
 }
 
-.error{
-    color:#b04b5b;
+.auth-status{
+  text-align:center;
+
+  margin:10px 0;
+
+  color:var(--muted);
+
+  font-size:14px;
 }
 
+/* =========================
+   MEMORIES
+========================= */
 
-/* =========================================================
-   DIARY
-   ========================================================= */
-
-#diary{
-    display:none;
+.memory-form{
+  display:grid;
+  gap:12px;
 }
 
-.diary-top{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:15px;
-    margin-bottom:20px;
+.memory-grid{
+  display:grid;
+
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap:16px;
+
+  margin-top:20px;
 }
-
-.welcome{
-    color:var(--deep);
-    font-size:17px;
-    overflow-wrap:anywhere;
-}
-
-
-/* =========================================================
-   MUSIC
-   ========================================================= */
-
-.music{
-    text-align:center;
-    overflow:visible;
-}
-
-.music-icon{
-    display:inline-block;
-    font-size:45px;
-}
-
-.music.playing .music-icon{
-    animation:
-        musicPulse
-        1.2s ease-in-out
-        infinite;
-}
-
-@keyframes musicPulse{
-
-    0%,100%{
-        transform:scale(1) rotate(0);
-    }
-
-    50%{
-        transform:scale(1.2) rotate(5deg);
-    }
-}
-
-.music-title{
-    color:var(--deep);
-    font-size:30px;
-    font-weight:bold;
-}
-
-.music-subtitle{
-    margin:8px 0 18px;
-    color:var(--muted);
-    font-size:17px;
-    font-style:italic;
-}
-
-#song{
-    display:block;
-    width:100%;
-    max-width:500px;
-    margin:10px auto 18px;
-}
-
-.music-status{
-    min-height:24px;
-    margin-top:12px;
-    color:#8a6872;
-    font-size:15px;
-}
-
-
-/* =========================================================
-   MEMORY
-   ========================================================= */
 
 .memory{
-    position:relative;
-    margin:26px 0;
-    padding:25px;
+  background:#fff;
 
-    border:
-        1px solid
-        rgba(160,91,111,.15);
+  border-radius:20px;
 
-    border-radius:23px;
+  overflow:hidden;
 
-    background:
-        linear-gradient(
-            145deg,
-            #fffdfb,
-            #fff7f4
-        );
-
-    box-shadow:
-        0 13px 32px
-        rgba(90,50,60,.09);
-
-    transform:rotate(-.35deg);
-
-    transition:.3s ease;
-}
-
-.memory:nth-child(even){
-    transform:rotate(.45deg);
-}
-
-.memory:hover{
-    transform:
-        translateY(-5px)
-        rotate(0);
-}
-
-.memory::before{
-    content:"♡";
-
-    position:absolute;
-
-    top:13px;
-    right:17px;
-
-    color:#ed91b1;
-
-    font-size:25px;
-}
-
-.memory h3{
-    margin-top:0;
-    padding-right:35px;
-    color:var(--deep);
-    font-size:26px;
-}
-
-.memory-date{
-    display:inline-block;
-
-    margin-bottom:12px;
-
-    padding:5px 11px;
-
-    border-radius:16px;
-
-    background:#fff0f4;
-
-    color:#a27682;
-
-    font-size:14px;
-}
-
-.memory p{
-    font-size:17px;
-    line-height:1.65;
-    white-space:pre-wrap;
-    overflow-wrap:anywhere;
+  box-shadow:
+    0 7px 20px var(--shadow);
 }
 
 .memory img{
-    display:block;
+  width:100%;
 
-    width:100%;
-    max-height:520px;
+  height:190px;
 
-    object-fit:cover;
+  object-fit:cover;
 
-    margin-top:16px;
-
-    padding:
-        9px 9px 28px;
-
-    border-radius:6px;
-
-    background:white;
-
-    box-shadow:
-        0 8px 20px
-        rgba(50,30,35,.14);
+  display:block;
 }
 
+.memory-content{
+  padding:15px;
+}
+
+.memory-content h3{
+  margin:0 0 5px;
+  color:var(--deep);
+}
+
+.memory-date{
+  font-size:12px;
+
+  color:var(--rose);
+
+  font-weight:700;
+
+  margin-bottom:8px;
+}
+
+.memory-content p{
+  color:var(--muted);
+
+  line-height:1.6;
+
+  white-space:pre-wrap;
+}
+
+@media(max-width:800px){
+
+  .memory-grid{
+    grid-template-columns:
+      repeat(2,1fr);
+  }
+
+}
+
+@media(max-width:560px){
+
+  .memory-grid{
+    grid-template-columns:1fr;
+  }
+
+}
+
+/* =========================
+   MUSIC
+========================= */
+
+.music-box{
+  text-align:center;
+}
+
+.music-box audio{
+  width:100%;
+  max-width:600px;
+}
 
 /* =========================================================
-   GAME
-   ========================================================= */
+   LOVE RUN GAME
+========================================================= */
 
 .game-intro{
-    color:var(--muted);
-    font-size:17px;
-    line-height:1.6;
+  text-align:center;
+
+  color:var(--muted);
+
+  line-height:1.7;
+
+  margin:
+    0 auto 18px;
+
+  max-width:650px;
 }
 
 .runner{
-    position:relative;
-    width:100%;
-    height:230px;
 
-    margin:20px 0;
+  position:relative;
 
-    overflow:hidden;
+  width:100%;
 
-    border-radius:22px;
+  height:250px;
 
-    background:
-        linear-gradient(
-            to bottom,
-            #fff2f7 0%,
-            #fff9f7 72%,
-            #f7d9e3 72%,
-            #f7d9e3 74%,
-            #fff9f7 74%
-        );
+  overflow:hidden;
 
-    border:1px solid #edc3d0;
+  border-radius:24px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      #fff1f6 0%,
+      #ffe4ed 55%,
+      #f8cbd9 56%,
+      #f1b7ca 100%
+    );
+
+  border:
+    2px solid
+    rgba(192,95,130,.18);
+
+  box-shadow:
+    inset
+    0 0 30px
+    rgba(255,255,255,.45);
+
+  touch-action:none;
+
+  user-select:none;
+
+  -webkit-user-select:none;
+}
+
+.runner::before{
+
+  content:"";
+
+  position:absolute;
+
+  width:180px;
+  height:180px;
+
+  border-radius:50%;
+
+  background:
+    rgba(255,255,255,.35);
+
+  right:-70px;
+  top:-80px;
+
+  pointer-events:none;
+}
+
+.runner::after{
+
+  content:"";
+
+  position:absolute;
+
+  width:110px;
+  height:110px;
+
+  border-radius:50%;
+
+  background:
+    rgba(255,255,255,.25);
+
+  left:-35px;
+  top:35px;
+
+  pointer-events:none;
 }
 
 .runner-cloud{
-    position:absolute;
-    font-size:30px;
-    opacity:.5;
-    animation:
-        cloudMove
-        14s linear
-        infinite;
+
+  position:absolute;
+
+  font-size:35px;
+
+  opacity:.65;
+
+  pointer-events:none;
+
+  z-index:1;
 }
 
 .cloud1{
-    top:25px;
-    left:100%;
+
+  top:28px;
+  left:15%;
+
+  animation:
+    cloudMove1 10s linear infinite;
 }
 
 .cloud2{
-    top:65px;
-    left:130%;
-    animation-delay:6s;
+
+  top:72px;
+  left:65%;
+
+  animation:
+    cloudMove2 14s linear infinite;
 }
 
-@keyframes cloudMove{
+@keyframes cloudMove1{
 
-    from{
-        transform:translateX(0);
-    }
+  from{
+    transform:translateX(0);
+  }
 
-    to{
-        transform:translateX(-650px);
-    }
+  to{
+    transform:translateX(160px);
+  }
+
 }
+
+@keyframes cloudMove2{
+
+  from{
+    transform:translateX(0);
+  }
+
+  to{
+    transform:translateX(-180px);
+  }
+
+}
+
+/* =========================
+   PLAYER
+========================= */
 
 .player{
-    position:absolute;
-    left:55px;
-    bottom:55px;
 
-    width:42px;
-    height:48px;
+  position:absolute;
 
-    font-size:39px;
+  left:55px;
 
-    z-index:5;
+  bottom:43px;
 
-    user-select:none;
+  width:58px;
+  height:58px;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  font-size:45px;
+
+  z-index:10;
+
+  filter:
+    drop-shadow(
+      0 5px 4px
+      rgba(80,40,60,.18)
+    );
+
+  will-change:
+    transform;
 }
+
+.player.running{
+
+  animation:
+    teddyRun .22s
+    infinite alternate;
+}
+
+@keyframes teddyRun{
+
+  from{
+    transform:translateY(0);
+  }
+
+  to{
+    transform:translateY(-4px);
+  }
+
+}
+
+/* =========================
+   OBSTACLE
+========================= */
 
 .obstacle{
-    position:absolute;
-    bottom:52px;
-    right:-60px;
 
-    font-size:38px;
+  position:absolute;
 
-    z-index:4;
+  left:0;
+
+  bottom:40px;
+
+  width:55px;
+  height:55px;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  font-size:42px;
+
+  z-index:8;
+
+  will-change:
+    left;
 }
+
+/* =========================
+   HEART
+========================= */
+
+.collectible{
+
+  position:absolute;
+
+  left:0;
+
+  bottom:115px;
+
+  width:42px;
+  height:42px;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  font-size:32px;
+
+  z-index:9;
+
+  will-change:
+    left;
+
+  filter:
+    drop-shadow(
+      0 5px 7px
+      rgba(120,40,70,.18)
+    );
+
+  animation:
+    heartFloat .8s
+    ease-in-out infinite alternate;
+}
+
+@keyframes heartFloat{
+
+  from{
+    transform:translateY(0);
+  }
+
+  to{
+    transform:translateY(-9px);
+  }
+
+}
+
+/* =========================
+   GROUND
+========================= */
 
 .game-ground{
-    position:absolute;
-    bottom:0;
-    left:0;
-    right:0;
 
-    height:54px;
+  position:absolute;
 
-    border-top:
-        3px solid
-        #d69aaf;
+  left:0;
+  right:0;
+
+  bottom:0;
+
+  height:43px;
+
+  background:
+
+    repeating-linear-gradient(
+      135deg,
+      rgba(255,255,255,.3)
+      0px,
+      rgba(255,255,255,.3)
+      8px,
+      transparent 8px,
+      transparent 18px
+    ),
+
+    #d991aa;
+
+  border-top:
+    2px solid
+    rgba(145,68,95,.15);
+
+  z-index:5;
+
+  pointer-events:none;
 }
+
+/* =========================
+   SCORE
+========================= */
 
 .game-score{
-    display:flex;
-    justify-content:space-between;
 
-    margin:12px 4px;
+  display:flex;
 
-    color:var(--deep);
+  justify-content:center;
 
-    font-weight:bold;
+  gap:10px;
+
+  flex-wrap:wrap;
+
+  margin:14px 0;
 }
 
+.game-score span{
+
+  background:var(--pink);
+
+  color:var(--deep);
+
+  padding:8px 15px;
+
+  border-radius:999px;
+
+  font-weight:700;
+
+  box-shadow:
+    0 4px 12px
+    var(--shadow);
+}
+
+/* =========================
+   CONTROLS
+========================= */
+
 .game-controls{
-    display:flex;
-    justify-content:center;
-    gap:10px;
-    margin-top:12px;
+
+  display:flex;
+
+  justify-content:center;
+
+  gap:10px;
+
+  flex-wrap:wrap;
 }
 
 .game-control{
-    min-width:130px;
 
-    padding:13px 18px;
+  border:0;
 
-    border:none;
+  border-radius:999px;
 
-    border-radius:25px;
+  padding:12px 20px;
 
-    background:var(--rose);
+  background:var(--rose);
 
-    color:white;
+  color:white;
 
-    font-family:inherit;
-    font-size:16px;
+  font-weight:700;
 
-    cursor:pointer;
+  box-shadow:
+    0 6px 16px
+    rgba(145,68,95,.2);
 
-    touch-action:manipulation;
+  transition:.2s;
+
+  touch-action:manipulation;
 }
+
+.game-control:hover{
+  transform:translateY(-2px);
+}
+
+.game-control:active{
+  transform:scale(.96);
+}
+
+/* =========================
+   GAME MESSAGE
+========================= */
 
 .game-message{
-    min-height:25px;
-    text-align:center;
-    color:var(--muted);
-    margin-top:10px;
+
+  text-align:center;
+
+  margin-top:14px;
+
+  min-height:25px;
+
+  color:var(--muted);
+
+  font-weight:600;
 }
 
+/* =========================
+   POPUP
+========================= */
 
-/* =========================================================
-   LOADING
-   ========================================================= */
+.game-popup{
 
-.loading{
-    padding:35px 10px;
-    text-align:center;
-    color:#98737d;
-    font-size:18px;
+  position:absolute;
+
+  left:50%;
+  top:45%;
+
+  transform:
+    translate(-50%,-50%)
+    scale(.7);
+
+  opacity:0;
+
+  pointer-events:none;
+
+  z-index:30;
+
+  background:
+    rgba(255,253,251,.96);
+
+  color:var(--deep);
+
+  padding:13px 20px;
+
+  border-radius:999px;
+
+  font-weight:800;
+
+  box-shadow:
+    0 10px 30px
+    rgba(90,45,65,.22);
+
+  white-space:nowrap;
 }
 
-.loading-bears{
-    font-size:38px;
-    letter-spacing:7px;
+.game-popup.show{
 
-    animation:
-        loadingBears
-        1.3s ease-in-out
-        infinite;
+  animation:
+    popupMessage 1s
+    ease forwards;
 }
 
-@keyframes loadingBears{
+@keyframes popupMessage{
 
-    0%,100%{
-        transform:translateY(0);
-    }
+  0%{
 
-    50%{
-        transform:translateY(-8px);
-    }
-}
-
-.empty{
-    padding:35px 15px;
-    text-align:center;
-    color:#98737d;
-    line-height:1.7;
-}
-
-.empty-bear{
-    font-size:50px;
-
-    animation:
-        teddyFloat
-        2.5s ease-in-out
-        infinite;
-}
-
-
-/* =========================================================
-   STICKER
-   ========================================================= */
-
-.sticker{
-    position:fixed;
-
-    right:14px;
-    bottom:14px;
-
-    z-index:20;
-
-    width:72px;
-    height:72px;
-
-    border-radius:50%;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    background:
-        rgba(255,255,255,.92);
-
-    border:3px solid white;
-
-    box-shadow:
-        0 8px 25px
-        rgba(90,40,60,.18);
-
-    animation:
-        stickerFloat
-        3s ease-in-out
-        infinite;
-
-    pointer-events:none;
-}
-
-.sticker::before{
-    content:"🧸";
-    font-size:40px;
-}
-
-.sticker::after{
-    content:"💕";
-
-    position:absolute;
-
-    top:-12px;
-    right:-5px;
-
-    font-size:20px;
-
-    animation:
-        heartbeat
-        1.5s
-        infinite;
-}
-
-@keyframes stickerFloat{
-
-    0%,100%{
-        transform:
-            translateY(0)
-            rotate(-4deg);
-    }
-
-    50%{
-        transform:
-            translateY(-8px)
-            rotate(4deg);
-    }
-}
-
-
-/* =========================================================
-   BIRTHDAY CELEBRATION
-   ========================================================= */
-
-#birthdayCelebration{
-    display:none;
-
-    position:fixed;
-
-    inset:0;
-
-    z-index:9999;
-
-    pointer-events:none;
-
-    overflow:hidden;
-
-    background:
-        rgba(255,232,241,.35);
-}
-
-#birthdayCelebration.active{
-    display:block;
-}
-
-.birthday-message{
-    position:absolute;
-
-    top:13%;
-    left:50%;
+    opacity:0;
 
     transform:
-        translateX(-50%)
-        scale(.5);
+      translate(-50%,-50%)
+      scale(.7);
+  }
 
-    width:94%;
+  20%{
 
-    text-align:center;
-
-    color:var(--deep);
-
-    font-size:
-        clamp(36px,10vw,82px);
-
-    font-weight:bold;
-
-    text-shadow:
-        0 5px 20px
-        rgba(145,68,95,.25);
-
-    animation:
-        birthdayMessage
-        1s
-        ease-out
-        forwards,
-        birthdayGlow
-        1.2s
-        ease-in-out
-        infinite
-        alternate;
-}
-
-@keyframes birthdayMessage{
-
-    0%{
-        opacity:0;
-        transform:
-            translateX(-50%)
-            scale(.3)
-            rotate(-8deg);
-    }
-
-    70%{
-        transform:
-            translateX(-50%)
-            scale(1.15)
-            rotate(4deg);
-    }
-
-    100%{
-        opacity:1;
-        transform:
-            translateX(-50%)
-            scale(1)
-            rotate(0);
-    }
-}
-
-@keyframes birthdayGlow{
-
-    from{
-        text-shadow:
-            0 5px 20px
-            rgba(145,68,95,.25);
-    }
-
-    to{
-        text-shadow:
-            0 5px 35px
-            rgba(192,95,130,.75);
-    }
-}
-
-
-/* CAKE */
-
-.cake-wrap{
-    position:absolute;
-
-    left:50%;
-    top:47%;
+    opacity:1;
 
     transform:
-        translate(-50%,-50%)
-        scale(.5);
+      translate(-50%,-50%)
+      scale(1.08);
+  }
 
-    animation:
-        cakeAppear
-        1.2s
-        .2s
-        ease-out
-        forwards;
+  70%{
+
+    opacity:1;
+
+    transform:
+      translate(-50%,-50%)
+      scale(1);
+  }
+
+  100%{
+
+    opacity:0;
+
+    transform:
+      translate(-50%,-75%)
+      scale(.95);
+  }
+
 }
 
-@keyframes cakeAppear{
+/* =========================
+   GAME OVER
+========================= */
 
-    0%{
-        opacity:0;
-        transform:
-            translate(-50%,-50%)
-            scale(.2)
-            rotate(-8deg);
-    }
+.game-over{
 
-    70%{
-        transform:
-            translate(-50%,-50%)
-            scale(1.1)
-            rotate(4deg);
-    }
+  position:absolute;
 
-    100%{
-        opacity:1;
-        transform:
-            translate(-50%,-50%)
-            scale(1)
-            rotate(0);
-    }
+  inset:0;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  flex-direction:column;
+
+  background:
+    rgba(89,60,69,.28);
+
+  backdrop-filter:
+    blur(3px);
+
+  z-index:25;
+
+  opacity:0;
+
+  pointer-events:none;
+
+  transition:.25s;
+}
+
+.game-over.show{
+
+  opacity:1;
+
+  pointer-events:auto;
+}
+
+.game-over-box{
+
+  background:
+    rgba(255,253,251,.97);
+
+  padding:22px;
+
+  border-radius:22px;
+
+  text-align:center;
+
+  box-shadow:
+    0 12px 35px
+    rgba(90,45,65,.25);
+
+  max-width:90%;
+}
+
+.game-over-box h3{
+
+  margin:
+    0 0 8px;
+
+  color:var(--deep);
+}
+
+.game-over-box p{
+
+  margin:
+    5px 0 15px;
+
+  color:var(--muted);
+}
+
+/* =========================
+   BIRTHDAY
+========================= */
+
+#birthdayOverlay{
+
+  position:fixed;
+
+  inset:0;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255,255,255,.95),
+      rgba(255,225,235,.96)
+    );
+
+  z-index:99999;
+
+  opacity:0;
+
+  visibility:hidden;
+
+  transition:.4s;
+}
+
+#birthdayOverlay.show{
+
+  opacity:1;
+
+  visibility:visible;
+}
+
+.birthday-box{
+
+  position:relative;
+
+  width:min(560px,90%);
+
+  text-align:center;
+
+  background:
+    rgba(255,253,251,.97);
+
+  border-radius:30px;
+
+  padding:32px 20px;
+
+  box-shadow:
+    0 20px 70px
+    rgba(90,45,65,.25);
+
+  animation:
+    birthdayBox .8s ease;
+}
+
+@keyframes birthdayBox{
+
+  from{
+
+    transform:
+      scale(.5)
+      rotate(-5deg);
+
+    opacity:0;
+  }
+
+  to{
+
+    transform:
+      scale(1)
+      rotate(0);
+
+    opacity:1;
+  }
+
+}
+
+.birthday-title{
+
+  color:var(--deep);
+
+  font-size:
+    clamp(34px,8vw,58px);
+
+  margin:0;
+
+  animation:
+    birthdayText 1s
+    infinite alternate;
+}
+
+@keyframes birthdayText{
+
+  from{
+    transform:scale(1);
+  }
+
+  to{
+    transform:scale(1.04);
+  }
+
+}
+
+.birthday-subtitle{
+
+  color:var(--muted);
+
+  line-height:1.6;
 }
 
 .cake{
-    position:relative;
 
-    width:220px;
-    height:150px;
+  font-size:100px;
+
+  margin:15px 0;
+
+  animation:
+    cakeBounce 1s
+    ease-in-out infinite alternate;
 }
 
-.cake-top{
-    position:absolute;
+@keyframes cakeBounce{
 
-    left:10px;
-    top:40px;
+  from{
+    transform:translateY(0);
+  }
 
-    width:200px;
-    height:45px;
+  to{
+    transform:translateY(-8px);
+  }
 
-    border-radius:
-        50% 50% 18px 18px;
-
-    background:
-        linear-gradient(
-            #fff4f7,
-            #ffd2df
-        );
-
-    border:
-        2px solid
-        #e8a0b7;
-
-    z-index:3;
 }
 
-.cake-middle{
-    position:absolute;
+.close-birthday{
 
-    left:10px;
-    top:65px;
+  border:0;
 
-    width:200px;
-    height:55px;
+  background:var(--rose);
 
-    border-radius:
-        10px 10px 18px 18px;
+  color:white;
 
-    background:
-        linear-gradient(
-            #e9a0b6,
-            #d87898
-        );
+  padding:12px 24px;
 
-    border:
-        2px solid
-        #c76687;
-}
+  border-radius:999px;
 
-.cake-bottom{
-    position:absolute;
-
-    left:0;
-    top:103px;
-
-    width:220px;
-    height:47px;
-
-    border-radius:
-        8px 8px 20px 20px;
-
-    background:
-        linear-gradient(
-            #f3b2c5,
-            #d97b99
-        );
-
-    border:
-        2px solid
-        #c76687;
-}
-
-.icing{
-    position:absolute;
-
-    left:18px;
-    top:55px;
-
-    width:184px;
-    height:30px;
-
-    z-index:5;
-
-    border-radius:
-        0 0 20px 20px;
-
-    background:#fff8fa;
-}
-
-.icing::before{
-    content:"";
-
-    position:absolute;
-
-    left:18px;
-    top:16px;
-
-    width:18px;
-    height:20px;
-
-    border-radius:50%;
-
-    background:#fff8fa;
-
-    box-shadow:
-        35px 3px 0 #fff8fa,
-        72px -2px 0 #fff8fa,
-        110px 4px 0 #fff8fa,
-        145px -1px 0 #fff8fa;
-}
-
-.candle{
-    position:absolute;
-
-    top:4px;
-
-    width:14px;
-    height:43px;
-
-    border-radius:5px;
-
-    background:
-        repeating-linear-gradient(
-            45deg,
-            #f5a8c0 0,
-            #f5a8c0 5px,
-            #fff6f9 5px,
-            #fff6f9 10px
-        );
-
-    z-index:8;
-}
-
-.candle1{left:62px;}
-.candle2{left:103px;}
-.candle3{left:144px;}
-
-.flame{
-    position:absolute;
-
-    left:50%;
-
-    top:-23px;
-
-    transform:
-        translateX(-50%);
-
-    width:14px;
-    height:21px;
-
-    border-radius:
-        50% 50% 50% 50%;
-
-    background:
-        radial-gradient(
-            circle at 50% 70%,
-            #fff6a0 0 25%,
-            #ffad4d 35%,
-            #f36d70 70%
-        );
-
-    animation:
-        flame
-        .45s
-        ease-in-out
-        infinite
-        alternate;
-}
-
-@keyframes flame{
-
-    from{
-        transform:
-            translateX(-50%)
-            scale(.9)
-            rotate(-4deg);
-    }
-
-    to{
-        transform:
-            translateX(-50%)
-            scale(1.12)
-            rotate(4deg);
-    }
+  font-weight:800;
 }
 
 .birthday-particle{
-    position:absolute;
 
-    top:-40px;
+  position:fixed;
 
-    font-size:
-        clamp(22px,5vw,38px);
+  pointer-events:none;
 
-    animation:
-        birthdayFall
-        4s
-        linear
-        forwards;
+  z-index:100000;
+
+  font-size:25px;
+
+  animation:
+    birthdayParticle 3s
+    ease-out forwards;
 }
 
-@keyframes birthdayFall{
+@keyframes birthdayParticle{
 
-    0%{
-        transform:
-            translateY(-50px)
-            rotate(0)
-            scale(.7);
+  0%{
 
-        opacity:0;
-    }
+    transform:
+      translateY(0)
+      scale(.5)
+      rotate(0);
 
-    10%{
-        opacity:1;
-    }
+    opacity:0;
+  }
 
-    100%{
-        transform:
-            translateY(110vh)
-            rotate(540deg)
-            scale(1.2);
+  15%{
+    opacity:1;
+  }
 
-        opacity:0;
-    }
+  100%{
+
+    transform:
+      translateY(-100vh)
+      scale(1.4)
+      rotate(360deg);
+
+    opacity:0;
+  }
+
 }
 
-
-/* =========================================================
-   CELEBRATION
-   ========================================================= */
-
-.celebration{
-    position:fixed;
-
-    z-index:100;
-
-    pointer-events:none;
-
-    font-size:25px;
-
-    animation:
-        celebrate
-        1.6s
-        ease-out
-        forwards;
-}
-
-@keyframes celebrate{
-
-    0%{
-        transform:
-            translate(0,0)
-            scale(.3);
-
-        opacity:0;
-    }
-
-    20%{
-        opacity:1;
-    }
-
-    100%{
-        transform:
-            translate(var(--x),var(--y))
-            scale(1.2)
-            rotate(25deg);
-
-        opacity:0;
-    }
-}
-
-
-/* =========================================================
+/* =========================
    FOOTER
-   ========================================================= */
+========================= */
 
 footer{
-    margin-top:55px;
-    padding-bottom:20px;
 
-    text-align:center;
+  text-align:center;
 
-    color:#86636d;
+  padding:
+    25px 18px 45px;
 
-    font-size:16px;
+  color:var(--muted);
 }
 
-.footer-bears{
-    font-size:35px;
-    margin-bottom:8px;
-
-    animation:
-        teddyFloat
-        2.5s
-        ease-in-out
-        infinite;
+footer span{
+  color:var(--rose);
 }
 
-
-/* =========================================================
+/* =========================
    MOBILE
-   ========================================================= */
+========================= */
 
 @media(max-width:600px){
 
-    .container{
-        width:94%;
-        padding-top:12px;
-    }
+  .nav{
+    align-items:flex-start;
+  }
 
-    .card,
-    .music{
-        padding:24px 19px;
-        border-radius:24px;
-    }
+  .logo{
+    font-size:16px;
+  }
 
-    h1{
-        font-size:43px;
-    }
+  .nav-buttons button{
 
-    .subtitle{
-        font-size:18px;
-    }
+    font-size:11px;
 
-    .teddies{
-        transform:scale(.82);
-        margin-bottom:-8px;
-    }
+    padding:
+      7px 9px;
+  }
 
-    .timer-card{
-        padding:23px 12px;
-    }
+  .hero{
 
-    .timer-grid{
-        gap:5px;
-    }
+    min-height:65vh;
 
-    .timer-box{
-        padding:12px 2px;
-    }
+    padding-top:35px;
+  }
 
-    .timer-number{
-        font-size:20px;
-    }
+  .hero-card{
 
-    .timer-label{
-        font-size:8px;
-    }
+    padding:
+      30px 18px;
+  }
 
-    .diary-top{
-        flex-direction:column;
-        align-items:flex-start;
-    }
+  .teddy{
+    font-size:65px;
+  }
 
-    .logout{
-        align-self:flex-end;
-    }
+  .card{
 
-    .sticker{
-        width:60px;
-        height:60px;
+    padding:
+      19px 15px;
+  }
 
-        right:8px;
-        bottom:8px;
-    }
+  .runner{
 
-    .sticker::before{
-        font-size:32px;
-    }
+    height:225px;
 
-    .runner{
-        height:210px;
-    }
+    border-radius:20px;
+  }
 
-    .player{
-        left:30px;
-    }
+  .player{
 
-    .game-control{
-        width:100%;
-        min-width:0;
-    }
+    left:30px;
 
-    .game-controls{
-        gap:8px;
-    }
+    bottom:43px;
+  }
 
-    .cake{
-        transform:scale(.82);
-    }
+  .game-control{
+
+    padding:
+      11px 17px;
+  }
+
 }
 
-@media(prefers-reduced-motion:reduce){
+/* =========================
+   LOADING
+========================= */
 
-    *,
-    *::before,
-    *::after{
+.loading{
 
-        animation-duration:.001ms !important;
+  text-align:center;
 
-        animation-iteration-count:1 !important;
+  color:var(--muted);
 
-        scroll-behavior:auto !important;
-    }
+  padding:20px;
+}
+
+.empty{
+
+  text-align:center;
+
+  color:var(--muted);
+
+  padding:20px;
 }
 
 </style>
 </head>
 
-
 <body>
 
-
-<!-- =======================================================
-     DECORATIONS
-     ======================================================= -->
-
-<div class="decorations">
-
-    <div class="float">💕</div>
-    <div class="float">💗</div>
-    <div class="float">💖</div>
-    <div class="float">❤️</div>
-    <div class="float">✨</div>
-
-    <div class="sparkle s1">✦</div>
-    <div class="sparkle s2">✧</div>
-    <div class="sparkle s3">✦</div>
-    <div class="sparkle s4">✧</div>
-
-</div>
-
-
-<!-- =======================================================
-     BIRTHDAY CELEBRATION OVERLAY
-     ======================================================= -->
-
-<div id="birthdayCelebration">
-
-    <div
-        id="birthdayMessage"
-        class="birthday-message">
-
-        🎉 HAPPY BIRTHDAY 🎉
-
-    </div>
-
-
-    <div class="cake-wrap">
-
-        <div class="cake">
-
-            <div class="candle candle1">
-                <div class="flame"></div>
-            </div>
-
-            <div class="candle candle2">
-                <div class="flame"></div>
-            </div>
-
-            <div class="candle candle3">
-                <div class="flame"></div>
-            </div>
-
-            <div class="cake-top"></div>
-
-            <div class="icing"></div>
-
-            <div class="cake-middle"></div>
-
-            <div class="cake-bottom"></div>
-
-        </div>
-
-    </div>
-
-</div>
-
-
-<!-- =======================================================
-     MAIN CONTAINER
-     ======================================================= -->
-
-<div class="container">
-
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
 
 <header>
 
+  <div class="nav">
 
-    <!-- TEDDIES -->
+    <div class="logo">
+      The Us Story ❤️
+    </div>
 
-    <div class="teddies">
+    <div class="nav-buttons">
 
+      <button onclick="scrollToSection('timers')">
+        ⏳ Timers
+      </button>
 
-        <div class="teddy">
+      <button onclick="scrollToSection('memories')">
+        📸 Memories
+      </button>
 
-            <div class="head">
+      <button onclick="scrollToSection('game')">
+        🎮 Game
+      </button>
 
-                <div class="ear left"></div>
-                <div class="ear right"></div>
-
-                <div class="eye left"></div>
-                <div class="eye right"></div>
-
-                <div class="cheek left"></div>
-                <div class="cheek right"></div>
-
-                <div class="muzzle">
-
-                    <div class="nose"></div>
-                    <div class="mouth"></div>
-
-                </div>
-
-            </div>
-
-
-            <div class="body">
-
-                <div class="belly"></div>
-
-            </div>
-
-
-            <div class="arm left"></div>
-            <div class="arm right"></div>
-
-            <div class="leg left"></div>
-            <div class="leg right"></div>
-
-            <div class="heart">
-                ❤️
-            </div>
-
-        </div>
-
-
-
-        <div class="teddy girl">
-
-            <div class="bow">
-                🎀
-            </div>
-
-            <div class="head">
-
-                <div class="ear left"></div>
-                <div class="ear right"></div>
-
-                <div class="eye left"></div>
-                <div class="eye right"></div>
-
-                <div class="cheek left"></div>
-                <div class="cheek right"></div>
-
-                <div class="muzzle">
-
-                    <div class="nose"></div>
-                    <div class="mouth"></div>
-
-                </div>
-
-            </div>
-
-
-            <div class="body">
-
-                <div class="belly"></div>
-
-            </div>
-
-
-            <div class="arm left"></div>
-            <div class="arm right"></div>
-
-            <div class="leg left"></div>
-            <div class="leg right"></div>
-
-            <div class="heart">
-                💗
-            </div>
-
-        </div>
-
+      <button onclick="scrollToSection('music')">
+        🎵 Music
+      </button>
 
     </div>
 
-
-    <div class="header-heart">
-        ❤️
-    </div>
-
-
-    <h1>
-        The Us Story
-    </h1>
-
-
-    <div class="divider">
-        <span>♡</span>
-    </div>
-
-
-    <p class="subtitle">
-
-        A tiny corner of the internet
-        <br>
-
-        that belongs only to our story. 🧸❤️
-
-    </p>
-
+  </div>
 
 </header>
 
 
+<!-- =========================================================
+     HERO
+========================================================= -->
 
-<!-- =======================================================
-     THREE TIMERS
-     ======================================================= -->
+<section class="hero">
 
-<div class="timer-section">
+  <div class="hero-card">
 
-
-    <h2 class="timer-heading">
-        💕 Our Little Timers 💕
-    </h2>
-
-
-    <!-- RELATIONSHIP TIMER -->
-
-    <div class="timer-card">
-
-        <div class="timer-icon">
-            ❤️
-        </div>
-
-        <div class="timer-title">
-            Together Since
-        </div>
-
-        <div class="timer-subtitle">
-            11 January 2022 · every second counts
-        </div>
-
-
-        <div class="timer-grid">
-
-            <div class="timer-box">
-
-                <div
-                    id="sinceDays"
-                    class="timer-number">
-
-                    0
-
-                </div>
-
-                <div class="timer-label">
-                    Days
-                </div>
-
-            </div>
-
-
-            <div class="timer-box">
-
-                <div
-                    id="sinceHours"
-                    class="timer-number">
-
-                    00
-
-                </div>
-
-                <div class="timer-label">
-                    Hours
-                </div>
-
-            </div>
-
-
-            <div class="timer-box">
-
-                <div
-                    id="sinceMinutes"
-                    class="timer-number">
-
-                    00
-
-                </div>
-
-                <div class="timer-label">
-                    Minutes
-                </div>
-
-            </div>
-
-
-            <div class="timer-box">
-
-                <div
-                    id="sinceSeconds"
-                    class="timer-number">
-
-                    00
-
-                </div>
-
-                <div class="timer-label">
-                    Seconds
-                </div>
-
-            </div>
-
-        </div>
-
+    <div class="teddy">
+      🧸
     </div>
 
-
-
-    <!-- HIS BIRTHDAY -->
-
-    <div
-        id="hisBirthdayCard"
-        class="timer-card birthday-card">
-
-        <div class="timer-icon">
-            🎂
-        </div>
-
-        <div class="timer-title">
-            His Birthday
-        </div>
-
-        <div class="timer-subtitle">
-            14 February · counting down to your day ❤️
-        </div>
-
-
-        <div class="timer-grid">
-
-            <div class="timer-box">
-
-                <div
-                    id="hisDays"
-                    class="timer-number">
-
-                    0
-
-                </div>
-
-                <div class="timer-label">
-                    Days
-                </div>
-
-            </div>
-
-
-            <div class="timer-box">
-
-                <div
-                    id="hisHours"
-                    class="timer-number">
-
-                    00
-
-                </div>
-
-                <div class="timer-label">
-                    Hours
-                </div>
-
-            </div>
-
-
-            <div class="timer-box">
-
-                <div
-                    id="hisMinutes"
-                    class="timer-number">
-
-                    00
-
-                </div>
-
-                <div class="timer-label">
-                    Minutes
-                </div>
-
-            </div>
-
-
-            <div class="timer-box">
-
-                <div
-                    id="hisSeconds"
-                    class="timer-number">
-
-                    00
-
-                </div>
-
-                <div class="timer-label">
-                    Seconds
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-
-    <!-- HER BIRTHDAY -->
-
-    <div
-        id="herBirthdayCard"
-        class="timer-card birthday-card">
-
-        <div class="timer-icon">
-            🎂
-        </div>
-
-        <div class="timer-title">
-            Her Birthday
-        </div>
-
-        <div class="timer-subtitle">
-            2 September · counting down to your day ❤️
-        </div>
-
-
-        <div class="timer-grid">
-
-            <div class="timer-box">
-
-                <div
-                    id="herDays"
-                    class="timer-number">
-
-                    0
-
-                </div>
-
-                <div class="timer-label">
-                    Days
-                </div>
-
-            </div>
-
-
-            <div class="timer-box">
-
-                <div
-                    id="herHours"
-                    class="timer-number">
-
-                    00
-
-                </div>
-
-                <div class="timer-label">
-                    Hours
-                </div>
-
-            </div>
-
-
-            <div class="timer-box">
-
-                <div
-                    id="herMinutes"
-                    class="timer-number">
-
-                    00
-
-                </div>
-
-                <div class="timer-label">
-                    Minutes
-                </div>
-
-            </div>
-
-
-            <div class="timer-box">
-
-                <div
-                    id="herSeconds"
-                    class="timer-number">
-
-                    00
-
-                </div>
-
-                <div class="timer-label">
-                    Seconds
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
-
-
-
-<!-- =======================================================
-     LOGIN
-     ======================================================= -->
-
-<div
-    id="login"
-    class="card">
-
-
-    <div class="login-title">
-        🔐 Our Private Diary
-    </div>
-
-
-    <div class="login-subtitle">
-
-        Just us, our memories,
-        and a little piece of forever. ❤️
-
-    </div>
-
-
-    <label for="email">
-        Email
-    </label>
-
-
-    <input
-        id="email"
-        type="email"
-        placeholder="Enter your email"
-        autocomplete="email"
-    >
-
-
-    <label for="password">
-        Password
-    </label>
-
-
-    <input
-        id="password"
-        type="password"
-        placeholder="Enter your password"
-        autocomplete="current-password"
-    >
-
+    <h1>
+      The Us Story ❤️
+    </h1>
+
+    <p>
+      A little corner for the memories,
+      moments, birthdays, and everything
+      worth remembering.
+    </p>
 
     <button
-        id="loginButton"
-        class="primary"
-        type="button">
+      class="primary"
+      onclick="scrollToSection('timers')">
 
-        Enter Our Diary ❤️
+      ✨ Start the Story
 
     </button>
 
+  </div>
+
+</section>
+
+
+<main>
+
+<!-- =========================================================
+     TIMERS
+========================================================= -->
+
+<section
+  id="timers"
+  class="card">
+
+  <h2>
+    ⏳ Three Little Timers
+  </h2>
+
+  <div class="timer-grid">
+
+    <div class="timer-card">
+
+      <div class="timer-icon">
+        ❤️
+      </div>
+
+      <div class="timer-title">
+        Together Since
+      </div>
+
+      <div
+        id="relationshipTimer"
+        class="timer-value">
+
+        Loading...
+
+      </div>
+
+      <div class="timer-small">
+        11 January 2022
+      </div>
+
+    </div>
+
+
+    <div class="timer-card">
+
+      <div class="timer-icon">
+        🎂
+      </div>
+
+      <div class="timer-title">
+        His Birthday
+      </div>
+
+      <div
+        id="hisBirthdayTimer"
+        class="timer-value">
+
+        Loading...
+
+      </div>
+
+      <div class="timer-small">
+        14 February
+      </div>
+
+    </div>
+
+
+    <div class="timer-card">
+
+      <div class="timer-icon">
+        🎂
+      </div>
+
+      <div class="timer-title">
+        Her Birthday
+      </div>
+
+      <div
+        id="herBirthdayTimer"
+        class="timer-value">
+
+        Loading...
+
+      </div>
+
+      <div class="timer-small">
+        2 September
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     LOGIN
+========================================================= -->
+
+<section
+  id="loginSection"
+  class="card">
+
+  <h2>
+    🔐 Private Memory Wall
+  </h2>
+
+  <p
+    style="
+      text-align:center;
+      color:var(--muted)
+    ">
+
+    Login to save and view private memories.
+
+  </p>
+
+  <div class="form">
+
+    <input
+      id="email"
+      type="email"
+      placeholder="Email">
+
+    <input
+      id="password"
+      type="password"
+      placeholder="Password">
+
+    <button
+      id="loginButton"
+      class="primary"
+      type="button">
+
+      🔐 Login
+
+    </button>
+
+    <button
+      id="logoutButton"
+      class="secondary hidden"
+      type="button">
+
+      Logout
+
+    </button>
+
+  </div>
+
+  <div
+    id="authStatus"
+    class="auth-status">
+
+    Not logged in.
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     MEMORIES
+========================================================= -->
+
+<section
+  id="memories"
+  class="card hidden">
+
+  <h2>
+    📸 Memory Wall
+  </h2>
+
+  <p style="color:var(--muted)">
+    Save little moments here.
+  </p>
+
+  <div class="memory-form">
+
+    <input
+      id="memoryTitle"
+      type="text"
+      placeholder="Memory title">
+
+    <input
+      id="memoryDate"
+      type="date">
+
+    <textarea
+      id="memoryMessage"
+      placeholder="Write something about this memory..."></textarea>
+
+    <input
+      id="memoryImage"
+      type="file"
+      accept="image/*">
+
+    <button
+      id="saveMemory"
+      class="primary"
+      type="button">
+
+      💾 Save Memory
+
+    </button>
+
+  </div>
+
+  <div
+    id="memoryStatus"
+    class="auth-status">
+  </div>
+
+  <div
+    id="memoryGrid"
+    class="memory-grid">
+
+    <div class="loading">
+      Loading memories...
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     LOVE RUN GAME
+========================================================= -->
+
+<section
+  id="game"
+  class="card">
+
+  <h2>
+    🎮 Love Run
+  </h2>
+
+  <p class="game-intro">
+
+    Help the little teddy keep running
+    through the story. 🧸
+
+    Jump over flowers,
+    collect hearts,
+    and beat the best score. ❤️
+
+  </p>
+
+
+  <div
+    class="runner"
+    id="runner">
+
+    <div class="runner-cloud cloud1">
+      ☁️
+    </div>
+
+    <div class="runner-cloud cloud2">
+      ☁️
+    </div>
+
 
     <div
-        id="loginStatus"
-        class="status">
+      id="player"
+      class="player">
+
+      🧸
 
     </div>
 
-
-</div>
-
-
-
-<!-- =======================================================
-     DIARY
-     ======================================================= -->
-
-<div id="diary">
-
-
-    <div class="diary-top">
-
-
-        <div
-            id="welcome"
-            class="welcome">
-
-            Welcome back ❤️
-
-        </div>
-
-
-        <button
-            id="logout"
-            class="logout"
-            type="button">
-
-            Logout
-
-        </button>
-
-
-    </div>
-
-
-
-    <!-- MUSIC -->
 
     <div
-        id="music"
-        class="music">
+      id="obstacle"
+      class="obstacle">
+
+      🌷
+
+    </div>
 
 
-        <div class="music-icon">
-            🎵
-        </div>
+    <div
+      id="collectible"
+      class="collectible">
+
+      ❤️
+
+    </div>
 
 
-        <div class="music-title">
-            Our Song ❤️
-        </div>
+    <div
+      id="gamePopup"
+      class="game-popup">
+    </div>
 
 
-        <div class="music-subtitle">
+    <div
+      id="gameOver"
+      class="game-over">
 
-            A little soundtrack
-            for our little world...
+      <div class="game-over-box">
 
-        </div>
+        <h3 id="gameOverTitle">
+          Game Over 💕
+        </h3>
 
-
-        <audio
-            id="song"
-            preload="metadata"
-            controls
-            playsinline>
-
-            <source
-                src="./vidssave.com%20Osho%20Jain%20_%20Tu%20Aisa%20Kaise%20Hai_%20_%20%23OshoJain%20720P.mp3"
-                type="audio/mpeg">
-
-            Your browser does not support audio.
-
-        </audio>
-
+        <p id="gameOverText">
+          The teddy bumped into a flower.
+        </p>
 
         <button
-            id="musicButton"
-            class="primary"
-            type="button">
+          id="gameRestartInside"
+          class="game-control"
+          type="button">
 
-            ▶ Play Our Song
+          🔄 Play Again
 
         </button>
 
-
-        <div
-            id="musicStatus"
-            class="music-status">
-
-            Our song ❤️
-
-        </div>
-
+      </div>
 
     </div>
 
 
+    <div class="game-ground"></div>
 
-    <!-- TO US -->
-
-    <div class="card">
-
-
-        <h2>
-            🌷 To Us
-        </h2>
+  </div>
 
 
-        <p>
+  <div class="game-score">
 
-            Some moments are too beautiful
-            to disappear into a phone gallery.
+    <span>
+      Score:
+      <span id="score">0</span>
+    </span>
 
-            <br><br>
+    <span>
+      ❤️ Hearts:
+      <span id="heartScore">0</span>
+    </span>
 
-            So this little place exists for us —
-            for the photos, the silly moments,
-            the milestones, the conversations,
-            and all those tiny things that somehow
-            became huge parts of our story.
+    <span>
+      Best:
+      <span id="best">0</span>
+    </span>
 
-            <br><br>
-
-            One day we'll look back at this place
-            and realize just how much life we lived
-            together. ❤️
-
-        </p>
+  </div>
 
 
+  <div class="game-controls">
+
+    <button
+      id="startGame"
+      class="game-control"
+      type="button">
+
+      🧸 Start
+
+    </button>
+
+    <button
+      id="jumpButton"
+      class="game-control"
+      type="button">
+
+      ☝️ Jump
+
+    </button>
+
+  </div>
+
+
+  <div
+    id="gameMessage"
+    class="game-message">
+
+    Tap Start to begin.
+    Then tap the screen or Jump to jump! ❤️
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     MUSIC
+========================================================= -->
+
+<section
+  id="music"
+  class="card music-box">
+
+  <h2>
+    🎵 Our Music
+  </h2>
+
+  <p style="color:var(--muted)">
+    Press play to start the music.
+  </p>
+
+  <audio
+    id="musicPlayer"
+    controls
+    preload="metadata">
+
+    <source
+      src="./vidssave.com%20Osho%20Jain%20_%20Tu%20Aisa%20Kaise%20Hai_%20_%20%23OshoJain%20720P.mp3"
+      type="audio/mpeg">
+
+    Your browser does not support audio.
+
+  </audio>
+
+</section>
+
+</main>
+
+
+<!-- =========================================================
+     BIRTHDAY OVERLAY
+========================================================= -->
+
+<div
+  id="birthdayOverlay">
+
+  <div class="birthday-box">
+
+    <h1
+      id="birthdayTitle"
+      class="birthday-title">
+
+      🎉 HAPPY BIRTHDAY! 🎉
+
+    </h1>
+
+    <div class="cake">
+      🎂
     </div>
 
+    <p
+      id="birthdaySubtitle"
+      class="birthday-subtitle">
 
+      Wishing a beautiful birthday
+      filled with happiness, smiles,
+      and wonderful memories. ❤️
 
-    <!-- MEMORY FORM -->
+    </p>
 
-    <div class="card">
+    <button
+      id="closeBirthday"
+      class="close-birthday">
 
+      ❤️ Close
 
-        <h2>
-            ✨ Save A Little Moment
-        </h2>
+    </button>
 
-
-        <label for="title">
-            Memory title
-        </label>
-
-
-        <input
-            id="title"
-            type="text"
-            placeholder="Our first date..."
-        >
-
-
-        <label for="date">
-            Date
-        </label>
-
-
-        <input
-            id="date"
-            type="date"
-        >
-
-
-        <label for="message">
-            What happened?
-        </label>
-
-
-        <textarea
-            id="message"
-            placeholder="Write everything you want us to remember..."
-        ></textarea>
-
-
-        <label for="photo">
-            Add a photo 📷
-        </label>
-
-
-        <input
-            id="photo"
-            type="file"
-            accept="image/*"
-        >
-
-
-        <button
-            id="save"
-            class="primary"
-            type="button">
-
-            🧸 Save This Little Moment ♡
-
-        </button>
-
-
-        <div
-            id="status"
-            class="status">
-
-        </div>
-
-
-    </div>
-
-
-
-    <!-- MEMORY WALL -->
-
-    <div class="card">
-
-
-        <h2>
-            📖 Our Memory Wall
-        </h2>
-
-
-        <p
-            style="
-                color:#80616a;
-                margin-top:-5px;
-                margin-bottom:25px;
-            ">
-
-            Little pieces of us,
-            kept safe in one place. ♡
-
-        </p>
-
-
-        <div id="memories">
-
-
-            <div class="loading">
-
-                <div class="loading-bears">
-                    🧸 💕 🧸
-                </div>
-
-                <br>
-
-                Bringing our memories...
-
-            </div>
-
-
-        </div>
-
-
-    </div>
-
-
-
-    <!-- GAME -->
-
-    <div class="card">
-
-
-        <h2>
-            💌 Missing Me? Let's Look Back Together
-        </h2>
-
-
-        <p class="game-intro">
-
-            Feeling a little lonely?
-
-            Come play our tiny endless-runner.
-            Jump over the little obstacles and see
-            how long you can keep our story going. 🧸❤️
-
-        </p>
-
-
-        <div
-            class="runner"
-            id="runner">
-
-
-            <div class="runner-cloud cloud1">
-                ☁️
-            </div>
-
-
-            <div class="runner-cloud cloud2">
-                ☁️
-            </div>
-
-
-            <div
-                id="player"
-                class="player">
-
-                🧸
-
-            </div>
-
-
-            <div
-                id="obstacle"
-                class="obstacle">
-
-                🌷
-
-            </div>
-
-
-            <div class="game-ground"></div>
-
-
-        </div>
-
-
-        <div class="game-score">
-
-
-            <span>
-
-                Score:
-                <span id="score">0</span>
-
-            </span>
-
-
-            <span>
-
-                Best:
-                <span id="best">0</span>
-
-            </span>
-
-
-        </div>
-
-
-        <div class="game-controls">
-
-
-            <button
-                id="startGame"
-                class="game-control">
-
-                🧸 Start
-
-            </button>
-
-
-            <button
-                id="jumpButton"
-                class="game-control">
-
-                ☝️ Jump
-
-            </button>
-
-
-        </div>
-
-
-        <div
-            id="gameMessage"
-            class="game-message">
-
-            Tap Start, then tap Jump whenever
-            you need to. ❤️
-
-        </div>
-
-
-    </div>
-
+  </div>
 
 </div>
-
-
-
-<div class="sticker"></div>
-
 
 
 <footer>
 
-
-    <div class="footer-bears">
-        🧸 ♡ 🧸
-    </div>
-
-
-    The Us Story.
-
-    <br>
-
-    A thousand little moments.
-
-    <br>
-
-    One beautiful story. ❤️
-
+  Made with <span>❤️</span>
+  • The Us Story
 
 </footer>
-
-
-</div>
-
 
 
 <script>
 
 /* =========================================================
    SUPABASE
-   ========================================================= */
+========================================================= */
 
 const SUPABASE_URL =
-    "https://rxtiefedshmfbfejtetk.supabase.co";
+  "https://rxtiefedshmfbfejtetk.supabase.co";
 
 const SUPABASE_KEY =
-    "sb_publishable_S59gIZua305x2r3BZ1BYKQ_Us1zmr3f";
+  "sb_publishable_S59gIZua305x2r3BZ1BYKQ_Us1zmr3f";
 
 const TABLE =
-    "memories";
-
+  "memories";
 
 const supabaseClient =
-    window.supabase.createClient(
-        SUPABASE_URL,
-        SUPABASE_KEY
-    );
+  window.supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_KEY
+  );
 
 
 /* =========================================================
-   DATE HELPERS
-   ========================================================= */
+   GENERAL
+========================================================= */
 
-function pad(number){
+function scrollToSection(id){
 
-    return String(number)
-        .padStart(2,"0");
+  const element =
+    document.getElementById(id);
+
+  if(element){
+
+    element.scrollIntoView({
+      behavior:"smooth",
+      block:"start"
+    });
+
+  }
 
 }
 
 
 /* =========================================================
-   TIMER 1 — TOGETHER SINCE
-   ========================================================= */
+   TIMERS
+========================================================= */
 
 const relationshipStart =
-    new Date("2022-01-11T00:00:00");
+  new Date(
+    "2022-01-11T00:00:00"
+  );
+
+
+function pad(number){
+
+  return String(number)
+    .padStart(2,"0");
+
+}
+
+
+function getTimeDifference(target){
+
+  const now =
+    new Date();
+
+  let difference =
+    target - now;
+
+  if(difference < 0){
+    difference = 0;
+  }
+
+  const totalSeconds =
+    Math.floor(
+      difference / 1000
+    );
+
+  const days =
+    Math.floor(
+      totalSeconds / 86400
+    );
+
+  const hours =
+    Math.floor(
+      (totalSeconds % 86400) / 3600
+    );
+
+  const minutes =
+    Math.floor(
+      (totalSeconds % 3600) / 60
+    );
+
+  const seconds =
+    totalSeconds % 60;
+
+  return {
+    days,
+    hours,
+    minutes,
+    seconds
+  };
+
+}
+
+
+function birthdayTarget(
+  month,
+  day
+){
+
+  const now =
+    new Date();
+
+  let year =
+    now.getFullYear();
+
+  let target =
+    new Date(
+      year,
+      month - 1,
+      day,
+      0,
+      0,
+      0
+    );
+
+  if(target <= now){
+
+    target =
+      new Date(
+        year + 1,
+        month - 1,
+        day,
+        0,
+        0,
+        0
+      );
+
+  }
+
+  return target;
+
+}
 
 
 function updateRelationshipTimer(){
 
-    const now =
-        new Date();
+  const now =
+    new Date();
 
+  let difference =
+    now - relationshipStart;
 
-    let difference =
-        now.getTime() -
-        relationshipStart.getTime();
+  if(difference < 0){
+    difference = 0;
+  }
 
+  const totalSeconds =
+    Math.floor(
+      difference / 1000
+    );
 
-    if(difference < 0){
+  const days =
+    Math.floor(
+      totalSeconds / 86400
+    );
 
-        difference = 0;
+  const hours =
+    Math.floor(
+      (totalSeconds % 86400) / 3600
+    );
 
-    }
+  const minutes =
+    Math.floor(
+      (totalSeconds % 3600) / 60
+    );
 
+  const seconds =
+    totalSeconds % 60;
 
-    const totalSeconds =
-        Math.floor(
-            difference / 1000
-        );
-
-
-    const days =
-        Math.floor(
-            totalSeconds / 86400
-        );
-
-
-    const hours =
-        Math.floor(
-            (totalSeconds % 86400) /
-            3600
-        );
-
-
-    const minutes =
-        Math.floor(
-            (totalSeconds % 3600) /
-            60
-        );
-
-
-    const seconds =
-        totalSeconds % 60;
-
-
-    document.getElementById(
-        "sinceDays"
-    ).textContent =
-        days.toLocaleString();
-
-
-    document.getElementById(
-        "sinceHours"
-    ).textContent =
-        pad(hours);
-
-
-    document.getElementById(
-        "sinceMinutes"
-    ).textContent =
-        pad(minutes);
-
-
-    document.getElementById(
-        "sinceSeconds"
-    ).textContent =
-        pad(seconds);
+  document.getElementById(
+    "relationshipTimer"
+  ).textContent =
+    days +
+    "d " +
+    pad(hours) +
+    "h " +
+    pad(minutes) +
+    "m " +
+    pad(seconds) +
+    "s";
 
 }
 
-
-/* =========================================================
-   BIRTHDAY DATE CALCULATOR
-   ========================================================= */
-
-function getNextBirthday(
-    month,
-    day
-){
-
-    const now =
-        new Date();
-
-
-    let year =
-        now.getFullYear();
-
-
-    let birthday =
-        new Date(
-            year,
-            month - 1,
-            day,
-            0,
-            0,
-            0
-        );
-
-
-    if(
-        birthday.getTime() <=
-        now.getTime()
-    ){
-
-        birthday =
-            new Date(
-                year + 1,
-                month - 1,
-                day,
-                0,
-                0,
-                0
-            );
-
-    }
-
-
-    return birthday;
-
-}
-
-
-/* =========================================================
-   BIRTHDAY COUNTDOWN
-   ========================================================= */
 
 function updateBirthdayTimer(
-    month,
-    day,
-    prefix,
-    cardId
+  elementId,
+  month,
+  day
 ){
 
-    const now =
-        new Date();
+  const target =
+    birthdayTarget(
+      month,
+      day
+    );
 
+  const time =
+    getTimeDifference(target);
 
-    const currentYearBirthday =
-        new Date(
-            now.getFullYear(),
-            month - 1,
-            day,
-            0,
-            0,
-            0
-        );
-
-
-    const isBirthdayToday =
-        now.getMonth() ===
-        month - 1
-        &&
-        now.getDate() ===
-        day;
-
-
-    const card =
-        document.getElementById(
-            cardId
-        );
-
-
-    if(isBirthdayToday){
-
-        card.classList.add(
-            "today"
-        );
-
-    }
-
-    else{
-
-        card.classList.remove(
-            "today"
-        );
-
-    }
-
-
-    let target;
-
-
-    if(isBirthdayToday){
-
-        target =
-            new Date(
-                now.getFullYear(),
-                month - 1,
-                day + 1,
-                0,
-                0,
-                0
-            );
-
-    }
-
-    else{
-
-        target =
-            getNextBirthday(
-                month,
-                day
-            );
-
-    }
-
-
-    let difference =
-        target.getTime() -
-        now.getTime();
-
-
-    if(difference < 0){
-
-        difference = 0;
-
-    }
-
-
-    const totalSeconds =
-        Math.floor(
-            difference / 1000
-        );
-
-
-    const days =
-        Math.floor(
-            totalSeconds / 86400
-        );
-
-
-    const hours =
-        Math.floor(
-            (totalSeconds % 86400) /
-            3600
-        );
-
-
-    const minutes =
-        Math.floor(
-            (totalSeconds % 3600) /
-            60
-        );
-
-
-    const seconds =
-        totalSeconds % 60;
-
-
-    document.getElementById(
-        prefix + "Days"
-    ).textContent =
-        days.toLocaleString();
-
-
-    document.getElementById(
-        prefix + "Hours"
-    ).textContent =
-        pad(hours);
-
-
-    document.getElementById(
-        prefix + "Minutes"
-    ).textContent =
-        pad(minutes);
-
-
-    document.getElementById(
-        prefix + "Seconds"
-    ).textContent =
-        pad(seconds);
-
-
-    return isBirthdayToday;
+  document.getElementById(
+    elementId
+  ).textContent =
+    time.days +
+    "d " +
+    pad(time.hours) +
+    "h " +
+    pad(time.minutes) +
+    "m " +
+    pad(time.seconds) +
+    "s";
 
 }
+
+
+function updateAllTimers(){
+
+  updateRelationshipTimer();
+
+  updateBirthdayTimer(
+    "hisBirthdayTimer",
+    2,
+    14
+  );
+
+  updateBirthdayTimer(
+    "herBirthdayTimer",
+    9,
+    2
+  );
+
+}
+
+updateAllTimers();
+
+setInterval(
+  updateAllTimers,
+  1000
+);
 
 
 /* =========================================================
    BIRTHDAY CELEBRATION
-   ========================================================= */
+========================================================= */
 
-let celebrationShown = false;
+const birthdayOverlay =
+  document.getElementById(
+    "birthdayOverlay"
+  );
+
+const birthdayTitle =
+  document.getElementById(
+    "birthdayTitle"
+  );
+
+const birthdaySubtitle =
+  document.getElementById(
+    "birthdaySubtitle"
+  );
+
+const closeBirthday =
+  document.getElementById(
+    "closeBirthday"
+  );
 
 
 function createBirthdayParticles(){
 
-    const symbols = [
-        "❤️",
-        "💕",
-        "💗",
-        "💖",
-        "✨",
-        "🎉",
-        "🎈",
-        "🎂",
-        "🌷",
-        "🧸"
-    ];
+  const symbols = [
+    "❤️",
+    "💕",
+    "💗",
+    "💖",
+    "✨",
+    "🎉",
+    "🎈",
+    "🎂",
+    "🌷",
+    "🧸"
+  ];
 
+  for(let i = 0; i < 70; i++){
 
-    for(
-        let i = 0;
-        i < 70;
-        i++
-    ){
+    const particle =
+      document.createElement("div");
 
-        const particle =
-            document.createElement(
-                "div"
-            );
+    particle.className =
+      "birthday-particle";
 
+    particle.textContent =
+      symbols[
+        Math.floor(
+          Math.random() *
+          symbols.length
+        )
+      ];
 
-        particle.className =
-            "birthday-particle";
+    particle.style.left =
+      Math.random() * 100 +
+      "vw";
 
+    particle.style.top =
+      (70 + Math.random() * 30) +
+      "vh";
 
-        particle.textContent =
-            symbols[
-                Math.floor(
-                    Math.random() *
-                    symbols.length
-                )
-            ];
+    particle.style.animationDelay =
+      Math.random() * 1.5 +
+      "s";
 
+    particle.style.fontSize =
+      (18 + Math.random() * 25) +
+      "px";
 
-        particle.style.left =
-            Math.random() * 100 +
-            "%";
-
-
-        particle.style.animationDelay =
-            Math.random() * 2.5 +
-            "s";
-
-
-        particle.style.animationDuration =
-            3 +
-            Math.random() * 3 +
-            "s";
-
-
-        document
-            .getElementById(
-                "birthdayCelebration"
-            )
-            .appendChild(
-                particle
-            );
-
-
-        setTimeout(
-            function(){
-
-                particle.remove();
-
-            },
-            7000
-        );
-
-    }
-
-}
-
-
-function birthdayCelebration(
-    person
-){
-
-    const overlay =
-        document.getElementById(
-            "birthdayCelebration"
-        );
-
-
-    const message =
-        document.getElementById(
-            "birthdayMessage"
-        );
-
-
-    if(person === "his"){
-
-        message.textContent =
-            "🎉 HAPPY BIRTHDAY 🎉";
-
-    }
-
-    else{
-
-        message.textContent =
-            "🎉 HAPPY BIRTHDAY 🎉";
-
-    }
-
-
-    overlay.classList.add(
-        "active"
+    document.body.appendChild(
+      particle
     );
-
-
-    createBirthdayParticles();
-
 
     setTimeout(
-        function(){
-
-            overlay.classList.remove(
-                "active"
-            );
-
-            const particles =
-                overlay.querySelectorAll(
-                    ".birthday-particle"
-                );
-
-
-            particles.forEach(
-                function(item){
-
-                    item.remove();
-
-                }
-            );
-
-        },
-        15000
+      () => particle.remove(),
+      4500
     );
+
+  }
 
 }
 
 
-/* =========================================================
-   CHECK BIRTHDAYS
-   ========================================================= */
+function isBirthdayToday(
+  month,
+  day
+){
 
-function checkBirthdays(){
+  const now =
+    new Date();
 
-    const now =
-        new Date();
-
-
-    const today =
-        now.getMonth() + 1 +
-        "-" +
-        now.getDate();
-
-
-    const hisBirthday =
-        today ===
-        "2-14";
-
-
-    const herBirthday =
-        today ===
-        "9-2";
-
-
-    const birthdayKey =
-        now.getFullYear() +
-        "-" +
-        today;
-
-
-    const alreadyShown =
-        localStorage.getItem(
-            "birthdayShown"
-        );
-
-
-    if(
-        hisBirthday &&
-        alreadyShown !== birthdayKey
-    ){
-
-        localStorage.setItem(
-            "birthdayShown",
-            birthdayKey
-        );
-
-        birthdayCelebration(
-            "his"
-        );
-
-    }
-
-
-    if(
-        herBirthday &&
-        alreadyShown !== birthdayKey
-    ){
-
-        localStorage.setItem(
-            "birthdayShown",
-            birthdayKey
-        );
-
-        birthdayCelebration(
-            "her"
-        );
-
-    }
+  return (
+    now.getMonth() + 1 === month &&
+    now.getDate() === day
+  );
 
 }
 
 
-/* =========================================================
-   UPDATE ALL TIMERS
-   ========================================================= */
+function showBirthdayCelebration(
+  type
+){
 
-function updateAllTimers(){
+  if(type === "her"){
 
-    updateRelationshipTimer();
+    birthdayTitle.textContent =
+      "🎉 HAPPY BIRTHDAY! 🎉";
 
+    birthdaySubtitle.textContent =
+      "Wishing a beautiful birthday " +
+      "filled with happiness, smiles, " +
+      "and wonderful memories. ❤️";
 
-    updateBirthdayTimer(
-        2,
-        14,
-        "his",
-        "hisBirthdayCard"
-    );
+  }else{
 
+    birthdayTitle.textContent =
+      "🎉 HAPPY BIRTHDAY! 🎉";
 
-    updateBirthdayTimer(
-        9,
-        2,
-        "her",
-        "herBirthdayCard"
-    );
+    birthdaySubtitle.textContent =
+      "Wishing you a fantastic birthday " +
+      "filled with happiness and great memories! ❤️";
 
+  }
 
-    checkBirthdays();
+  birthdayOverlay.classList.add(
+    "show"
+  );
+
+  createBirthdayParticles();
 
 }
 
 
-updateAllTimers();
+function checkBirthday(){
+
+  const todayKey =
+    new Date()
+      .toISOString()
+      .slice(0,10);
+
+  const alreadyShown =
+    localStorage.getItem(
+      "birthdayShown"
+    );
+
+  if(alreadyShown === todayKey){
+    return;
+  }
+
+  if(isBirthdayToday(9,2)){
+
+    localStorage.setItem(
+      "birthdayShown",
+      todayKey
+    );
+
+    setTimeout(
+      () =>
+        showBirthdayCelebration("her"),
+      1000
+    );
+
+    return;
+  }
+
+  if(isBirthdayToday(2,14)){
+
+    localStorage.setItem(
+      "birthdayShown",
+      todayKey
+    );
+
+    setTimeout(
+      () =>
+        showBirthdayCelebration("his"),
+      1000
+    );
+
+  }
+
+}
+
+checkBirthday();
 
 
-setInterval(
-    updateAllTimers,
-    1000
+closeBirthday.addEventListener(
+  "click",
+  function(){
+
+    birthdayOverlay.classList.remove(
+      "show"
+    );
+
+  }
 );
 
 
 /* =========================================================
-   ELEMENTS
-   ========================================================= */
+   AUTH
+========================================================= */
 
-const login =
-    document.getElementById(
-        "login"
-    );
+const emailInput =
+  document.getElementById("email");
 
-
-const diary =
-    document.getElementById(
-        "diary"
-    );
-
+const passwordInput =
+  document.getElementById("password");
 
 const loginButton =
-    document.getElementById(
-        "loginButton"
-    );
-
+  document.getElementById("loginButton");
 
 const logoutButton =
-    document.getElementById(
-        "logout"
-    );
+  document.getElementById("logoutButton");
+
+const authStatus =
+  document.getElementById("authStatus");
+
+const memoriesSection =
+  document.getElementById("memories");
 
 
-const loginStatus =
-    document.getElementById(
-        "loginStatus"
-    );
-
-
-const welcome =
-    document.getElementById(
-        "welcome"
-    );
-
-
-const saveButton =
-    document.getElementById(
-        "save"
-    );
-
-
-const status =
-    document.getElementById(
-        "status"
-    );
-
-
-const memoriesContainer =
-    document.getElementById(
-        "memories"
-    );
-
-
-/* =========================================================
-   LOGIN DISPLAY
-   ========================================================= */
-
-function showLogin(){
-
-    login.style.display =
-        "block";
-
-    diary.style.display =
-        "none";
-
-}
-
-
-function showDiary(user){
-
-    login.style.display =
-        "none";
-
-    diary.style.display =
-        "block";
-
-
-    if(
-        user &&
-        user.email
-    ){
-
-        welcome.textContent =
-            "Welcome back ❤️ " +
-            user.email;
-
-    }
-
-
-    loadMemories();
-
-}
-
-
-/* =========================================================
-   LOGIN
-   ========================================================= */
-
-async function doLogin(){
+loginButton.addEventListener(
+  "click",
+  async function(){
 
     const email =
-        document
-        .getElementById(
-            "email"
-        )
-        .value
-        .trim();
-
+      emailInput.value.trim();
 
     const password =
-        document
-        .getElementById(
-            "password"
-        )
-        .value;
+      passwordInput.value;
 
+    if(!email || !password){
 
-    if(
-        !email ||
-        !password
-    ){
+      authStatus.textContent =
+        "Please enter email and password.";
 
-        loginStatus.className =
-            "status error";
-
-
-        loginStatus.textContent =
-            "Please enter both email and password ❤️";
-
-
-        return;
-
+      return;
     }
-
 
     loginButton.disabled =
-        true;
+      true;
 
-
-    loginButton.textContent =
-        "Opening our diary... ❤️";
-
+    authStatus.textContent =
+      "Logging in...";
 
     try{
 
-        const {
-            data,
-            error
-        } =
-            await supabaseClient
-            .auth
-            .signInWithPassword({
+      const {
+        data,
+        error
+      } =
+        await supabaseClient.auth
+          .signInWithPassword({
+            email,
+            password
+          });
 
-                email:email,
+      if(error){
 
-                password:password
+        authStatus.textContent =
+          error.message;
 
-            });
+        return;
+      }
 
+      if(data.user){
 
-        if(error){
+        authStatus.textContent =
+          "Logged in successfully ❤️";
 
-            throw error;
+      }
 
-        }
+    }catch(error){
 
+      console.error(error);
 
-        if(
-            !data ||
-            !data.session ||
-            !data.user
-        ){
+      authStatus.textContent =
+        "Login failed. Please try again.";
 
-            throw new Error(
-                "Login session could not be created."
-            );
+    }finally{
 
-        }
-
-
-        loginStatus.textContent =
-            "";
-
-
-        showDiary(
-            data.user
-        );
+      loginButton.disabled =
+        false;
 
     }
 
-
-    catch(error){
-
-        console.error(
-            "LOGIN ERROR:",
-            error
-        );
-
-
-        loginStatus.className =
-            "status error";
-
-
-        loginStatus.textContent =
-            error.message ||
-            "Couldn't log in. Please check your details.";
-
-    }
-
-
-    finally{
-
-        loginButton.disabled =
-            false;
-
-
-        loginButton.textContent =
-            "Enter Our Diary ❤️";
-
-    }
-
-}
-
-
-/* =========================================================
-   LOGOUT
-   ========================================================= */
-
-async function doLogout(){
-
-    try{
-
-        await supabaseClient
-            .auth
-            .signOut();
-
-    }
-
-    catch(error){
-
-        console.error(
-            "LOGOUT ERROR:",
-            error
-        );
-
-    }
-
-
-    showLogin();
-
-
-    loginStatus.className =
-        "status";
-
-
-    loginStatus.textContent =
-        "Logged out ❤️";
-
-}
-
-
-/* =========================================================
-   AUTH STATE
-   ========================================================= */
-
-supabaseClient.auth
-.onAuthStateChange(
-    function(
-        event,
-        session
-    ){
-
-        if(
-            session &&
-            session.user
-        ){
-
-            showDiary(
-                session.user
-            );
-
-        }
-
-        else{
-
-            showLogin();
-
-        }
-
-    }
+  }
 );
 
 
-/* =========================================================
-   CHECK SESSION
-   ========================================================= */
+logoutButton.addEventListener(
+  "click",
+  async function(){
 
-async function checkSession(){
+    await supabaseClient.auth.signOut();
 
-    try{
-
-        const {
-            data,
-            error
-        } =
-            await supabaseClient
-            .auth
-            .getSession();
+  }
+);
 
 
-        if(error){
+async function updateAuthUI(){
 
-            throw error;
+  try{
 
-        }
+    const {
+      data
+    } =
+      await supabaseClient.auth
+        .getSession();
 
+    const session =
+      data.session;
 
-        if(
-            data &&
-            data.session &&
-            data.session.user
-        ){
+    if(session){
 
-            showDiary(
-                data.session.user
-            );
+      authStatus.textContent =
+        "Logged in as " +
+        (session.user.email || "user") +
+        " ❤️";
 
-        }
+      loginButton.classList.add(
+        "hidden"
+      );
 
-        else{
+      emailInput.classList.add(
+        "hidden"
+      );
 
-            showLogin();
+      passwordInput.classList.add(
+        "hidden"
+      );
 
-        }
+      logoutButton.classList.remove(
+        "hidden"
+      );
+
+      memoriesSection.classList.remove(
+        "hidden"
+      );
+
+      loadMemories();
+
+    }else{
+
+      authStatus.textContent =
+        "Not logged in.";
+
+      loginButton.classList.remove(
+        "hidden"
+      );
+
+      emailInput.classList.remove(
+        "hidden"
+      );
+
+      passwordInput.classList.remove(
+        "hidden"
+      );
+
+      logoutButton.classList.add(
+        "hidden"
+      );
+
+      memoriesSection.classList.add(
+        "hidden"
+      );
 
     }
 
+  }catch(error){
 
-    catch(error){
+    console.error(
+      "Auth error:",
+      error
+    );
 
-        console.error(
-            "SESSION ERROR:",
-            error
-        );
-
-
-        showLogin();
-
-    }
+  }
 
 }
 
 
-checkSession();
+supabaseClient.auth.onAuthStateChange(
+  function(){
 
+    updateAuthUI();
 
-/* =========================================================
-   HTML ESCAPE
-   ========================================================= */
+  }
+);
 
-function escapeHTML(value){
-
-    if(
-        value === null ||
-        value === undefined
-    ){
-
-        return "";
-
-    }
-
-
-    return String(value)
-
-        .replace(
-            /&/g,
-            "&amp;"
-        )
-
-        .replace(
-            /</g,
-            "&lt;"
-        )
-
-        .replace(
-            />/g,
-            "&gt;"
-        )
-
-        .replace(
-            /"/g,
-            "&quot;"
-        )
-
-        .replace(
-            /'/g,
-            "&#039;"
-        );
-
-}
+updateAuthUI();
 
 
 /* =========================================================
    IMAGE COMPRESSION
-   ========================================================= */
+========================================================= */
 
-function compressImage(file){
+async function compressImage(file){
 
-    return new Promise(
-        function(
-            resolve,
-            reject
-        ){
+  return new Promise(
+    function(resolve,reject){
 
-            const reader =
-                new FileReader();
+      const reader =
+        new FileReader();
 
+      reader.onload =
+        function(event){
 
-            reader.onload =
-                function(event){
+          const image =
+            new Image();
 
-                    const image =
-                        new Image();
+          image.onload =
+            function(){
 
+              const maxSize =
+                1600;
 
-                    image.onload =
-                        function(){
+              let width =
+                image.width;
 
-                            const MAX =
-                                1600;
+              let height =
+                image.height;
 
+              if(width > maxSize){
 
-                            let width =
-                                image.width;
+                height =
+                  Math.round(
+                    height *
+                    maxSize /
+                    width
+                  );
 
+                width =
+                  maxSize;
 
-                            let height =
-                                image.height;
+              }
 
+              if(height > maxSize){
 
-                            if(
-                                width > MAX ||
-                                height > MAX
-                            ){
+                width =
+                  Math.round(
+                    width *
+                    maxSize /
+                    height
+                  );
 
-                                if(
-                                    width >
-                                    height
-                                ){
+                height =
+                  maxSize;
 
-                                    height =
-                                        Math.round(
-                                            height *
-                                            MAX /
-                                            width
-                                        );
+              }
 
-                                    width =
-                                        MAX;
-
-                                }
-
-                                else{
-
-                                    width =
-                                        Math.round(
-                                            width *
-                                            MAX /
-                                            height
-                                        );
-
-                                    height =
-                                        MAX;
-
-                                }
-
-                            }
-
-
-                            const canvas =
-                                document
-                                .createElement(
-                                    "canvas"
-                                );
-
-
-                            canvas.width =
-                                width;
-
-
-                            canvas.height =
-                                height;
-
-
-                            const ctx =
-                                canvas
-                                .getContext(
-                                    "2d"
-                                );
-
-
-                            ctx.drawImage(
-                                image,
-                                0,
-                                0,
-                                width,
-                                height
-                            );
-
-
-                            resolve(
-                                canvas.toDataURL(
-                                    "image/jpeg",
-                                    .82
-                                )
-                            );
-
-                        };
-
-
-                    image.onerror =
-                        function(){
-
-                            reject(
-                                new Error(
-                                    "This image could not be processed."
-                                )
-                            );
-
-                        };
-
-
-                    image.src =
-                        event.target.result;
-
-                };
-
-
-            reader.onerror =
-                function(){
-
-                    reject(
-                        new Error(
-                            "Could not read the photo."
-                        )
-                    );
-
-                };
-
-
-            reader.readAsDataURL(
-                file
-            );
-
-        }
-    );
-
-}
-
-
-/* =========================================================
-   LOAD MEMORIES
-   ========================================================= */
-
-async function loadMemories(){
-
-    memoriesContainer.innerHTML = `
-
-        <div class="loading">
-
-            <div class="loading-bears">
-                🧸 💕 🧸
-            </div>
-
-            <br>
-
-            Bringing our memories...
-
-        </div>
-
-    `;
-
-
-    try{
-
-        const {
-            data:userData,
-            error:userError
-        } =
-            await supabaseClient
-            .auth
-            .getUser();
-
-
-        if(userError){
-
-            throw userError;
-
-        }
-
-
-        const user =
-            userData &&
-            userData.user;
-
-
-        if(!user){
-
-            memoriesContainer.innerHTML = `
-
-                <div class="empty">
-
-                    <div class="empty-bear">
-                        🧸
-                    </div>
-
-                    Please log in to see
-                    our memories. ❤️
-
-                </div>
-
-            `;
-
-
-            return;
-
-        }
-
-
-        const {
-            data,
-            error
-        } =
-            await supabaseClient
-            .from(TABLE)
-            .select(
-                "id,user_id,title,date,message,image,created_at"
-            )
-            .eq(
-                "user_id",
-                user.id
-            )
-            .order(
-                "created_at",
-                {
-                    ascending:false
-                }
-            );
-
-
-        if(error){
-
-            throw error;
-
-        }
-
-
-        displayMemories(
-            data || []
-        );
-
-    }
-
-
-    catch(error){
-
-        console.error(
-            "LOAD ERROR:",
-            error
-        );
-
-
-        memoriesContainer.innerHTML = `
-
-            <div class="empty">
-
-                <div class="empty-bear">
-                    🧸💔
-                </div>
-
-                <strong>
-                    Our memory wall couldn't load.
-                </strong>
-
-                <br><br>
-
-                ${escapeHTML(
-                    error.message ||
-                    "Unknown error."
-                )}
-
-            </div>
-
-        `;
-
-    }
-
-}
-
-
-/* =========================================================
-   DISPLAY MEMORIES
-   ========================================================= */
-
-function displayMemories(
-    memories
-){
-
-    if(
-        !memories ||
-        memories.length === 0
-    ){
-
-        memoriesContainer.innerHTML = `
-
-            <div class="empty">
-
-                <div class="empty-bear">
-                    🧸💕
-                </div>
-
-                No memories yet...
-
-                <br>
-
-                Let's save our first
-                little moment. ❤️
-
-            </div>
-
-        `;
-
-
-        return;
-
-    }
-
-
-    memoriesContainer.innerHTML =
-        "";
-
-
-    memories.forEach(
-        function(memory){
-
-            const article =
+              const canvas =
                 document.createElement(
-                    "article"
+                  "canvas"
                 );
 
+              canvas.width =
+                width;
 
-            article.className =
-                "memory";
+              canvas.height =
+                height;
 
-
-            const title =
-                escapeHTML(
-                    memory.title
+              const context =
+                canvas.getContext(
+                  "2d"
                 );
 
+              context.drawImage(
+                image,
+                0,
+                0,
+                width,
+                height
+              );
 
-            const message =
-                escapeHTML(
-                    memory.message
-                );
+              resolve(
+                canvas.toDataURL(
+                  "image/jpeg",
+                  .82
+                )
+              );
 
+            };
 
-            let dateHTML =
-                "";
+          image.onerror =
+            reject;
 
+          image.src =
+            event.target.result;
 
-            if(memory.date){
+        };
 
-                const d =
-                    new Date(
-                        memory.date +
-                        "T00:00:00"
-                    );
+      reader.onerror =
+        reject;
 
+      reader.readAsDataURL(file);
 
-                dateHTML = `
-
-                    <div class="memory-date">
-
-                        ${escapeHTML(
-                            d.toLocaleDateString(
-                                undefined,
-                                {
-                                    day:"numeric",
-                                    month:"long",
-                                    year:"numeric"
-                                }
-                            )
-                        )}
-
-                    </div>
-
-                `;
-
-            }
-
-
-            let imageHTML =
-                "";
-
-
-            if(memory.image){
-
-                imageHTML = `
-
-                    <img
-                        src="${escapeHTML(
-                            memory.image
-                        )}"
-                        alt="Our memory"
-                        loading="lazy"
-                    >
-
-                `;
-
-            }
-
-
-            article.innerHTML = `
-
-                <h3>
-                    ${title}
-                </h3>
-
-                ${dateHTML}
-
-                <p>
-                    ${message}
-                </p>
-
-                ${imageHTML}
-
-            `;
-
-
-            memoriesContainer.appendChild(
-                article
-            );
-
-        }
-    );
+    }
+  );
 
 }
 
 
 /* =========================================================
    SAVE MEMORY
-   ========================================================= */
+========================================================= */
 
-async function saveMemory(){
+const saveMemory =
+  document.getElementById(
+    "saveMemory"
+  );
 
-    const title =
-        document
-        .getElementById(
-            "title"
-        )
-        .value
-        .trim();
-
-
-    const date =
-        document
-        .getElementById(
-            "date"
-        )
-        .value;
+const memoryStatus =
+  document.getElementById(
+    "memoryStatus"
+  );
 
 
-    const message =
-        document
-        .getElementById(
-            "message"
-        )
-        .value
-        .trim();
+saveMemory.addEventListener(
+  "click",
+  async function(){
 
+    const {
+      data
+    } =
+      await supabaseClient.auth
+        .getUser();
 
-    const photoInput =
-        document
-        .getElementById(
-            "photo"
-        );
+    const user =
+      data.user;
 
+    if(!user){
 
-    if(
-        !title ||
-        !message
-    ){
+      memoryStatus.textContent =
+        "Please login first.";
 
-        status.className =
-            "status error";
-
-
-        status.textContent =
-            "Please add a title and message ❤️";
-
-
-        return;
-
+      return;
     }
 
+    const title =
+      document.getElementById(
+        "memoryTitle"
+      ).value.trim();
 
-    saveButton.disabled =
-        true;
+    const date =
+      document.getElementById(
+        "memoryDate"
+      ).value;
 
+    const message =
+      document.getElementById(
+        "memoryMessage"
+      ).value.trim();
 
-    saveButton.textContent =
-        "Saving our little moment... 🧸";
+    const imageFile =
+      document.getElementById(
+        "memoryImage"
+      ).files[0];
 
+    if(!title && !message && !imageFile){
+
+      memoryStatus.textContent =
+        "Add something to the memory.";
+
+      return;
+    }
+
+    saveMemory.disabled =
+      true;
+
+    memoryStatus.textContent =
+      "Saving memory...";
+
+    let image =
+      null;
 
     try{
 
-        const {
-            data:userData,
-            error:userError
-        } =
-            await supabaseClient
-            .auth
-            .getUser();
+      if(imageFile){
 
+        image =
+          await compressImage(
+            imageFile
+          );
 
-        if(userError){
+      }
 
-            throw userError;
-
-        }
-
-
-        const user =
-            userData &&
-            userData.user;
-
-
-        if(!user){
-
-            throw new Error(
-                "Your login session has expired. Please log in again."
-            );
-
-        }
-
-
-        let image =
-            null;
-
-
-        if(
-            photoInput.files &&
-            photoInput.files.length > 0
-        ){
-
-            const file =
-                photoInput.files[0];
-
-
-            if(
-                !file.type.startsWith(
-                    "image/"
-                )
-            ){
-
-                throw new Error(
-                    "Please choose an image file."
-                );
-
-            }
-
-
-            if(
-                file.size >
-                15 * 1024 * 1024
-            ){
-
-                throw new Error(
-                    "That photo is over 15 MB. Please choose a smaller photo."
-                );
-
-            }
-
-
-            status.className =
-                "status";
-
-
-            status.textContent =
-                "Making the photo diary-friendly... 📷";
-
-
-            image =
-                await compressImage(
-                    file
-                );
-
-        }
-
-
-        const memory = {
+      const {
+        error
+      } =
+        await supabaseClient
+          .from(TABLE)
+          .insert({
 
             user_id:user.id,
 
-            title:title,
+            title:
+              title ||
+              "Untitled Memory",
 
             date:
-                date ||
-                null,
+              date ||
+              null,
 
-            message:message,
+            message:
+              message ||
+              "",
 
             image:image
 
-        };
+          });
 
+      if(error){
 
-        const {
-            error
-        } =
-            await supabaseClient
-            .from(TABLE)
-            .insert(
-                memory
-            );
+        console.error(error);
 
+        memoryStatus.textContent =
+          error.message;
 
-        if(error){
+        return;
+      }
 
-            throw error;
+      memoryStatus.textContent =
+        "Memory saved ❤️";
 
-        }
+      document.getElementById(
+        "memoryTitle"
+      ).value = "";
 
+      document.getElementById(
+        "memoryDate"
+      ).value = "";
 
-        status.className =
-            "status success";
+      document.getElementById(
+        "memoryMessage"
+      ).value = "";
 
+      document.getElementById(
+        "memoryImage"
+      ).value = "";
 
-        status.textContent =
-            "Our little moment is safely saved forever. ❤️";
+      await loadMemories();
 
+    }catch(error){
 
-        document
-        .getElementById(
-            "title"
-        )
-        .value = "";
+      console.error(error);
 
+      memoryStatus.textContent =
+        "Could not save memory.";
 
-        document
-        .getElementById(
-            "date"
-        )
-        .value = "";
+    }finally{
 
-
-        document
-        .getElementById(
-            "message"
-        )
-        .value = "";
-
-
-        photoInput.value =
-            "";
-
-
-        celebration();
-
-
-        await loadMemories();
+      saveMemory.disabled =
+        false;
 
     }
 
-
-    catch(error){
-
-        console.error(
-            "SAVE ERROR:",
-            error
-        );
-
-
-        status.className =
-            "status error";
-
-
-        status.textContent =
-            error.message ||
-            "Couldn't save this memory.";
-
-    }
-
-
-    finally{
-
-        saveButton.disabled =
-            false;
-
-
-        saveButton.textContent =
-            "🧸 Save This Little Moment ♡";
-
-    }
-
-}
+  }
+);
 
 
 /* =========================================================
-   SAVE CELEBRATION
-   ========================================================= */
+   LOAD MEMORIES
+========================================================= */
 
-function celebration(){
+async function loadMemories(){
 
-    const symbols = [
-        "❤️",
-        "💕",
-        "💗",
-        "💖",
-        "✨",
-        "🧸"
-    ];
+  const memoryGrid =
+    document.getElementById(
+      "memoryGrid"
+    );
 
+  memoryGrid.innerHTML =
+    '<div class="loading">Loading memories...</div>';
 
-    for(
-        let i=0;
-        i<15;
-        i++
-    ){
+  try{
 
-        const element =
+    const {
+      data:userData
+    } =
+      await supabaseClient.auth
+        .getUser();
+
+    const user =
+      userData.user;
+
+    if(!user){
+
+      memoryGrid.innerHTML =
+        '<div class="empty">Login to see memories.</div>';
+
+      return;
+    }
+
+    const {
+      data,
+      error
+    } =
+      await supabaseClient
+        .from(TABLE)
+        .select(
+          "id,user_id,title,date,message,image,created_at"
+        )
+        .eq(
+          "user_id",
+          user.id
+        )
+        .order(
+          "created_at",
+          {
+            ascending:false
+          }
+        );
+
+    if(error){
+
+      console.error(error);
+
+      memoryGrid.innerHTML =
+        '<div class="empty">Could not load memories.</div>';
+
+      return;
+    }
+
+    if(!data || data.length === 0){
+
+      memoryGrid.innerHTML =
+        '<div class="empty">' +
+        'No memories yet. Add the first one ❤️' +
+        '</div>';
+
+      return;
+    }
+
+    memoryGrid.innerHTML =
+      "";
+
+    data.forEach(
+      function(memory){
+
+        const card =
+          document.createElement(
+            "article"
+          );
+
+        card.className =
+          "memory";
+
+        if(memory.image){
+
+          const image =
             document.createElement(
-                "div"
+              "img"
             );
 
+          image.src =
+            memory.image;
 
-        element.className =
-            "celebration";
+          image.alt =
+            memory.title ||
+            "Memory";
 
+          card.appendChild(
+            image
+          );
 
-        element.textContent =
-            symbols[
-                Math.floor(
-                    Math.random() *
-                    symbols.length
-                )
-            ];
+        }
 
+        const content =
+          document.createElement(
+            "div"
+          );
 
-        element.style.left =
-            "50%";
+        content.className =
+          "memory-content";
 
+        const title =
+          document.createElement(
+            "h3"
+          );
 
-        element.style.top =
-            "50%";
+        title.textContent =
+          memory.title ||
+          "Untitled Memory";
 
+        const date =
+          document.createElement(
+            "div"
+          );
 
-        element.style.setProperty(
-            "--x",
-            (
-                Math.random() *
-                340 -
-                170
-            ) +
-            "px"
+        date.className =
+          "memory-date";
+
+        if(memory.date){
+
+          date.textContent =
+            memory.date;
+
+        }else{
+
+          date.textContent =
+            memory.created_at
+              ? new Date(
+                  memory.created_at
+                ).toLocaleDateString()
+              : "";
+
+        }
+
+        const message =
+          document.createElement(
+            "p"
+          );
+
+        message.textContent =
+          memory.message ||
+          "";
+
+        content.appendChild(
+          title
         );
 
-
-        element.style.setProperty(
-            "--y",
-            (
-                Math.random() *
-                340 -
-                240
-            ) +
-            "px"
+        content.appendChild(
+          date
         );
 
-
-        document.body.appendChild(
-            element
+        content.appendChild(
+          message
         );
 
-
-        setTimeout(
-            function(){
-
-                element.remove();
-
-            },
-            1700
+        card.appendChild(
+          content
         );
 
-    }
+        memoryGrid.appendChild(
+          card
+        );
+
+      }
+    );
+
+  }catch(error){
+
+    console.error(error);
+
+    memoryGrid.innerHTML =
+      '<div class="empty">Could not load memories.</div>';
+
+  }
 
 }
 
 
 /* =========================================================
-   MUSIC
-   ========================================================= */
-
-const song =
-    document.getElementById(
-        "song"
-    );
-
-
-const music =
-    document.getElementById(
-        "music"
-    );
-
-
-const musicButton =
-    document.getElementById(
-        "musicButton"
-    );
-
-
-const musicStatus =
-    document.getElementById(
-        "musicStatus"
-    );
-
-
-musicButton.addEventListener(
-    "click",
-    async function(){
-
-        if(song.paused){
-
-            try{
-
-                await song.play();
-
-            }
-
-
-            catch(error){
-
-                console.error(
-                    "AUDIO ERROR:",
-                    error
-                );
-
-
-                musicStatus.textContent =
-                    "Couldn't play the song. Make sure the MP3 filename is exactly correct. ❤️";
-
-            }
-
-        }
-
-        else{
-
-            song.pause();
-
-        }
-
-    }
-);
-
-
-song.addEventListener(
-    "play",
-    function(){
-
-        music.classList.add(
-            "playing"
-        );
-
-
-        musicButton.textContent =
-            "⏸ Pause Our Song";
-
-
-        musicStatus.textContent =
-            "Playing our song ❤️";
-
-    }
-);
-
-
-song.addEventListener(
-    "pause",
-    function(){
-
-        music.classList.remove(
-            "playing"
-        );
-
-
-        if(!song.ended){
-
-            musicButton.textContent =
-                "▶ Play Our Song";
-
-
-            musicStatus.textContent =
-                "Paused ❤️";
-
-        }
-
-    }
-);
-
-
-song.addEventListener(
-    "ended",
-    function(){
-
-        music.classList.remove(
-            "playing"
-        );
-
-
-        musicButton.textContent =
-            "▶ Play Our Song";
-
-
-        musicStatus.textContent =
-            "Our song ❤️";
-
-    }
-);
-
-
-/* =========================================================
-   GAME
-   ========================================================= */
+   LOVE RUN GAME
+   FIXED VERSION
+========================================================= */
 
 const runner =
-    document.getElementById(
-        "runner"
-    );
-
+  document.getElementById(
+    "runner"
+  );
 
 const player =
-    document.getElementById(
-        "player"
-    );
-
+  document.getElementById(
+    "player"
+  );
 
 const obstacle =
-    document.getElementById(
-        "obstacle"
-    );
+  document.getElementById(
+    "obstacle"
+  );
 
+const collectible =
+  document.getElementById(
+    "collectible"
+  );
 
 const scoreElement =
-    document.getElementById(
-        "score"
-    );
+  document.getElementById(
+    "score"
+  );
 
+const heartScoreElement =
+  document.getElementById(
+    "heartScore"
+  );
 
 const bestElement =
-    document.getElementById(
-        "best"
-    );
-
+  document.getElementById(
+    "best"
+  );
 
 const startGameButton =
-    document.getElementById(
-        "startGame"
-    );
-
+  document.getElementById(
+    "startGame"
+  );
 
 const jumpButton =
-    document.getElementById(
-        "jumpButton"
-    );
-
+  document.getElementById(
+    "jumpButton"
+  );
 
 const gameMessage =
-    document.getElementById(
-        "gameMessage"
-    );
+  document.getElementById(
+    "gameMessage"
+  );
+
+const gamePopup =
+  document.getElementById(
+    "gamePopup"
+  );
+
+const gameOver =
+  document.getElementById(
+    "gameOver"
+  );
+
+const gameOverTitle =
+  document.getElementById(
+    "gameOverTitle"
+  );
+
+const gameOverText =
+  document.getElementById(
+    "gameOverText"
+  );
+
+const gameRestartInside =
+  document.getElementById(
+    "gameRestartInside"
+  );
 
 
 let gameRunning =
-    false;
-
+  false;
 
 let jumping =
-    false;
-
+  false;
 
 let velocityY =
-    0;
-
+  0;
 
 let playerY =
-    0;
-
+  0;
 
 let obstacleX =
-    -70;
+  0;
 
+let heartX =
+  0;
 
 let score =
-    0;
+  0;
 
+let heartScore =
+  0;
 
 let gameSpeed =
-    6;
-
+  5.5;
 
 let animationFrame =
-    null;
-
+  null;
 
 let lastTime =
-    0;
+  0;
 
+let obstacleCycle =
+  0;
+
+let heartCycle =
+  0;
 
 let best =
-    Number(
-        localStorage.getItem(
-            "theUsStoryBest"
-        ) || 0
-    );
+  Number(
+    localStorage.getItem(
+      "theUsStoryBest"
+    ) || 0
+  );
 
 
 bestElement.textContent =
-    best;
+  best;
 
 
-/* JUMP */
+/* =========================================================
+   RESET GAME OBJECTS
+========================================================= */
+
+function resetGameObjects(){
+
+  const width =
+    runner.clientWidth;
+
+  obstacleX =
+    width + 100;
+
+  heartX =
+    width + 300;
+
+  obstacle.style.left =
+    obstacleX + "px";
+
+  collectible.style.left =
+    heartX + "px";
+
+  playerY =
+    0;
+
+  player.style.transform =
+    "translateY(0px)";
+
+}
+
+
+/* =========================================================
+   JUMP
+========================================================= */
 
 function jump(){
 
-    if(!gameRunning){
+  if(!gameRunning){
+    return;
+  }
 
-        return;
+  if(jumping){
+    return;
+  }
 
-    }
+  jumping =
+    true;
 
-
-    if(jumping){
-
-        return;
-
-    }
-
-
-    jumping =
-        true;
-
-
-    velocityY =
-        14;
+  velocityY =
+    14;
 
 }
 
 
-/* START GAME */
+/* =========================================================
+   START GAME
+========================================================= */
 
 function startGame(){
 
-    if(gameRunning){
+  cancelAnimationFrame(
+    animationFrame
+  );
 
-        return;
+  gameRunning =
+    true;
 
-    }
+  jumping =
+    false;
 
+  velocityY =
+    0;
 
-    gameRunning =
-        true;
+  playerY =
+    0;
 
+  score =
+    0;
 
-    jumping =
-        false;
+  heartScore =
+    0;
 
+  gameSpeed =
+    5.5;
 
-    velocityY =
-        0;
+  obstacleCycle =
+    0;
 
+  heartCycle =
+    0;
 
-    playerY =
-        0;
+  scoreElement.textContent =
+    "0";
 
+  heartScoreElement.textContent =
+    "0";
 
-    obstacleX =
-        runner.clientWidth +
-        40;
+  player.style.transform =
+    "translateY(0px)";
 
+  player.classList.add(
+    "running"
+  );
 
-    score =
-        0;
+  gameOver.classList.remove(
+    "show"
+  );
 
+  gamePopup.classList.remove(
+    "show"
+  );
 
-    gameSpeed =
-        6;
+  collectible.style.display =
+    "flex";
 
+  resetGameObjects();
 
-    scoreElement.textContent =
-        "0";
+  gameMessage.textContent =
+    "Run! Jump over 🌷 and collect ❤️";
 
+  startGameButton.textContent =
+    "🔄 Restart";
 
-    gameMessage.textContent =
-        "Keep going! 🧸❤️";
+  lastTime =
+    performance.now();
 
-
-    startGameButton.textContent =
-        "🔄 Restart";
-
-
-    lastTime =
-        performance.now();
-
-
-    cancelAnimationFrame(
-        animationFrame
+  animationFrame =
+    requestAnimationFrame(
+      gameLoop
     );
-
-
-    animationFrame =
-        requestAnimationFrame(
-            gameLoop
-        );
 
 }
 
 
-/* GAME OVER */
+/* =========================================================
+   POPUP
+========================================================= */
 
-function gameOver(){
+function showPopup(text){
 
-    gameRunning =
-        false;
+  gamePopup.textContent =
+    text;
 
+  gamePopup.classList.remove(
+    "show"
+  );
 
-    cancelAnimationFrame(
-        animationFrame
-    );
+  void gamePopup.offsetWidth;
 
-
-    if(score > best){
-
-        best =
-            score;
-
-
-        localStorage.setItem(
-            "theUsStoryBest",
-            best
-        );
-
-
-        bestElement.textContent =
-            best;
-
-
-        gameMessage.textContent =
-            "NEW BEST! 🧸💗 You made our story longer!";
-
-    }
-
-    else{
-
-        gameMessage.textContent =
-            "Aww, you bumped into a flower. 🌷 Try again? ❤️";
-
-    }
-
-
-    startGameButton.textContent =
-        "🧸 Play Again";
+  gamePopup.classList.add(
+    "show"
+  );
 
 }
 
 
-/* GAME LOOP */
+/* =========================================================
+   GAME OVER
+========================================================= */
+
+function endGame(){
+
+  if(!gameRunning){
+    return;
+  }
+
+  gameRunning =
+    false;
+
+  cancelAnimationFrame(
+    animationFrame
+  );
+
+  player.classList.remove(
+    "running"
+  );
+
+  if(score > best){
+
+    best =
+      score;
+
+    localStorage.setItem(
+      "theUsStoryBest",
+      String(best)
+    );
+
+    bestElement.textContent =
+      best;
+
+    gameOverTitle.textContent =
+      "NEW BEST! 🎉";
+
+    gameOverText.textContent =
+      "Amazing! Score: " +
+      score +
+      " • Hearts: " +
+      heartScore +
+      " ❤️";
+
+  }else{
+
+    gameOverTitle.textContent =
+      "Game Over 💕";
+
+    gameOverText.textContent =
+      "Score: " +
+      score +
+      " • Hearts: " +
+      heartScore +
+      " ❤️";
+
+  }
+
+  gameMessage.textContent =
+    "The teddy bumped into a flower. Try again! 🌷";
+
+  gameOver.classList.add(
+    "show"
+  );
+
+  startGameButton.textContent =
+    "🧸 Play Again";
+
+}
+
+
+/* =========================================================
+   COLLISION
+========================================================= */
+
+function isColliding(
+  a,
+  b,
+  padding
+){
+
+  return (
+
+    a.left + padding <
+    b.right - padding
+
+    &&
+
+    a.right - padding >
+    b.left + padding
+
+    &&
+
+    a.top + padding <
+    b.bottom - padding
+
+    &&
+
+    a.bottom - padding >
+    b.top + padding
+
+  );
+
+}
+
+
+/* =========================================================
+   GAME LOOP
+========================================================= */
 
 function gameLoop(time){
 
-    if(!gameRunning){
-
-        return;
-
-    }
+  if(!gameRunning){
+    return;
+  }
 
 
-    const delta =
-        Math.min(
-            (time - lastTime) /
-            16.67,
-            2
-        );
+  let delta =
+    (time - lastTime) / 16.67;
+
+  delta =
+    Math.min(
+      Math.max(delta,.5),
+      2
+    );
+
+  lastTime =
+    time;
 
 
-    lastTime =
-        time;
+  /* =========================
+     JUMP PHYSICS
+  ========================= */
 
+  if(jumping){
 
-    /* PLAYER */
+    velocityY -=
+      .72 * delta;
 
-    if(jumping){
+    playerY +=
+      velocityY * delta;
 
-        velocityY -=
-            .75 * delta;
+    if(playerY <= 0){
 
+      playerY =
+        0;
 
-        playerY +=
-            velocityY * delta;
+      velocityY =
+        0;
 
-
-        if(playerY <= 0){
-
-            playerY =
-                0;
-
-
-            velocityY =
-                0;
-
-
-            jumping =
-                false;
-
-        }
+      jumping =
+        false;
 
     }
 
-
-    player.style.transform =
-        "translateY(" +
-        (-playerY) +
-        "px)";
+  }
 
 
-    /* OBSTACLE */
-
-    obstacleX -=
-        gameSpeed *
-        delta;
-
-
-    if(obstacleX < -70){
-
-        obstacleX =
-            runner.clientWidth +
-            20;
+  player.style.transform =
+    "translateY(" +
+    (-playerY) +
+    "px)";
 
 
-        score++;
+  /* =========================
+     OBSTACLE MOVEMENT
+  ========================= */
+
+  obstacleX -=
+    gameSpeed * delta;
 
 
-        scoreElement.textContent =
-            score;
+  if(
+    obstacleX <
+    -70
+  ){
 
+    score++;
 
-        gameSpeed =
-            Math.min(
-                12,
-                6 +
-                score *
-                .12
-            );
+    scoreElement.textContent =
+      score;
 
-    }
+    gameSpeed =
+      Math.min(
+        11,
+        5.5 +
+        score * .12
+      );
 
+    obstacleCycle++;
 
-    obstacle.style.transform =
-        "translateX(" +
-        obstacleX +
-        "px)";
+    const width =
+      runner.clientWidth;
 
+    obstacleX =
+      width +
+      100 +
+      Math.random() * 180;
 
-    /* COLLISION */
+    /* Every few obstacles
+       change heart position */
 
-    const playerRect =
-        player.getBoundingClientRect();
+    heartX =
+      width +
+      250 +
+      Math.random() * 350;
 
+    collectible.style.display =
+      "flex";
 
-    const obstacleRect =
-        obstacle.getBoundingClientRect();
+    /* Milestones */
 
+    if(score === 5){
 
-    const padding =
-        8;
-
-
-    const collision =
-
-        playerRect.left +
-        padding <
-        obstacleRect.right -
-        padding &&
-
-        playerRect.right -
-        padding >
-        obstacleRect.left +
-        padding &&
-
-        playerRect.top +
-        padding <
-        obstacleRect.bottom -
-        padding &&
-
-        playerRect.bottom -
-        padding >
-        obstacleRect.top +
-        padding;
-
-
-    if(collision){
-
-        gameOver();
-
-        return;
+      showPopup(
+        "🌷 5 Points!"
+      );
 
     }
 
+    if(score === 10){
 
-    animationFrame =
-        requestAnimationFrame(
-            gameLoop
-        );
+      showPopup(
+        "✨ 10 Points!"
+      );
+
+    }
+
+    if(score === 25){
+
+      showPopup(
+        "💗 25 Points!"
+      );
+
+    }
+
+    if(score === 50){
+
+      showPopup(
+        "🎉 50 Points!"
+      );
+
+    }
+
+  }
+
+
+  obstacle.style.left =
+    obstacleX + "px";
+
+
+  /* =========================
+     HEART MOVEMENT
+  ========================= */
+
+  heartX -=
+    gameSpeed * delta;
+
+
+  if(
+    heartX <
+    -60
+  ){
+
+    heartCycle++;
+
+    heartX =
+      runner.clientWidth +
+      250 +
+      Math.random() * 350;
+
+  }
+
+
+  collectible.style.left =
+    heartX + "px";
+
+
+  /* =========================
+     PLAYER RECT
+  ========================= */
+
+  const playerRect =
+    player.getBoundingClientRect();
+
+
+  /* =========================
+     FLOWER COLLISION
+  ========================= */
+
+  const obstacleRect =
+    obstacle.getBoundingClientRect();
+
+
+  if(
+    isColliding(
+      playerRect,
+      obstacleRect,
+      10
+    )
+  ){
+
+    endGame();
+
+    return;
+
+  }
+
+
+  /* =========================
+     HEART COLLECTION
+  ========================= */
+
+  const heartRect =
+    collectible.getBoundingClientRect();
+
+
+  if(
+    collectible.style.display !== "none" &&
+    isColliding(
+      playerRect,
+      heartRect,
+      7
+    )
+  ){
+
+    heartScore++;
+
+    heartScoreElement.textContent =
+      heartScore;
+
+    showPopup(
+      "❤️ +1 Heart!"
+    );
+
+    collectible.style.display =
+      "none";
+
+    heartX =
+      runner.clientWidth +
+      400 +
+      Math.random() * 300;
+
+  }
+
+
+  /* =========================
+     CONTINUE
+  ========================= */
+
+  animationFrame =
+    requestAnimationFrame(
+      gameLoop
+    );
 
 }
 
 
-/* GAME BUTTONS */
+/* =========================================================
+   START BUTTON
+========================================================= */
 
 startGameButton.addEventListener(
-    "click",
-    startGame
+  "click",
+  function(){
+
+    startGame();
+
+  }
 );
 
 
-jumpButton.addEventListener(
-    "pointerdown",
-    function(event){
+/* =========================================================
+   GAME OVER RESTART BUTTON
+========================================================= */
 
-        event.preventDefault();
+gameRestartInside.addEventListener(
+  "click",
+  function(event){
+
+    event.stopPropagation();
+
+    startGame();
+
+  }
+);
+
+
+/* =========================================================
+   JUMP BUTTON
+========================================================= */
+
+jumpButton.addEventListener(
+  "pointerdown",
+  function(event){
+
+    event.preventDefault();
+
+    event.stopPropagation();
+
+    if(!gameRunning){
+
+      startGame();
+
+    }else{
+
+      jump();
+
+    }
+
+  }
+);
+
+
+/* =========================================================
+   GAME AREA TOUCH
+========================================================= */
+
+runner.addEventListener(
+  "pointerdown",
+  function(event){
+
+    if(
+      event.target.closest(
+        ".game-over-box"
+      )
+    ){
+
+      return;
+
+    }
+
+    event.preventDefault();
+
+    if(!gameRunning){
+
+      startGame();
+
+    }else{
+
+      jump();
+
+    }
+
+  }
+);
+
+
+/* =========================================================
+   KEYBOARD
+========================================================= */
+
+document.addEventListener(
+  "keydown",
+  function(event){
+
+    if(
+      event.code === "Space" ||
+      event.code === "ArrowUp"
+    ){
+
+      event.preventDefault();
+
+      if(!gameRunning){
+
+        startGame();
+
+      }else{
 
         jump();
 
-    }
-);
-
-
-runner.addEventListener(
-    "pointerdown",
-    function(event){
-
-        if(gameRunning){
-
-            event.preventDefault();
-
-            jump();
-
-        }
+      }
 
     }
-);
 
-
-/* KEYBOARD */
-
-document.addEventListener(
-    "keydown",
-    function(event){
-
-        if(
-            event.code === "Space" ||
-            event.code === "ArrowUp"
-        ){
-
-            event.preventDefault();
-
-
-            if(!gameRunning){
-
-                startGame();
-
-            }
-
-            else{
-
-                jump();
-
-            }
-
-        }
-
-    }
+  }
 );
 
 
 /* =========================================================
-   BUTTON EVENTS
-   ========================================================= */
+   INITIAL GAME STATE
+========================================================= */
 
-loginButton.addEventListener(
-    "click",
-    doLogin
+collectible.style.display =
+  "none";
+
+gameOver.classList.remove(
+  "show"
 );
 
-
-logoutButton.addEventListener(
-    "click",
-    doLogout
-);
-
-
-saveButton.addEventListener(
-    "click",
-    saveMemory
-);
+resetGameObjects();
 
 
 /* =========================================================
-   ENTER TO LOGIN
-   ========================================================= */
+   MEMORY DATE DEFAULT
+========================================================= */
 
-document
-.getElementById(
-    "password"
-)
-.addEventListener(
-    "keydown",
-    function(event){
+const memoryDateInput =
+  document.getElementById(
+    "memoryDate"
+  );
 
-        if(event.key === "Enter"){
+if(memoryDateInput){
 
-            doLogin();
+  const now =
+    new Date();
 
-        }
+  const year =
+    now.getFullYear();
 
-    }
-);
+  const month =
+    String(
+      now.getMonth() + 1
+    ).padStart(2,"0");
 
+  const day =
+    String(
+      now.getDate()
+    ).padStart(2,"0");
 
-document
-.getElementById(
-    "email"
-)
-.addEventListener(
-    "keydown",
-    function(event){
+  memoryDateInput.value =
+    year +
+    "-" +
+    month +
+    "-" +
+    day;
 
-        if(event.key === "Enter"){
-
-            document
-            .getElementById(
-                "password"
-            )
-            .focus();
-
-        }
-
-    }
-);
+}
 
 </script>
 
