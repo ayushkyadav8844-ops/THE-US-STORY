@@ -4,16 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <meta name="theme-color" content="#c05f82">
+
 <title>The Us Story ❤️</title>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <style>
-
-/* =========================================================
-   THE US STORY
-   A PRIVATE DIGITAL SCRAPBOOK
-   ========================================================= */
 
 :root{
     --rose:#c05f82;
@@ -47,16 +43,12 @@ body{
             rgba(255,241,246,.76),
             rgba(255,248,243,.87)
         ),
-        url("./background.jpg");
+        url("./file_0000000b66082118bbde5d0666da038.png");
 
     background-size:cover;
     background-position:center;
     background-attachment:fixed;
 }
-
-/* =========================================================
-   BACKGROUND
-   ========================================================= */
 
 body::before{
     content:"";
@@ -100,7 +92,6 @@ body::before{
 
 .float:nth-child(1){
     left:7%;
-    animation-delay:0s;
 }
 
 .float:nth-child(2){
@@ -124,13 +115,8 @@ body::before{
 }
 
 @keyframes floatUp{
-
     0%{
-        transform:
-            translateY(0)
-            translateX(0)
-            rotate(0)
-            scale(.6);
+        transform:translateY(0) translateX(0) rotate(0) scale(.6);
         opacity:0;
     }
 
@@ -139,20 +125,14 @@ body::before{
     }
 
     50%{
-        transform:
-            translateY(-55vh)
-            translateX(25px)
-            rotate(18deg)
-            scale(1);
+        transform:translateY(-55vh) translateX(25px)
+                   rotate(18deg) scale(1);
         opacity:.4;
     }
 
     100%{
-        transform:
-            translateY(-115vh)
-            translateX(-25px)
-            rotate(-18deg)
-            scale(1.15);
+        transform:translateY(-115vh) translateX(-25px)
+                   rotate(-18deg) scale(1.15);
         opacity:0;
     }
 }
@@ -187,7 +167,6 @@ body::before{
 }
 
 @keyframes sparkle{
-
     0%,100%{
         transform:scale(.5) rotate(0);
         opacity:.2;
@@ -199,10 +178,6 @@ body::before{
     }
 }
 
-/* =========================================================
-   MAIN
-   ========================================================= */
-
 .container{
     position:relative;
     z-index:5;
@@ -212,18 +187,12 @@ body::before{
     padding:20px 0 80px;
 }
 
-/* =========================================================
-   HEADER
-   ========================================================= */
-
 header{
     text-align:center;
     padding:25px 8px 10px;
 }
 
-/* =========================================================
-   CUTE TEDDY COUPLE
-   ========================================================= */
+/* TEDDIES */
 
 .teddies{
     display:flex;
@@ -231,7 +200,6 @@ header{
     align-items:flex-end;
     gap:12px;
     height:155px;
-    margin-bottom:0;
 }
 
 .teddy{
@@ -239,9 +207,7 @@ header{
     width:100px;
     height:135px;
     animation:teddyFloat 3s ease-in-out infinite;
-    filter:drop-shadow(
-        0 9px 8px rgba(80,40,30,.13)
-    );
+    filter:drop-shadow(0 9px 8px rgba(80,40,30,.13));
 }
 
 .teddy:nth-child(2){
@@ -255,20 +221,12 @@ header{
     width:76px;
     height:70px;
     border-radius:48%;
-    background:linear-gradient(
-        145deg,
-        #dfa174,
-        #ae694b
-    );
+    background:linear-gradient(145deg,#dfa174,#ae694b);
     z-index:3;
 }
 
 .girl .head{
-    background:linear-gradient(
-        145deg,
-        #e5a08f,
-        #b97065
-    );
+    background:linear-gradient(145deg,#e5a08f,#b97065);
 }
 
 .ear{
@@ -384,19 +342,11 @@ header{
     width:58px;
     height:50px;
     border-radius:48% 48% 40% 40%;
-    background:linear-gradient(
-        145deg,
-        #dfa174,
-        #ae694b
-    );
+    background:linear-gradient(145deg,#dfa174,#ae694b);
 }
 
 .girl .body{
-    background:linear-gradient(
-        145deg,
-        #e5a08f,
-        #b97065
-    );
+    background:linear-gradient(145deg,#e5a08f,#b97065);
 }
 
 .belly{
@@ -469,22 +419,16 @@ header{
 }
 
 @keyframes teddyFloat{
-
     0%,100%{
-        transform:
-            translateY(0)
-            rotate(-2deg);
+        transform:translateY(0) rotate(-2deg);
     }
 
     50%{
-        transform:
-            translateY(-10px)
-            rotate(2deg);
+        transform:translateY(-10px) rotate(2deg);
     }
 }
 
 @keyframes heartBounce{
-
     0%,100%{
         transform:scale(1) rotate(-3deg);
     }
@@ -495,7 +439,6 @@ header{
 }
 
 @keyframes bowWiggle{
-
     0%,100%{
         transform:rotate(10deg);
     }
@@ -511,7 +454,6 @@ header{
 }
 
 @keyframes heartbeat{
-
     0%,100%{
         transform:scale(1);
     }
@@ -526,8 +468,7 @@ h1{
     color:var(--deep);
     font-size:clamp(40px,9vw,72px);
     line-height:1;
-    text-shadow:
-        0 4px 15px rgba(145,76,101,.13);
+    text-shadow:0 4px 15px rgba(145,76,101,.13);
 }
 
 .subtitle{
@@ -549,26 +490,14 @@ h1{
     content:"";
     width:70px;
     height:1px;
-    background:
-        linear-gradient(
-            to right,
-            transparent,
-            var(--soft)
-        );
+    background:linear-gradient(to right,transparent,var(--soft));
 }
 
 .divider::after{
-    background:
-        linear-gradient(
-            to left,
-            transparent,
-            var(--soft)
-        );
+    background:linear-gradient(to left,transparent,var(--soft));
 }
 
-/* =========================================================
-   COUNTER
-   ========================================================= */
+/* COUNTER */
 
 .counter{
     position:relative;
@@ -600,16 +529,12 @@ h1{
 }
 
 @keyframes counterPulse{
-
     0%,100%{
         transform:scale(1);
     }
 
     50%{
         transform:scale(1.18);
-        filter:drop-shadow(
-            0 0 12px rgba(255,90,130,.4)
-        );
     }
 }
 
@@ -640,14 +565,9 @@ h1{
 .counter-box{
     padding:15px 5px;
     border-radius:19px;
-    background:linear-gradient(
-        145deg,
-        #fff7fa,
-        #fffdfb
-    );
+    background:linear-gradient(145deg,#fff7fa,#fffdfb);
     border:1px solid rgba(192,95,130,.14);
-    box-shadow:
-        0 7px 18px rgba(90,50,60,.07);
+    box-shadow:0 7px 18px rgba(90,50,60,.07);
     transition:transform .25s ease;
 }
 
@@ -670,38 +590,7 @@ h1{
     letter-spacing:.8px;
 }
 
-.counter-line{
-    width:140px;
-    height:3px;
-    margin:22px auto 0;
-    overflow:hidden;
-    border-radius:10px;
-    background:#f3dce3;
-}
-
-.counter-line::after{
-    content:"";
-    display:block;
-    width:55px;
-    height:100%;
-    background:var(--rose);
-    animation:lineMove 2s linear infinite;
-}
-
-@keyframes lineMove{
-
-    from{
-        transform:translateX(-60px);
-    }
-
-    to{
-        transform:translateX(150px);
-    }
-}
-
-/* =========================================================
-   CARDS
-   ========================================================= */
+/* CARDS */
 
 .card,
 .music{
@@ -747,9 +636,7 @@ h1{
     line-height:1.7;
 }
 
-/* =========================================================
-   LOGIN
-   ========================================================= */
+/* LOGIN */
 
 #login{
     max-width:450px;
@@ -768,10 +655,6 @@ h1{
     color:var(--muted);
     font-size:17px;
 }
-
-/* =========================================================
-   FORM
-   ========================================================= */
 
 label{
     display:block;
@@ -797,9 +680,7 @@ textarea{
 input:focus,
 textarea:focus{
     border-color:#b66b83;
-    box-shadow:
-        0 0 0 3px rgba(182,107,131,.11);
-    transform:translateY(-1px);
+    box-shadow:0 0 0 3px rgba(182,107,131,.11);
 }
 
 textarea{
@@ -811,10 +692,6 @@ input[type=file]{
     padding:11px;
 }
 
-/* =========================================================
-   BUTTONS
-   ========================================================= */
-
 button{
     font-family:inherit;
 }
@@ -823,33 +700,21 @@ button{
     border:none;
     border-radius:30px;
     padding:14px 24px;
-    background:linear-gradient(
-        135deg,
-        #c7678a,
-        #ae5577
-    );
+    background:linear-gradient(135deg,#c7678a,#ae5577);
     color:white;
     font-size:17px;
     cursor:pointer;
-    box-shadow:
-        0 9px 24px rgba(150,70,100,.2);
+    box-shadow:0 9px 24px rgba(150,70,100,.2);
     transition:.2s ease;
 }
 
 .primary:hover{
     transform:translateY(-3px);
-    box-shadow:
-        0 14px 28px rgba(150,70,100,.25);
-}
-
-.primary:active{
-    transform:scale(.98);
 }
 
 .primary:disabled{
     opacity:.6;
     cursor:not-allowed;
-    transform:none;
 }
 
 #loginButton{
@@ -864,10 +729,6 @@ button{
     color:var(--deep);
     cursor:pointer;
 }
-
-/* =========================================================
-   STATUS
-   ========================================================= */
 
 .status{
     min-height:25px;
@@ -885,9 +746,7 @@ button{
     color:#b04b5b;
 }
 
-/* =========================================================
-   DIARY
-   ========================================================= */
+/* DIARY */
 
 #diary{
     display:none;
@@ -907,9 +766,7 @@ button{
     overflow-wrap:anywhere;
 }
 
-/* =========================================================
-   MUSIC
-   ========================================================= */
+/* MUSIC */
 
 .music{
     text-align:center;
@@ -926,7 +783,6 @@ button{
 }
 
 @keyframes musicPulse{
-
     0%,100%{
         transform:scale(1) rotate(0);
     }
@@ -956,38 +812,6 @@ button{
     margin:10px auto 18px;
 }
 
-.music.playing::after{
-    content:"💕   ✨   💗";
-    position:absolute;
-    left:50%;
-    bottom:20px;
-    transform:translateX(-50%);
-    white-space:nowrap;
-    animation:musicHearts 2.5s ease-out infinite;
-    pointer-events:none;
-}
-
-@keyframes musicHearts{
-
-    0%{
-        transform:
-            translate(-50%,10px)
-            scale(.7);
-        opacity:0;
-    }
-
-    20%{
-        opacity:.8;
-    }
-
-    100%{
-        transform:
-            translate(-50%,-70px)
-            scale(1.1);
-        opacity:0;
-    }
-}
-
 .music-status{
     min-height:24px;
     margin-top:12px;
@@ -995,9 +819,7 @@ button{
     font-size:15px;
 }
 
-/* =========================================================
-   MEMORY WALL
-   ========================================================= */
+/* MEMORY */
 
 .memory{
     position:relative;
@@ -1005,13 +827,8 @@ button{
     padding:25px;
     border:1px solid rgba(160,91,111,.15);
     border-radius:23px;
-    background:linear-gradient(
-        145deg,
-        #fffdfb,
-        #fff7f4
-    );
-    box-shadow:
-        0 13px 32px rgba(90,50,60,.09);
+    background:linear-gradient(145deg,#fffdfb,#fff7f4);
+    box-shadow:0 13px 32px rgba(90,50,60,.09);
     transform:rotate(-.35deg);
     transition:.3s ease;
 }
@@ -1021,11 +838,7 @@ button{
 }
 
 .memory:hover{
-    transform:
-        translateY(-5px)
-        rotate(0);
-    box-shadow:
-        0 20px 40px rgba(90,50,60,.15);
+    transform:translateY(-5px) rotate(0);
 }
 
 .memory::before{
@@ -1070,19 +883,10 @@ button{
     padding:9px 9px 28px;
     border-radius:6px;
     background:white;
-    box-shadow:
-        0 8px 20px rgba(50,30,35,.14);
-    transform:rotate(-1deg);
+    box-shadow:0 8px 20px rgba(50,30,35,.14);
 }
 
-/* =========================================================
-   GAMES
-   ========================================================= */
-
-.game-card{
-    position:relative;
-    overflow:hidden;
-}
+/* GAME */
 
 .game-intro{
     color:var(--muted);
@@ -1107,8 +911,6 @@ button{
             #fff9f7 74%
         );
     border:1px solid #edc3d0;
-    box-shadow:
-        inset 0 -8px 20px rgba(170,80,110,.06);
 }
 
 .runner-cloud{
@@ -1130,7 +932,6 @@ button{
 }
 
 @keyframes cloudMove{
-
     from{
         transform:translateX(0);
     }
@@ -1149,7 +950,6 @@ button{
     font-size:39px;
     z-index:5;
     user-select:none;
-    transition:transform .08s linear;
 }
 
 .obstacle{
@@ -1194,8 +994,6 @@ button{
     font-family:inherit;
     font-size:16px;
     cursor:pointer;
-    box-shadow:
-        0 7px 18px rgba(150,70,100,.18);
     touch-action:manipulation;
 }
 
@@ -1206,57 +1004,7 @@ button{
     margin-top:10px;
 }
 
-/* =========================================================
-   STICKER CORNER
-   ========================================================= */
-
-.sticker{
-    position:fixed;
-    right:14px;
-    bottom:14px;
-    z-index:20;
-    width:72px;
-    height:72px;
-    border-radius:50%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background:rgba(255,255,255,.92);
-    border:3px solid white;
-    box-shadow:
-        0 8px 25px rgba(90,40,60,.18);
-    animation:stickerFloat 3s ease-in-out infinite;
-    pointer-events:none;
-}
-
-.sticker::before{
-    content:"🧸";
-    font-size:40px;
-}
-
-.sticker::after{
-    content:"💕";
-    position:absolute;
-    top:-12px;
-    right:-5px;
-    font-size:20px;
-    animation:heartbeat 1.5s infinite;
-}
-
-@keyframes stickerFloat{
-
-    0%,100%{
-        transform:translateY(0) rotate(-4deg);
-    }
-
-    50%{
-        transform:translateY(-8px) rotate(4deg);
-    }
-}
-
-/* =========================================================
-   LOADING
-   ========================================================= */
+/* LOADING */
 
 .loading{
     padding:35px 10px;
@@ -1272,7 +1020,6 @@ button{
 }
 
 @keyframes loadingBears{
-
     0%,100%{
         transform:translateY(0);
     }
@@ -1294,9 +1041,51 @@ button{
     animation:teddyFloat 2.5s ease-in-out infinite;
 }
 
-/* =========================================================
-   CELEBRATION
-   ========================================================= */
+/* STICKER */
+
+.sticker{
+    position:fixed;
+    right:14px;
+    bottom:14px;
+    z-index:20;
+    width:72px;
+    height:72px;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:rgba(255,255,255,.92);
+    border:3px solid white;
+    box-shadow:0 8px 25px rgba(90,40,60,.18);
+    animation:stickerFloat 3s ease-in-out infinite;
+    pointer-events:none;
+}
+
+.sticker::before{
+    content:"🧸";
+    font-size:40px;
+}
+
+.sticker::after{
+    content:"💕";
+    position:absolute;
+    top:-12px;
+    right:-5px;
+    font-size:20px;
+    animation:heartbeat 1.5s infinite;
+}
+
+@keyframes stickerFloat{
+    0%,100%{
+        transform:translateY(0) rotate(-4deg);
+    }
+
+    50%{
+        transform:translateY(-8px) rotate(4deg);
+    }
+}
+
+/* CELEBRATION */
 
 .celebration{
     position:fixed;
@@ -1307,7 +1096,6 @@ button{
 }
 
 @keyframes celebrate{
-
     0%{
         transform:translate(0,0) scale(.3);
         opacity:0;
@@ -1318,17 +1106,11 @@ button{
     }
 
     100%{
-        transform:
-            translate(var(--x),var(--y))
-            scale(1.2)
-            rotate(25deg);
+        transform:translate(var(--x),var(--y))
+                   scale(1.2) rotate(25deg);
         opacity:0;
     }
 }
-
-/* =========================================================
-   FOOTER
-   ========================================================= */
 
 footer{
     margin-top:55px;
@@ -1344,9 +1126,7 @@ footer{
     animation:teddyFloat 2.5s ease-in-out infinite;
 }
 
-/* =========================================================
-   MOBILE
-   ========================================================= */
+/* MOBILE */
 
 @media(max-width:600px){
 
@@ -1445,10 +1225,6 @@ footer{
 
 <body>
 
-<!-- =======================================================
-     BACKGROUND DECORATIONS
-     ======================================================= -->
-
 <div class="decorations">
 
     <div class="float">💕</div>
@@ -1464,18 +1240,11 @@ footer{
 
 </div>
 
-
 <div class="container">
-
-<!-- =======================================================
-     HEADER
-     ======================================================= -->
 
 <header>
 
     <div class="teddies">
-
-        <!-- Teddy 1 -->
 
         <div class="teddy">
 
@@ -1510,9 +1279,6 @@ footer{
             <div class="heart">❤️</div>
 
         </div>
-
-
-        <!-- Teddy 2 -->
 
         <div class="teddy girl">
 
@@ -1552,43 +1318,28 @@ footer{
 
     </div>
 
+    <div class="header-heart">❤️</div>
 
-    <div class="header-heart">
-        ❤️
-    </div>
-
-
-    <h1>
-        The Us Story
-    </h1>
-
+    <h1>The Us Story</h1>
 
     <div class="divider">
         <span>♡</span>
     </div>
 
-
     <p class="subtitle">
-
         A tiny corner of the internet
         <br>
         that belongs only to our story. 🧸❤️
-
     </p>
 
 </header>
 
 
-<!-- =======================================================
-     LOVE COUNTER
-     START: 11 JANUARY 2022
-     ======================================================= -->
+<!-- LOVE COUNTER -->
 
 <div class="counter">
 
-    <div class="counter-heart">
-        ❤️
-    </div>
+    <div class="counter-heart">❤️</div>
 
     <div class="counter-title">
         Our Story So Far
@@ -1622,14 +1373,10 @@ footer{
 
     </div>
 
-    <div class="counter-line"></div>
-
 </div>
 
 
-<!-- =======================================================
-     LOGIN
-     ======================================================= -->
+<!-- LOGIN -->
 
 <div id="login" class="card">
 
@@ -1641,9 +1388,7 @@ footer{
         Just us, our memories, and a little piece of forever. ❤️
     </div>
 
-    <label for="email">
-        Email
-    </label>
+    <label for="email">Email</label>
 
     <input
         id="email"
@@ -1652,9 +1397,7 @@ footer{
         autocomplete="email"
     >
 
-    <label for="password">
-        Password
-    </label>
+    <label for="password">Password</label>
 
     <input
         id="password"
@@ -1677,9 +1420,7 @@ footer{
 </div>
 
 
-<!-- =======================================================
-     DIARY
-     ======================================================= -->
+<!-- DIARY -->
 
 <div id="diary">
 
@@ -1701,9 +1442,7 @@ footer{
     </div>
 
 
-    <!-- ===================================================
-         MUSIC
-         =================================================== -->
+    <!-- MUSIC -->
 
     <div id="music" class="music">
 
@@ -1725,9 +1464,13 @@ footer{
             controls
             playsinline>
 
+            <!-- YOUR ACTUAL SONG FILE -->
+
             <source
-                src="./our-song.mp3"
+                src="./vidssave.com%20Osho%20Jain%20_%20Tu%20Aisa%20Kaise%20Hai_%20%E2%80%93%20%23OshoJain%20720P.mp3"
                 type="audio/mpeg">
+
+            Your browser does not support audio.
 
         </audio>
 
@@ -1751,15 +1494,11 @@ footer{
     </div>
 
 
-    <!-- ===================================================
-         TO US
-         =================================================== -->
+    <!-- TO US -->
 
     <div class="card">
 
-        <h2>
-            🌷 To Us
-        </h2>
+        <h2>🌷 To Us</h2>
 
         <p>
 
@@ -1784,15 +1523,11 @@ footer{
     </div>
 
 
-    <!-- ===================================================
-         MEMORY FORM
-         =================================================== -->
+    <!-- MEMORY FORM -->
 
     <div class="card">
 
-        <h2>
-            ✨ Save A Little Moment
-        </h2>
+        <h2>✨ Save A Little Moment</h2>
 
         <label for="title">
             Memory title
@@ -1846,15 +1581,11 @@ footer{
     </div>
 
 
-    <!-- ===================================================
-         MEMORY WALL
-         =================================================== -->
+    <!-- MEMORY WALL -->
 
     <div class="card">
 
-        <h2>
-            📖 Our Memory Wall
-        </h2>
+        <h2>📖 Our Memory Wall</h2>
 
         <p
             style="
@@ -1883,18 +1614,12 @@ footer{
 
         </div>
 
-        <div class="memory-decoration">
-            🧸 · ♡ · 💕 · ♡ · 🧸
-        </div>
-
     </div>
 
 
-    <!-- ===================================================
-         GAME
-         =================================================== -->
+    <!-- GAME -->
 
-    <div class="card game-card">
+    <div class="card">
 
         <h2>
             💌 Missing Me? Let's Look Back Together
@@ -1909,7 +1634,6 @@ footer{
             how long you can keep our story going. 🧸❤️
 
         </p>
-
 
         <div class="runner" id="runner">
 
@@ -1941,25 +1665,19 @@ footer{
 
         </div>
 
-
         <div class="game-score">
 
             <span>
                 Score:
-                <span id="score">
-                    0
-                </span>
+                <span id="score">0</span>
             </span>
 
             <span>
                 Best:
-                <span id="best">
-                    0
-                </span>
+                <span id="best">0</span>
             </span>
 
         </div>
-
 
         <div class="game-controls">
 
@@ -1981,7 +1699,6 @@ footer{
 
         </div>
 
-
         <div
             id="gameMessage"
             class="game-message">
@@ -1995,16 +1712,8 @@ footer{
 </div>
 
 
-<!-- =======================================================
-     FLOATING STICKER
-     ======================================================= -->
-
 <div class="sticker"></div>
 
-
-<!-- =======================================================
-     FOOTER
-     ======================================================= -->
 
 <footer>
 
@@ -2026,16 +1735,8 @@ footer{
 <script>
 
 /* =========================================================
-   SUPABASE CONFIG
+   SUPABASE
    ========================================================= */
-
-/*
-   YOUR FRIEND MUST REPLACE THESE TWO VALUES.
-
-   Supabase Dashboard
-   → Project Settings
-   → API
-*/
 
 const SUPABASE_URL =
     "PASTE_YOUR_SUPABASE_PROJECT_URL_HERE";
@@ -2043,10 +1744,7 @@ const SUPABASE_URL =
 const SUPABASE_KEY =
     "PASTE_YOUR_SUPABASE_PUBLISHABLE_KEY_HERE";
 
-
-const TABLE =
-    "memories";
-
+const TABLE = "memories";
 
 const supabaseClient =
     window.supabase.createClient(
@@ -2057,23 +1755,17 @@ const supabaseClient =
 
 /* =========================================================
    RELATIONSHIP COUNTER
-   START: 11 JANUARY 2022
    ========================================================= */
 
 const relationshipStart =
-    new Date(
-        "2022-01-11T00:00:00"
-    );
-
+    new Date("2022-01-11T00:00:00");
 
 function updateCounter(){
 
-    const now =
-        new Date();
+    const now = new Date();
 
     let difference =
-        now.getTime()
-        -
+        now.getTime() -
         relationshipStart.getTime();
 
     if(difference < 0){
@@ -2081,73 +1773,44 @@ function updateCounter(){
     }
 
     const totalSeconds =
-        Math.floor(
-            difference / 1000
-        );
+        Math.floor(difference / 1000);
 
     const days =
-        Math.floor(
-            totalSeconds / 86400
-        );
+        Math.floor(totalSeconds / 86400);
 
     const hours =
         Math.floor(
-            (totalSeconds % 86400)
-            / 3600
+            (totalSeconds % 86400) / 3600
         );
 
     const minutes =
         Math.floor(
-            (totalSeconds % 3600)
-            / 60
+            (totalSeconds % 3600) / 60
         );
 
     const seconds =
         totalSeconds % 60;
 
-
-    document.getElementById(
-        "days"
-    ).textContent =
+    document.getElementById("days")
+        .textContent =
         days.toLocaleString();
 
+    document.getElementById("hours")
+        .textContent =
+        String(hours).padStart(2,"0");
 
-    document.getElementById(
-        "hours"
-    ).textContent =
-        String(hours).padStart(
-            2,
-            "0"
-        );
+    document.getElementById("minutes")
+        .textContent =
+        String(minutes).padStart(2,"0");
 
-
-    document.getElementById(
-        "minutes"
-    ).textContent =
-        String(minutes).padStart(
-            2,
-            "0"
-        );
-
-
-    document.getElementById(
-        "seconds"
-    ).textContent =
-        String(seconds).padStart(
-            2,
-            "0"
-        );
-
+    document.getElementById("seconds")
+        .textContent =
+        String(seconds).padStart(2,"0");
 }
-
 
 updateCounter();
 
-
-setInterval(
-    updateCounter,
-    1000
-);
+setInterval(updateCounter,1000);
 
 
 /* =========================================================
@@ -2155,79 +1818,50 @@ setInterval(
    ========================================================= */
 
 const login =
-    document.getElementById(
-        "login"
-    );
+    document.getElementById("login");
 
 const diary =
-    document.getElementById(
-        "diary"
-    );
+    document.getElementById("diary");
 
 const loginButton =
-    document.getElementById(
-        "loginButton"
-    );
+    document.getElementById("loginButton");
 
 const logoutButton =
-    document.getElementById(
-        "logout"
-    );
+    document.getElementById("logout");
 
 const loginStatus =
-    document.getElementById(
-        "loginStatus"
-    );
+    document.getElementById("loginStatus");
 
 const welcome =
-    document.getElementById(
-        "welcome"
-    );
+    document.getElementById("welcome");
 
 const saveButton =
-    document.getElementById(
-        "save"
-    );
+    document.getElementById("save");
 
 const status =
-    document.getElementById(
-        "status"
-    );
+    document.getElementById("status");
 
 const memoriesContainer =
-    document.getElementById(
-        "memories"
-    );
+    document.getElementById("memories");
 
 
 /* =========================================================
-   AUTH DISPLAY
+   LOGIN DISPLAY
    ========================================================= */
 
 function showLogin(){
 
-    login.style.display =
-        "block";
-
-    diary.style.display =
-        "none";
+    login.style.display = "block";
+    diary.style.display = "none";
 
 }
 
-
 function showDiary(user){
 
-    login.style.display =
-        "none";
+    login.style.display = "none";
+    diary.style.display = "block";
 
-    diary.style.display =
-        "block";
-
-
-    if(
-        user &&
-        user.email
-    ){
+    if(user && user.email){
 
         welcome.textContent =
             "Welcome back ❤️ " +
@@ -2236,7 +1870,6 @@ function showDiary(user){
     }
 
     loadMemories();
-
 }
 
 
@@ -2247,25 +1880,14 @@ function showDiary(user){
 async function doLogin(){
 
     const email =
-        document
-            .getElementById(
-                "email"
-            )
-            .value
-            .trim();
+        document.getElementById("email")
+        .value.trim();
 
     const password =
-        document
-            .getElementById(
-                "password"
-            )
-            .value;
+        document.getElementById("password")
+        .value;
 
-
-    if(
-        !email ||
-        !password
-    ){
+    if(!email || !password){
 
         loginStatus.className =
             "status error";
@@ -2274,16 +1896,12 @@ async function doLogin(){
             "Please enter both email and password ❤️";
 
         return;
-
     }
 
-
-    loginButton.disabled =
-        true;
+    loginButton.disabled = true;
 
     loginButton.textContent =
         "Opening our diary... ❤️";
-
 
     try{
 
@@ -2291,20 +1909,15 @@ async function doLogin(){
             data,
             error
         } =
-            await supabaseClient
-                .auth
-                .signInWithPassword({
-
-                    email:email,
-                    password:password
-
-                });
-
+            await supabaseClient.auth
+            .signInWithPassword({
+                email:email,
+                password:password
+            });
 
         if(error){
             throw error;
         }
-
 
         if(
             !data ||
@@ -2318,16 +1931,11 @@ async function doLogin(){
 
         }
 
+        loginStatus.textContent = "";
 
-        loginStatus.textContent =
-            "";
-
-        showDiary(
-            data.user
-        );
+        showDiary(data.user);
 
     }
-
 
     catch(error){
 
@@ -2345,11 +1953,9 @@ async function doLogin(){
 
     }
 
-
     finally{
 
-        loginButton.disabled =
-            false;
+        loginButton.disabled = false;
 
         loginButton.textContent =
             "Enter Our Diary ❤️";
@@ -2384,8 +1990,7 @@ async function doLogout(){
 
     showLogin();
 
-    loginStatus.className =
-        "status";
+    loginStatus.className = "status";
 
     loginStatus.textContent =
         "Logged out ❤️";
@@ -2397,37 +2002,31 @@ async function doLogout(){
    AUTH STATE
    ========================================================= */
 
-supabaseClient
-    .auth
-    .onAuthStateChange(
-        function(
-            event,
-            session
+supabaseClient.auth
+.onAuthStateChange(
+    function(event,session){
+
+        if(
+            session &&
+            session.user
         ){
 
-            if(
-                session &&
-                session.user
-            ){
-
-                showDiary(
-                    session.user
-                );
-
-            }
-
-            else{
-
-                showLogin();
-
-            }
+            showDiary(session.user);
 
         }
-    );
+
+        else{
+
+            showLogin();
+
+        }
+
+    }
+);
 
 
 /* =========================================================
-   INITIAL SESSION
+   CHECK SESSION
    ========================================================= */
 
 async function checkSession(){
@@ -2439,14 +2038,12 @@ async function checkSession(){
             error
         } =
             await supabaseClient
-                .auth
-                .getSession();
-
+            .auth
+            .getSession();
 
         if(error){
             throw error;
         }
-
 
         if(
             data &&
@@ -2481,7 +2078,6 @@ async function checkSession(){
 
 }
 
-
 checkSession();
 
 
@@ -2500,7 +2096,6 @@ function escapeHTML(value){
 
     }
 
-
     return String(value)
         .replace(/&/g,"&amp;")
         .replace(/</g,"&lt;")
@@ -2518,14 +2113,10 @@ function escapeHTML(value){
 function compressImage(file){
 
     return new Promise(
-        function(
-            resolve,
-            reject
-        ){
+        function(resolve,reject){
 
             const reader =
                 new FileReader();
-
 
             reader.onload =
                 function(event){
@@ -2533,12 +2124,10 @@ function compressImage(file){
                     const image =
                         new Image();
 
-
                     image.onload =
                         function(){
 
-                            const MAX =
-                                1600;
+                            const MAX = 1600;
 
                             let width =
                                 image.width;
@@ -2546,15 +2135,12 @@ function compressImage(file){
                             let height =
                                 image.height;
 
-
                             if(
                                 width > MAX ||
                                 height > MAX
                             ){
 
-                                if(
-                                    width > height
-                                ){
+                                if(width > height){
 
                                     height =
                                         Math.round(
@@ -2563,8 +2149,7 @@ function compressImage(file){
                                             width
                                         );
 
-                                    width =
-                                        MAX;
+                                    width = MAX;
 
                                 }
 
@@ -2577,32 +2162,24 @@ function compressImage(file){
                                             height
                                         );
 
-                                    height =
-                                        MAX;
+                                    height = MAX;
 
                                 }
 
                             }
-
 
                             const canvas =
                                 document.createElement(
                                     "canvas"
                                 );
 
-
-                            canvas.width =
-                                width;
-
-                            canvas.height =
-                                height;
-
+                            canvas.width = width;
+                            canvas.height = height;
 
                             const ctx =
                                 canvas.getContext(
                                     "2d"
                                 );
-
 
                             ctx.drawImage(
                                 image,
@@ -2612,7 +2189,6 @@ function compressImage(file){
                                 height
                             );
 
-
                             resolve(
                                 canvas.toDataURL(
                                     "image/jpeg",
@@ -2621,7 +2197,6 @@ function compressImage(file){
                             );
 
                         };
-
 
                     image.onerror =
                         function(){
@@ -2634,12 +2209,10 @@ function compressImage(file){
 
                         };
 
-
                     image.src =
                         event.target.result;
 
                 };
-
 
             reader.onerror =
                 function(){
@@ -2652,10 +2225,7 @@ function compressImage(file){
 
                 };
 
-
-            reader.readAsDataURL(
-                file
-            );
+            reader.readAsDataURL(file);
 
         }
     );
@@ -2685,7 +2255,6 @@ async function loadMemories(){
 
     `;
 
-
     try{
 
         const {
@@ -2693,19 +2262,16 @@ async function loadMemories(){
             error:userError
         } =
             await supabaseClient
-                .auth
-                .getUser();
-
+            .auth
+            .getUser();
 
         if(userError){
             throw userError;
         }
 
-
         const user =
             userData &&
             userData.user;
-
 
         if(!user){
 
@@ -2728,42 +2294,29 @@ async function loadMemories(){
 
         }
 
-
-        /*
-           RLS-SAFE QUERY
-
-           The table policy should use:
-
-           auth.uid() = user_id
-
-           Therefore we only request this user's rows.
-        */
-
         const {
             data,
             error
         } =
             await supabaseClient
-                .from(TABLE)
-                .select(
-                    "id,user_id,title,date,message,image,created_at"
-                )
-                .eq(
-                    "user_id",
-                    user.id
-                )
-                .order(
-                    "created_at",
-                    {
-                        ascending:false
-                    }
-                );
-
+            .from(TABLE)
+            .select(
+                "id,user_id,title,date,message,image,created_at"
+            )
+            .eq(
+                "user_id",
+                user.id
+            )
+            .order(
+                "created_at",
+                {
+                    ascending:false
+                }
+            );
 
         if(error){
             throw error;
         }
-
 
         displayMemories(
             data || []
@@ -2771,14 +2324,12 @@ async function loadMemories(){
 
     }
 
-
     catch(error){
 
         console.error(
             "LOAD ERROR:",
             error
         );
-
 
         memoriesContainer.innerHTML = `
 
@@ -2842,10 +2393,7 @@ function displayMemories(memories){
 
     }
 
-
-    memoriesContainer.innerHTML =
-        "";
-
+    memoriesContainer.innerHTML = "";
 
     memories.forEach(
         function(memory){
@@ -2855,26 +2403,20 @@ function displayMemories(memories){
                     "article"
                 );
 
-
             article.className =
                 "memory";
-
 
             const title =
                 escapeHTML(
                     memory.title
                 );
 
-
             const message =
                 escapeHTML(
                     memory.message
                 );
 
-
-            let dateHTML =
-                "";
-
+            let dateHTML = "";
 
             if(memory.date){
 
@@ -2883,7 +2425,6 @@ function displayMemories(memories){
                         memory.date +
                         "T00:00:00"
                     );
-
 
                 dateHTML = `
 
@@ -2906,10 +2447,7 @@ function displayMemories(memories){
 
             }
 
-
-            let imageHTML =
-                "";
-
+            let imageHTML = "";
 
             if(memory.image){
 
@@ -2927,7 +2465,6 @@ function displayMemories(memories){
 
             }
 
-
             article.innerHTML = `
 
                 <h3>
@@ -2943,7 +2480,6 @@ function displayMemories(memories){
                 ${imageHTML}
 
             `;
-
 
             memoriesContainer.appendChild(
                 article
@@ -2962,41 +2498,21 @@ function displayMemories(memories){
 async function saveMemory(){
 
     const title =
-        document
-            .getElementById(
-                "title"
-            )
-            .value
-            .trim();
-
+        document.getElementById("title")
+        .value.trim();
 
     const date =
-        document
-            .getElementById(
-                "date"
-            )
-            .value;
-
+        document.getElementById("date")
+        .value;
 
     const message =
-        document
-            .getElementById(
-                "message"
-            )
-            .value
-            .trim();
-
+        document.getElementById("message")
+        .value.trim();
 
     const photoInput =
-        document.getElementById(
-            "photo"
-        );
+        document.getElementById("photo");
 
-
-    if(
-        !title ||
-        !message
-    ){
+    if(!title || !message){
 
         status.className =
             "status error";
@@ -3008,13 +2524,10 @@ async function saveMemory(){
 
     }
 
-
-    saveButton.disabled =
-        true;
+    saveButton.disabled = true;
 
     saveButton.textContent =
         "Saving our little moment... 🧸";
-
 
     try{
 
@@ -3023,19 +2536,16 @@ async function saveMemory(){
             error:userError
         } =
             await supabaseClient
-                .auth
-                .getUser();
-
+            .auth
+            .getUser();
 
         if(userError){
             throw userError;
         }
 
-
         const user =
             userData &&
             userData.user;
-
 
         if(!user){
 
@@ -3045,14 +2555,7 @@ async function saveMemory(){
 
         }
 
-
-        let image =
-            null;
-
-
-        /* =================================================
-           PHOTO
-           ================================================= */
+        let image = null;
 
         if(
             photoInput.files &&
@@ -3062,11 +2565,8 @@ async function saveMemory(){
             const file =
                 photoInput.files[0];
 
-
             if(
-                !file.type.startsWith(
-                    "image/"
-                )
+                !file.type.startsWith("image/")
             ){
 
                 throw new Error(
@@ -3074,7 +2574,6 @@ async function saveMemory(){
                 );
 
             }
-
 
             if(
                 file.size >
@@ -3087,81 +2586,36 @@ async function saveMemory(){
 
             }
 
-
-            status.className =
-                "status";
+            status.className = "status";
 
             status.textContent =
                 "Making the photo diary-friendly... 📷";
 
-
-            /*
-               PNG/JPG/JPEG/WEBP are all accepted.
-
-               Everything is converted into
-               a compressed JPEG before storage.
-            */
-
             image =
-                await compressImage(
-                    file
-                );
+                await compressImage(file);
 
         }
 
-
-        /* =================================================
-           INSERT
-           ================================================= */
-
         const memory = {
 
-            /*
-               IMPORTANT FOR RLS
-
-               Policy:
-
-               auth.uid() = user_id
-
-               Therefore user_id MUST be inserted.
-            */
-
-            user_id:
-                user.id,
-
-            title:
-                title,
-
-            date:
-                date || null,
-
-            message:
-                message,
-
-            image:
-                image
+            user_id:user.id,
+            title:title,
+            date:date || null,
+            message:message,
+            image:image
 
         };
-
 
         const {
             error
         } =
             await supabaseClient
-                .from(TABLE)
-                .insert(
-                    memory
-                );
-
+            .from(TABLE)
+            .insert(memory);
 
         if(error){
             throw error;
         }
-
-
-        /* =================================================
-           SUCCESS
-           ================================================= */
 
         status.className =
             "status success";
@@ -3169,36 +2623,22 @@ async function saveMemory(){
         status.textContent =
             "Our little moment is safely saved forever. ❤️";
 
+        document.getElementById("title")
+            .value = "";
 
-        document.getElementById(
-            "title"
-        ).value =
-            "";
+        document.getElementById("date")
+            .value = "";
 
+        document.getElementById("message")
+            .value = "";
 
-        document.getElementById(
-            "date"
-        ).value =
-            "";
-
-
-        document.getElementById(
-            "message"
-        ).value =
-            "";
-
-
-        photoInput.value =
-            "";
-
+        photoInput.value = "";
 
         celebration();
-
 
         await loadMemories();
 
     }
-
 
     catch(error){
 
@@ -3206,7 +2646,6 @@ async function saveMemory(){
             "SAVE ERROR:",
             error
         );
-
 
         status.className =
             "status error";
@@ -3217,11 +2656,9 @@ async function saveMemory(){
 
     }
 
-
     finally{
 
-        saveButton.disabled =
-            false;
+        saveButton.disabled = false;
 
         saveButton.textContent =
             "🧸 Save This Little Moment ♡";
@@ -3246,7 +2683,6 @@ function celebration(){
         "🧸"
     ];
 
-
     for(
         let i=0;
         i<15;
@@ -3254,14 +2690,10 @@ function celebration(){
     ){
 
         const element =
-            document.createElement(
-                "div"
-            );
-
+            document.createElement("div");
 
         element.className =
             "celebration";
-
 
         element.textContent =
             symbols[
@@ -3271,13 +2703,8 @@ function celebration(){
                 )
             ];
 
-
-        element.style.left =
-            "50%";
-
-        element.style.top =
-            "50%";
-
+        element.style.left = "50%";
+        element.style.top = "50%";
 
         element.style.setProperty(
             "--x",
@@ -3288,7 +2715,6 @@ function celebration(){
             ) + "px"
         );
 
-
         element.style.setProperty(
             "--y",
             (
@@ -3298,11 +2724,9 @@ function celebration(){
             ) + "px"
         );
 
-
         document.body.appendChild(
             element
         );
-
 
         setTimeout(
             function(){
@@ -3321,25 +2745,16 @@ function celebration(){
    ========================================================= */
 
 const song =
-    document.getElementById(
-        "song"
-    );
+    document.getElementById("song");
 
 const music =
-    document.getElementById(
-        "music"
-    );
+    document.getElementById("music");
 
 const musicButton =
-    document.getElementById(
-        "musicButton"
-    );
+    document.getElementById("musicButton");
 
 const musicStatus =
-    document.getElementById(
-        "musicStatus"
-    );
-
+    document.getElementById("musicStatus");
 
 musicButton.addEventListener(
     "click",
@@ -3361,7 +2776,7 @@ musicButton.addEventListener(
                 );
 
                 musicStatus.textContent =
-                    "Couldn't play the song. Make sure our-song.mp3 is in the repository. ❤️";
+                    "Couldn't play the song. Check the song filename. ❤️";
 
             }
 
@@ -3376,14 +2791,11 @@ musicButton.addEventListener(
     }
 );
 
-
 song.addEventListener(
     "play",
     function(){
 
-        music.classList.add(
-            "playing"
-        );
+        music.classList.add("playing");
 
         musicButton.textContent =
             "⏸ Pause Our Song";
@@ -3394,14 +2806,11 @@ song.addEventListener(
     }
 );
 
-
 song.addEventListener(
     "pause",
     function(){
 
-        music.classList.remove(
-            "playing"
-        );
+        music.classList.remove("playing");
 
         if(!song.ended){
 
@@ -3416,14 +2825,11 @@ song.addEventListener(
     }
 );
 
-
 song.addEventListener(
     "ended",
     function(){
 
-        music.classList.remove(
-            "playing"
-        );
+        music.classList.remove("playing");
 
         musicButton.textContent =
             "▶ Play Our Song";
@@ -3436,78 +2842,42 @@ song.addEventListener(
 
 
 /* =========================================================
-   ENDLESS RUNNER GAME
-   PHONE FRIENDLY
+   GAME
    ========================================================= */
 
 const runner =
-    document.getElementById(
-        "runner"
-    );
+    document.getElementById("runner");
 
 const player =
-    document.getElementById(
-        "player"
-    );
+    document.getElementById("player");
 
 const obstacle =
-    document.getElementById(
-        "obstacle"
-    );
+    document.getElementById("obstacle");
 
 const scoreElement =
-    document.getElementById(
-        "score"
-    );
+    document.getElementById("score");
 
 const bestElement =
-    document.getElementById(
-        "best"
-    );
+    document.getElementById("best");
 
 const startGameButton =
-    document.getElementById(
-        "startGame"
-    );
+    document.getElementById("startGame");
 
 const jumpButton =
-    document.getElementById(
-        "jumpButton"
-    );
+    document.getElementById("jumpButton");
 
 const gameMessage =
-    document.getElementById(
-        "gameMessage"
-    );
+    document.getElementById("gameMessage");
 
-
-let gameRunning =
-    false;
-
-let jumping =
-    false;
-
-let velocityY =
-    0;
-
-let playerY =
-    0;
-
-let obstacleX =
-    -70;
-
-let score =
-    0;
-
-let gameSpeed =
-    6;
-
-let animationFrame =
-    null;
-
-let lastTime =
-    0;
-
+let gameRunning = false;
+let jumping = false;
+let velocityY = 0;
+let playerY = 0;
+let obstacleX = -70;
+let score = 0;
+let gameSpeed = 6;
+let animationFrame = null;
+let lastTime = 0;
 
 let best =
     Number(
@@ -3516,14 +2886,10 @@ let best =
         ) || 0
     );
 
-
-bestElement.textContent =
-    best;
+bestElement.textContent = best;
 
 
-/* =========================================================
-   JUMP
-   ========================================================= */
+/* JUMP */
 
 function jump(){
 
@@ -3535,18 +2901,13 @@ function jump(){
         return;
     }
 
-    jumping =
-        true;
-
-    velocityY =
-        14;
+    jumping = true;
+    velocityY = 14;
 
 }
 
 
-/* =========================================================
-   START
-   ========================================================= */
+/* START GAME */
 
 function startGame(){
 
@@ -3554,47 +2915,31 @@ function startGame(){
         return;
     }
 
-
-    gameRunning =
-        true;
-
-    jumping =
-        false;
-
-    velocityY =
-        0;
-
-    playerY =
-        0;
+    gameRunning = true;
+    jumping = false;
+    velocityY = 0;
+    playerY = 0;
 
     obstacleX =
         runner.clientWidth + 40;
 
-    score =
-        0;
+    score = 0;
+    gameSpeed = 6;
 
-    gameSpeed =
-        6;
-
-    scoreElement.textContent =
-        "0";
+    scoreElement.textContent = "0";
 
     gameMessage.textContent =
         "Keep going! 🧸❤️";
 
-
     startGameButton.textContent =
         "🔄 Restart";
-
 
     lastTime =
         performance.now();
 
-
     cancelAnimationFrame(
         animationFrame
     );
-
 
     animationFrame =
         requestAnimationFrame(
@@ -3604,24 +2949,19 @@ function startGame(){
 }
 
 
-/* =========================================================
-   GAME OVER
-   ========================================================= */
+/* GAME OVER */
 
 function gameOver(){
 
-    gameRunning =
-        false;
+    gameRunning = false;
 
     cancelAnimationFrame(
         animationFrame
     );
 
-
     if(score > best){
 
-        best =
-            score;
+        best = score;
 
         localStorage.setItem(
             "theUsStoryBest",
@@ -3643,16 +2983,13 @@ function gameOver(){
 
     }
 
-
     startGameButton.textContent =
         "🧸 Play Again";
 
 }
 
 
-/* =========================================================
-   GAME LOOP
-   ========================================================= */
+/* GAME LOOP */
 
 function gameLoop(time){
 
@@ -3660,22 +2997,16 @@ function gameLoop(time){
         return;
     }
 
-
     const delta =
         Math.min(
-            (time - lastTime) /
-            16.67,
+            (time - lastTime) / 16.67,
             2
         );
 
-
-    lastTime =
-        time;
+    lastTime = time;
 
 
-    /* =========================
-       PLAYER PHYSICS
-       ========================= */
+    /* PLAYER */
 
     if(jumping){
 
@@ -3685,22 +3016,15 @@ function gameLoop(time){
         playerY +=
             velocityY * delta;
 
-
         if(playerY <= 0){
 
-            playerY =
-                0;
-
-            velocityY =
-                0;
-
-            jumping =
-                false;
+            playerY = 0;
+            velocityY = 0;
+            jumping = false;
 
         }
 
     }
-
 
     player.style.transform =
         "translateY(" +
@@ -3708,23 +3032,15 @@ function gameLoop(time){
         "px)";
 
 
-    /* =========================
-       OBSTACLE
-       ========================= */
+    /* OBSTACLE */
 
     obstacleX -=
-        gameSpeed *
-        delta;
+        gameSpeed * delta;
 
-
-    if(
-        obstacleX <
-        -70
-    ){
+    if(obstacleX < -70){
 
         obstacleX =
-            runner.clientWidth +
-            20;
+            runner.clientWidth + 20;
 
         score++;
 
@@ -3734,13 +3050,10 @@ function gameLoop(time){
         gameSpeed =
             Math.min(
                 12,
-                6 +
-                score *
-                .12
+                6 + score * .12
             );
 
     }
-
 
     obstacle.style.transform =
         "translateX(" +
@@ -3748,9 +3061,7 @@ function gameLoop(time){
         "px)";
 
 
-    /* =========================
-       COLLISION
-       ========================= */
+    /* COLLISION */
 
     const playerRect =
         player.getBoundingClientRect();
@@ -3758,30 +3069,27 @@ function gameLoop(time){
     const obstacleRect =
         obstacle.getBoundingClientRect();
 
-
-    const padding =
-        8;
-
+    const padding = 8;
 
     const collision =
         playerRect.left + padding <
         obstacleRect.right - padding &&
+
         playerRect.right - padding >
         obstacleRect.left + padding &&
+
         playerRect.top + padding <
         obstacleRect.bottom - padding &&
+
         playerRect.bottom - padding >
         obstacleRect.top + padding;
-
 
     if(collision){
 
         gameOver();
-
         return;
 
     }
-
 
     animationFrame =
         requestAnimationFrame(
@@ -3791,15 +3099,12 @@ function gameLoop(time){
 }
 
 
-/* =========================================================
-   GAME CONTROLS
-   ========================================================= */
+/* GAME BUTTONS */
 
 startGameButton.addEventListener(
     "click",
     startGame
 );
-
 
 jumpButton.addEventListener(
     "pointerdown",
@@ -3812,28 +3117,11 @@ jumpButton.addEventListener(
     }
 );
 
-
-/*
-   Tapping the game itself also jumps.
-
-   This makes the game much easier
-   to use on a phone.
-*/
-
 runner.addEventListener(
     "pointerdown",
     function(event){
 
-        if(
-            event.target ===
-            startGameButton
-        ){
-            return;
-        }
-
-        if(
-            gameRunning
-        ){
+        if(gameRunning){
 
             event.preventDefault();
 
@@ -3845,19 +3133,15 @@ runner.addEventListener(
 );
 
 
-/*
-   Keyboard controls for desktop.
-*/
+/* KEYBOARD */
 
 document.addEventListener(
     "keydown",
     function(event){
 
         if(
-            event.code ===
-            "Space" ||
-            event.code ===
-            "ArrowUp"
+            event.code === "Space" ||
+            event.code === "ArrowUp"
         ){
 
             event.preventDefault();
@@ -3867,6 +3151,7 @@ document.addEventListener(
                 startGame();
 
             }
+
             else{
 
                 jump();
@@ -3888,12 +3173,10 @@ loginButton.addEventListener(
     doLogin
 );
 
-
 logoutButton.addEventListener(
     "click",
     doLogout
 );
-
 
 saveButton.addEventListener(
     "click",
@@ -3902,53 +3185,40 @@ saveButton.addEventListener(
 
 
 /* =========================================================
-   LOGIN ENTER KEY
+   ENTER TO LOGIN
    ========================================================= */
 
 document
-    .getElementById(
-        "password"
-    )
-    .addEventListener(
-        "keydown",
-        function(event){
+.getElementById("password")
+.addEventListener(
+    "keydown",
+    function(event){
 
-            if(
-                event.key ===
-                "Enter"
-            ){
+        if(event.key === "Enter"){
 
-                doLogin();
-
-            }
+            doLogin();
 
         }
-    );
 
+    }
+);
 
 document
-    .getElementById(
-        "email"
-    )
-    .addEventListener(
-        "keydown",
-        function(event){
+.getElementById("email")
+.addEventListener(
+    "keydown",
+    function(event){
 
-            if(
-                event.key ===
-                "Enter"
-            ){
+        if(event.key === "Enter"){
 
-                document
-                    .getElementById(
-                        "password"
-                    )
-                    .focus();
-
-            }
+            document
+            .getElementById("password")
+            .focus();
 
         }
-    );
+
+    }
+);
 
 </script>
 
